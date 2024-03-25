@@ -26,14 +26,13 @@ MonoBehaviour:
     labels: []
   - name: <b><color=#FCD90D>Standing</color></b>
     icon: {fileID: 2800000, guid: 7f67cf0dcb12eee44895ded71f469886, type: 3}
-    type: 103
+    type: 102
     parameter:
-      name: 
+      name: Go/VRCEmote
     value: 17
     style: 0
     subMenu: {fileID: 11400000, guid: a423af16cc6d4794c99a6d6f9fcf80ff, type: 2}
-    subParameters:
-    - name: 
+    subParameters: []
     labels: []
   - name: <b><color=#FCD90D>Sitting</color></b>
     icon: {fileID: 2800000, guid: 1ff8232669204924fa6275af9c1270b9, type: 3}
