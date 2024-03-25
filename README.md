@@ -1,3 +1,4 @@
+<a href="https://buddyworks.wtf"><img width=50% src="https://splash.buddyworks.wtf/tckAqsHD.png"></img></a>  
 # BUDDYWORKS Poses Extension for GoGo Loco
 
 A neat extension for GogoLoco with plenty of poses for photography.
