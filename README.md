@@ -1,1 +1,1 @@
-# vpm-packagetemplate
+# buddyworks-poses-extension
