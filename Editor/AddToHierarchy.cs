@@ -5,22 +5,23 @@ namespace BUDDYWORKS.PosesExtension.AddToHierarchy
 {
     public class InstantiateAndPingPrefabByGUID : MonoBehaviour
     {
-        public static string prefabGUID = "10b55c87769faa544ae55a6de658bf86";
-        public static string prefabGUID2 = "d1e19656881f0994b880e2ea7164e6bf";
+        public static string prefabGUID = "ff714a403f2fe944aa77358222a4be1c";
+        public static string prefabGUID2 = "09cb0fd5fac430446b22b023b90bd66d";
 
-        [MenuItem("BUDDYWORKS/Poses Extension/Spawn Beyond Prefab... (recommended)")]
-        public static void SpawnGGLBeyondPrefab()
+        // Toolbar Menu
+        [MenuItem("BUDDYWORKS/Poses Extension/Spawn Prefab...")]
+        public static void SpawnPE()
         {
             SpawnPrefab(prefabGUID);
         }
 
-        [MenuItem("BUDDYWORKS/Poses Extension/Spawn All Prefab...")]
-        public static void SpawnGGLAllPrefab()
+        [MenuItem("BUDDYWORKS/Poses Extension/Spawn Prefab... (GGL Experimental)")]
+        public static void SpawnPEGGL()
         {
             SpawnPrefab(prefabGUID2);
         }
 
-        private static void SpawnPrefab(string guid)
+        public static void SpawnPrefab(string guid)
         {
             string prefabPath = AssetDatabase.GUIDToAssetPath(guid);
 
