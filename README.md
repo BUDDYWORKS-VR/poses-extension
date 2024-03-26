@@ -7,6 +7,7 @@ The Poses are all put into a singular animation clip and dialed in via a radial 
 
 # Dependencies:
 - VRCFury
+- (optional) GoGo Loco for the GGL Variant.
 
 # Installation:
 1. Add the Prefab to your scene via the Unity Toolbar. "BUDDYWORKS -> Poses Extension -> Spawn Prefab"
