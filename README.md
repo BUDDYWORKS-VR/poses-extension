@@ -19,8 +19,9 @@ That should be it, upload and use.
 Toggle the type of pose, and use the dial to select the desired pose.
 
 # Add more poses:
-Edit the animations and menus inside /Packages/wtf.buddyworks.posesextension/
-Editing the Animationclip "Custom_Master.anim" would be ideal, if you plan on updating PE, copy that file to /Assets/ and embed it in the Action Controller.
+Edit the animations and menus inside /Packages/wtf.buddyworks.posesextension/  
+Editing the Animationclip "Custom_Master.anim" would be ideal.  
+If you plan on updating PE, copy that file to /Assets/ and embed it in the Action Controller.
 
 Need Help?
 https://discord.buddyworks.wtf
