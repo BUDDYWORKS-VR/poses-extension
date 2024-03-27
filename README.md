@@ -1,7 +1,7 @@
 <a href="https://buddyworks.wtf"><img width=50% src="https://splash.buddyworks.wtf/tckAqsHD.png"></img></a>  
-# BUDDYWORKS Poses Extension for GoGo Loco
+# BUDDYWORKS Poses Extension
 
-A neat extension for GogoLoco with plenty of poses for photography.
+A neat extension with plenty of poses for photography.
 
 The Poses are all put into a singular animation clip and dialed in via a radial menu. This not only makes it way easier to maintain, it also allows you to easily add additional poses. Note that the more poses you have, the more difficult it will get to dial them in with the radial menu. The limit is probably 100.
 
