@@ -35,6 +35,20 @@ namespace BUDDYWORKS.PosesExtension.AddToHierarchy
             SpawnPrefab(prefabGUID4);
         }
 
+        // Enable or disable menu items dynamically
+        [MenuItem("BUDDYWORKS/Poses Extension/Spawn GoGo Loco Beyond Prefab (If Imported)", true)]
+        public static bool ValidateSpawnGGLBeyond()
+        {
+            return AssetDatabase.LoadAssetAtPath<GameObject>(AssetDatabase.GUIDToAssetPath(prefabGUID3)) != null;
+        }
+
+        [MenuItem("BUDDYWORKS/Poses Extension/Spawn GoGo Loco All Prefab (If Imported)", true)]
+        public static bool ValidateSpawnGGLAll()
+        {
+            return AssetDatabase.LoadAssetAtPath<GameObject>(AssetDatabase.GUIDToAssetPath(prefabGUID4)) != null;
+        }
+
+        // Prefab Spawner
         private static void SpawnPrefab(string guid)
         {
             string prefabPath = AssetDatabase.GUIDToAssetPath(guid);
