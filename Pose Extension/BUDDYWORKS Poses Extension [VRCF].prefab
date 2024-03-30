@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4042542169889367255
+--- !u!1 &1505672427823461560
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5782738825328456825}
-  - component: {fileID: 4581435434206638136}
+  - component: {fileID: 5304920859011447211}
+  - component: {fileID: 2305606716160327652}
   m_Layer: 0
-  m_Name: BUDDYWORKS Poses Extension (GGL Variant)
+  m_Name: BUDDYWORKS Poses Extension [VRCF]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5782738825328456825
+--- !u!4 &5304920859011447211
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4042542169889367255}
+  m_GameObject: {fileID: 1505672427823461560}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -32,13 +32,13 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4581435434206638136
+--- !u!114 &2305606716160327652
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4042542169889367255}
+  m_GameObject: {fileID: 1505672427823461560}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
@@ -64,33 +64,29 @@ MonoBehaviour:
             version: 1
             fileID: 0
             guid: 
-            id: a148822042ee8bd41b1b865f4d4495d0|Packages/wtf.buddyworks.posesextension/Pose
-              Extension/Data/GoGo Loco ParameterSpace/Poses Extension - Action (GGL).controller
-            objRef: {fileID: 9100000, guid: a148822042ee8bd41b1b865f4d4495d0, type: 2}
+            id: 860fa19ea5c08d741ad8bace141a52d3|Packages/wtf.buddyworks.posesextension/Pose
+              Extension/Data/Poses Extension - Action.controller
+            objRef: {fileID: 9100000, guid: 860fa19ea5c08d741ad8bace141a52d3, type: 2}
           type: 4
         menus:
         - menu:
             version: 1
             fileID: 0
             guid: 
-            id: 549e9115a05ce4642b74e379fd08b226|Packages/wtf.buddyworks.posesextension/Pose
-              Extension/Data/GoGo Loco ParameterSpace/Poses Extension - Main Menu
-              (GGL).asset
-            objRef: {fileID: 11400000, guid: 549e9115a05ce4642b74e379fd08b226, type: 2}
+            id: b49bdfc82a706264bb26141d729bfc6a|Packages/wtf.buddyworks.posesextension/Pose
+              Extension/Data/Poses Extension - Main Menu.asset
+            objRef: {fileID: 11400000, guid: b49bdfc82a706264bb26141d729bfc6a, type: 2}
           prefix: <b>Poses Extension
         prms:
         - parameters:
             version: 1
             fileID: 0
             guid: 
-            id: 2fbf80741256c0048b04595b6907d40c|Packages/wtf.buddyworks.posesextension/Pose
-              Extension/Data/GoGo Loco ParameterSpace/Poses Extension - Parameters
-              (GGL).asset
-            objRef: {fileID: 11400000, guid: 2fbf80741256c0048b04595b6907d40c, type: 2}
+            id: 67064e00373d93f448c3fc7565cebecc|Packages/wtf.buddyworks.posesextension/Pose
+              Extension/Data/Poses Extension - Parameters.asset
+            objRef: {fileID: 11400000, guid: 67064e00373d93f448c3fc7565cebecc, type: 2}
         smoothedPrms: []
-        globalParams:
-        - Go/Float
-        - Go/VRCEmote
+        globalParams: []
         allNonsyncedAreGlobal: 0
         ignoreSaved: 0
         toggleParam: 

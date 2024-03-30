@@ -35,7 +35,7 @@ MonoBehaviour:
     subParameters: []
     labels: []
   - name: <b><color=#FCD90D>Sitting</color></b>
-    icon: {fileID: 2800000, guid: 1ff8232669204924fa6275af9c1270b9, type: 3}
+    icon: {fileID: 0}
     type: 102
     parameter:
       name: PE/Set
@@ -45,7 +45,7 @@ MonoBehaviour:
     subParameters: []
     labels: []
   - name: <b><color=#FCD90D>Kneeling</color></b>
-    icon: {fileID: 2800000, guid: 10418cd129c0c0e4f97881e025aee116, type: 3}
+    icon: {fileID: 0}
     type: 102
     parameter:
       name: PE/Set
@@ -75,7 +75,7 @@ MonoBehaviour:
     subParameters: []
     labels: []
   - name: <b><color=#FCD90D>Dances</color></b>
-    icon: {fileID: 2800000, guid: 745b06ef49b3c7f4b9b03bb339dfd2aa, type: 3}
+    icon: {fileID: 0}
     type: 103
     parameter:
       name: 
