@@ -56,7 +56,7 @@ MonoBehaviour:
     subParameters:
     - name: 
     labels: []
-  - name: <b><color=#FCD90D>Laying</color></b>
+  - name: <b><color=#FCD90D>Prone</color></b>
     icon: {fileID: 2800000, guid: b39fdc54d9e2c414eb3e69abc7c4acdd, type: 3}
     type: 103
     parameter:
@@ -68,7 +68,7 @@ MonoBehaviour:
     - name: 
     labels: []
   - name: <b><color=#FCD90D>Dances</color></b>
-    icon: {fileID: 2800000, guid: 746fde86436037b4e9bed4545fc8a807, type: 3}
+    icon: {fileID: 2800000, guid: 9f3f47d8fee53034094af3736162f961, type: 3}
     type: 103
     parameter:
       name: 

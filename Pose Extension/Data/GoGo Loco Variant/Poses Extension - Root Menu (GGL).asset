@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Poses Extension - Root Menu (GGL)
   m_EditorClassIdentifier: 
   controls:
-  - name: <b>Poses Extension</b>
-    icon: {fileID: 0}
+  - name: <b><color=#FCD90D>Poses Extension</color></b>
+    icon: {fileID: 2800000, guid: f4b2b831ee86e0c499d7dfeb74106705, type: 3}
     type: 103
     parameter:
       name: 
-    value: 1
+    value: 0
     style: 0
     subMenu: {fileID: 11400000, guid: 549e9115a05ce4642b74e379fd08b226, type: 2}
     subParameters:
