@@ -73,10 +73,10 @@ MonoBehaviour:
             version: 1
             fileID: 0
             guid: 
-            id: b49bdfc82a706264bb26141d729bfc6a|Packages/wtf.buddyworks.posesextension/Pose
-              Extension/Data/Poses Extension - Main Menu.asset
-            objRef: {fileID: 11400000, guid: b49bdfc82a706264bb26141d729bfc6a, type: 2}
-          prefix: <b>Poses Extension
+            id: 0139880b23f00c6478d654b3092ca7d5|Packages/wtf.buddyworks.posesextension/Pose
+              Extension/Data/Poses Extension - Root Menu.asset
+            objRef: {fileID: 11400000, guid: 0139880b23f00c6478d654b3092ca7d5, type: 2}
+          prefix: 
         prms:
         - parameters:
             version: 1
@@ -86,7 +86,8 @@ MonoBehaviour:
               Extension/Data/Poses Extension - Parameters.asset
             objRef: {fileID: 11400000, guid: 67064e00373d93f448c3fc7565cebecc, type: 2}
         smoothedPrms: []
-        globalParams: []
+        globalParams:
+        - Grounded
         allNonsyncedAreGlobal: 0
         ignoreSaved: 0
         toggleParam: 
