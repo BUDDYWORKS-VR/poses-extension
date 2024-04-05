@@ -13,70 +13,62 @@ MonoBehaviour:
   m_Name: Poses Extension - Main Menu
   m_EditorClassIdentifier: 
   controls:
-  - name: <color=#FCA70D><b>Dial Pose</b></color>
-    icon: {fileID: 2800000, guid: 2d669a053008d3844977808c0bc0f203, type: 3}
-    type: 203
+  - name: <color=#FCA70D><b>Reset</b></color>
+    icon: {fileID: 2800000, guid: 56a531c42c4a6374b8f68fda36f7d91f, type: 3}
+    type: 101
     parameter:
-      name: 
+      name: PE/Reset
     value: 1
     style: 0
     subMenu: {fileID: 0}
-    subParameters:
-    - name: PE/Float
-    labels: []
-  - name: <color=#FCA70D><b>Height</b></color>
-    icon: {fileID: 2800000, guid: 36eef47a88e853f4d8b74742c8c480c5, type: 3}
-    type: 203
-    parameter:
-      name: 
-    value: 1
-    style: 0
-    subMenu: {fileID: 0}
-    subParameters:
-    - name: PE/Height
+    subParameters: []
     labels: []
   - name: <b><color=#FCD90D>Standing</color></b>
-    icon: {fileID: 2800000, guid: 0e090248d242f9448be2d9f27834577d, type: 3}
-    type: 102
+    icon: {fileID: 2800000, guid: f4b2b831ee86e0c499d7dfeb74106705, type: 3}
+    type: 103
     parameter:
-      name: PE/Set
+      name: 
     value: 1
     style: 0
-    subMenu: {fileID: 11400000, guid: a423af16cc6d4794c99a6d6f9fcf80ff, type: 2}
-    subParameters: []
+    subMenu: {fileID: 11400000, guid: 14e9d54ae5e6f7841b329b17117d4047, type: 2}
+    subParameters:
+    - name: 
     labels: []
   - name: <b><color=#FCD90D>Sitting</color></b>
-    icon: {fileID: 2800000, guid: 0e090248d242f9448be2d9f27834577d, type: 3}
-    type: 102
+    icon: {fileID: 2800000, guid: ec95400adde534649a0ec1c92add571c, type: 3}
+    type: 103
     parameter:
-      name: PE/Set
-    value: 2
+      name: 
+    value: 1
     style: 0
-    subMenu: {fileID: 0}
-    subParameters: []
+    subMenu: {fileID: 11400000, guid: ff999a78af9005b46bd8960c6e6c5ce9, type: 2}
+    subParameters:
+    - name: 
     labels: []
   - name: <b><color=#FCD90D>Kneeling</color></b>
-    icon: {fileID: 2800000, guid: 0e090248d242f9448be2d9f27834577d, type: 3}
-    type: 102
+    icon: {fileID: 2800000, guid: 981bf52962c9efc40aabfb5872d83edf, type: 3}
+    type: 103
     parameter:
-      name: PE/Set
-    value: 3
+      name: 
+    value: 1
     style: 0
-    subMenu: {fileID: 0}
-    subParameters: []
+    subMenu: {fileID: 11400000, guid: 3a1d616c606f14345abfb6413e988c81, type: 2}
+    subParameters:
+    - name: 
     labels: []
   - name: <b><color=#FCD90D>Laying</color></b>
-    icon: {fileID: 2800000, guid: 0e090248d242f9448be2d9f27834577d, type: 3}
-    type: 102
+    icon: {fileID: 2800000, guid: b39fdc54d9e2c414eb3e69abc7c4acdd, type: 3}
+    type: 103
     parameter:
-      name: PE/Set
-    value: 4
+      name: 
+    value: 1
     style: 0
-    subMenu: {fileID: 0}
-    subParameters: []
+    subMenu: {fileID: 11400000, guid: 5dd468efbab6e7b43a17ccda72607b01, type: 2}
+    subParameters:
+    - name: 
     labels: []
   - name: <b><color=#FCD90D>Dances</color></b>
-    icon: {fileID: 2800000, guid: bf1bf0565cfaaaf4a804a6968f1e7bca, type: 3}
+    icon: {fileID: 2800000, guid: 746fde86436037b4e9bed4545fc8a807, type: 3}
     type: 103
     parameter:
       name: 

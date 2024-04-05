@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -340790334, guid: 67cc4cb7839cd3741b63733d5adf0442, type: 3}
+  m_Name: Poses Extension - Poses - Kneeling
+  m_EditorClassIdentifier: 
+  controls:
+  - name: <color=#FCA70D><b>Dial Pose</b></color>
+    icon: {fileID: 2800000, guid: 66d7829e698d3ab4ea0a90e354213b4b, type: 3}
+    type: 203
+    parameter:
+      name: 
+    value: 1
+    style: 0
+    subMenu: {fileID: 0}
+    subParameters:
+    - name: PE/Float
+    labels: []
+  - name: <color=#FCA70D><b>Height</b></color>
+    icon: {fileID: 2800000, guid: 5039637f6b8b25047ac82c01bf3a7bbf, type: 3}
+    type: 203
+    parameter:
+      name: 
+    value: 1
+    style: 0
+    subMenu: {fileID: 0}
+    subParameters:
+    - name: PE/Height
+    labels: []
+  - name: <b><color=#FCD90D>Upright</color></b>
+    icon: {fileID: 2800000, guid: 981bf52962c9efc40aabfb5872d83edf, type: 3}
+    type: 102
+    parameter:
+      name: PE/Set
+    value: 20
+    style: 0
+    subMenu: {fileID: 0}
+    subParameters: []
+    labels: []
+  - name: <b><color=#FCD90D>Crawling</color></b>
+    icon: {fileID: 2800000, guid: 981bf52962c9efc40aabfb5872d83edf, type: 3}
+    type: 102
+    parameter:
+      name: PE/Set
+    value: 21
+    style: 0
+    subMenu: {fileID: 0}
+    subParameters: []
+    labels: []

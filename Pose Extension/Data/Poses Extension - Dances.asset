@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controls:
   - name: <b><color=#FCD90D>Hipsway</color></b>
-    icon: {fileID: 0}
+    icon: {fileID: 2800000, guid: 04687f6376686994bb7904e91bb7a5eb, type: 3}
     type: 203
     parameter:
       name: PE/Set
@@ -25,7 +25,7 @@ MonoBehaviour:
     - name: PE/Float
     labels: []
   - name: <b><color=#FCD90D>Funky</color></b>
-    icon: {fileID: 0}
+    icon: {fileID: 2800000, guid: 9f3f47d8fee53034094af3736162f961, type: 3}
     type: 203
     parameter:
       name: PE/Set
@@ -36,7 +36,7 @@ MonoBehaviour:
     - name: PE/Float
     labels: []
   - name: <b><color=#FCD90D>Lethal</color></b>
-    icon: {fileID: 0}
+    icon: {fileID: 2800000, guid: d467296f0b612fa418f808b2dc0f7fab, type: 3}
     type: 203
     parameter:
       name: PE/Set
@@ -47,7 +47,7 @@ MonoBehaviour:
     - name: PE/Float
     labels: []
   - name: <b><color=#FCD90D>Toothless</color></b>
-    icon: {fileID: 0}
+    icon: {fileID: 2800000, guid: c66a9f09fab59a740a71ea34475f43d7, type: 3}
     type: 203
     parameter:
       name: PE/Set
@@ -58,7 +58,7 @@ MonoBehaviour:
     - name: PE/Float
     labels: []
   - name: <b><color=#FCD90D>T-Spin</color></b>
-    icon: {fileID: 0}
+    icon: {fileID: 2800000, guid: cb3b8b5db045dc2419d6ab10d1939e65, type: 3}
     type: 203
     parameter:
       name: PE/Set

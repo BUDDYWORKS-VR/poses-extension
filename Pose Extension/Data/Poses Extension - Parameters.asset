@@ -28,3 +28,8 @@ MonoBehaviour:
     saved: 0
     defaultValue: 0.25
     networkSynced: 1
+  - name: PE/Reset
+    valueType: 2
+    saved: 0
+    defaultValue: 0
+    networkSynced: 0
