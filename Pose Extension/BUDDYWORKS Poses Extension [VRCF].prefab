@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.822.0
+  vrcfuryVersion: 1.830.0
   somethingIsBroken: 0
   config:
     features: []
@@ -88,6 +88,7 @@ MonoBehaviour:
         smoothedPrms: []
         globalParams:
         - Grounded
+        - Go/VRCEmote
         allNonsyncedAreGlobal: 0
         ignoreSaved: 0
         toggleParam: 
