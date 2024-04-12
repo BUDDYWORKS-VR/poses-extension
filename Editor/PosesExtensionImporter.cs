@@ -24,12 +24,15 @@ namespace BUDDYWORKS.PosesExtension
         public static void SpawnPE()
         {
             SpawnPrefab(prefabPE_Standalone_VRCF);
+            Debug.Log("Make sure the Poses Extension Prefab is placed after your Locomotion prefab in the Hierarchy, else you might encounter issues.");
+
         }
 
         [MenuItem("BUDDYWORKS/Poses Extension/Spawn GGL-Variant Prefab... [VRCFury]", false, 1)]
         public static void SpawnPEGGL()
         {
             SpawnPrefab(prefabPE_GGL_VRCF);
+            Debug.Log("Make sure the Poses Extension Prefab is placed after your Locomotion prefab in the Hierarchy, else you might encounter issues.");
         }
 
 
@@ -37,12 +40,14 @@ namespace BUDDYWORKS.PosesExtension
         public static void SpawnPE_MA()
         {
             SpawnPrefab(prefabPE_Standalone_MA);
+            Debug.Log("Make sure the Poses Extension Prefab is placed after your Locomotion prefab in the Hierarchy, else you might encounter issues.");
         }
 
     //    [MenuItem("BUDDYWORKS/Poses Extension/Spawn GGL-Variant Prefab... [ModularAvatar] (Experimental)", false, 30)]
     //    public static void SpawnPEGGL_MA()
     //    {
     //        SpawnPrefab(prefabPE_Standalone_MA);
+    //        Debug.Log("Make sure the Poses Extension Prefab is placed after your Locomotion prefab in the Hierarchy, else you might encounter issues.");
     //    }
 
 
@@ -58,9 +63,11 @@ namespace BUDDYWORKS.PosesExtension
             SpawnPrefab(prefabGGL_All);
         }
 
-
-
-
+        [MenuItem("BUDDYWORKS/Poses Extension/Prefab must go after Locomotion in Hierarchy!", false, 1000)]
+        public static void DISCLAIMER()
+        {
+            Debug.Log("Make sure the Poses Extension Prefab is placed after your Locomotion prefab in the Hierarchy, else you might encounter issues.");
+        }
 
 
         // Enable or disable menu items dynamically
