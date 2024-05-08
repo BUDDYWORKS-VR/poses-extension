@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -340790334, guid: 67cc4cb7839cd3741b63733d5adf0442, type: 3}
+  m_Name: Poses Extension - Poses - Prone (GGL Variant)
+  m_EditorClassIdentifier: 
+  controls:
+  - name: <color=#FCA70D><b>Dial Pose</b></color>
+    icon: {fileID: 2800000, guid: 66d7829e698d3ab4ea0a90e354213b4b, type: 3}
+    type: 203
+    parameter:
+      name: 
+    value: 1
+    style: 0
+    subMenu: {fileID: 0}
+    subParameters:
+    - name: Go/Float
+    labels: []
+  - name: <b><color=#FCD90D>On Back</color></b>
+    icon: {fileID: 2800000, guid: b39fdc54d9e2c414eb3e69abc7c4acdd, type: 3}
+    type: 102
+    parameter:
+      name: Go/VRCEmote
+    value: 23
+    style: 0
+    subMenu: {fileID: 0}
+    subParameters: []
+    labels: []
+  - name: <b><color=#FCD90D>On Belly</color></b>
+    icon: {fileID: 2800000, guid: a76029879d8a5224d8f78a5fe2c9832a, type: 3}
+    type: 102
+    parameter:
+      name: Go/VRCEmote
+    value: 24
+    style: 0
+    subMenu: {fileID: 0}
+    subParameters: []
+    labels: []
+  - name: <b><color=#FCD90D>On Side</color></b>
+    icon: {fileID: 2800000, guid: ee76414bbe624884cb0051564860f62b, type: 3}
+    type: 102
+    parameter:
+      name: Go/VRCEmote
+    value: 25
+    style: 0
+    subMenu: {fileID: 0}
+    subParameters: []
+    labels: []
