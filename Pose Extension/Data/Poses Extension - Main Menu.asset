@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controls:
   - name: <color=#FCA70D><b>Reset</b></color>
-    icon: {fileID: 2800000, guid: 56a531c42c4a6374b8f68fda36f7d91f, type: 3}
+    icon: {fileID: 2800000, guid: 1121a5b9140303142a7e69b3eeb5b57b, type: 3}
     type: 101
     parameter:
       name: PE/Reset
@@ -75,6 +75,17 @@ MonoBehaviour:
     value: 1
     style: 0
     subMenu: {fileID: 11400000, guid: 5727ac68c6cfdf84ba92ec7aa6e1bd9a, type: 2}
+    subParameters:
+    - name: 
+    labels: []
+  - name: <b><color=#FCD90D>More</color></b>
+    icon: {fileID: 2800000, guid: c3ae69a0b4b77094abe1996a8fad6bb1, type: 3}
+    type: 103
+    parameter:
+      name: 
+    value: 1
+    style: 0
+    subMenu: {fileID: 11400000, guid: f0cb8b0f4fcb447488fd3b94227eef4d, type: 2}
     subParameters:
     - name: 
     labels: []
