@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controls:
   - name: <color=#FCA70D><b>Reset</b></color>
-    icon: {fileID: 2800000, guid: 56a531c42c4a6374b8f68fda36f7d91f, type: 3}
+    icon: {fileID: 2800000, guid: 1121a5b9140303142a7e69b3eeb5b57b, type: 3}
     type: 101
     parameter:
       name: Go/VRCEmote
@@ -75,6 +75,17 @@ MonoBehaviour:
     value: 1
     style: 0
     subMenu: {fileID: 11400000, guid: 3259827a2b80bd949813536134c1b7fd, type: 2}
+    subParameters:
+    - name: 
+    labels: []
+  - name: <b><color=#FCD90D>More</color></b>
+    icon: {fileID: 2800000, guid: c3ae69a0b4b77094abe1996a8fad6bb1, type: 3}
+    type: 103
+    parameter:
+      name: 
+    value: 1
+    style: 0
+    subMenu: {fileID: 11400000, guid: 7c95495debb987e4ca565ea27c87bc11, type: 2}
     subParameters:
     - name: 
     labels: []

@@ -23,3 +23,63 @@ MonoBehaviour:
     saved: 0
     defaultValue: 0.25
     networkSynced: 1
+  - name: PE/Favorite/Slot_A_Set
+    valueType: 0
+    saved: 1
+    defaultValue: 17
+    networkSynced: 0
+  - name: PE/Favorite/Slot_A_Pose
+    valueType: 1
+    saved: 1
+    defaultValue: 0.1
+    networkSynced: 0
+  - name: PE/Favorite/Slot_A_Save
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
+  - name: PE/Favorite/Slot_A_Load
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
+  - name: PE/Favorite/Slot_B_Set
+    valueType: 0
+    saved: 1
+    defaultValue: 21
+    networkSynced: 0
+  - name: PE/Favorite/Slot_B_Pose
+    valueType: 1
+    saved: 1
+    defaultValue: 0.2
+    networkSynced: 0
+  - name: PE/Favorite/Slot_B_Save
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
+  - name: PE/Favorite/Slot_B_Load
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
+  - name: PE/Favorite/Slot_C_Set
+    valueType: 0
+    saved: 1
+    defaultValue: 23
+    networkSynced: 0
+  - name: PE/Favorite/Slot_C_Pose
+    valueType: 1
+    saved: 1
+    defaultValue: 0.3
+    networkSynced: 0
+  - name: PE/Favorite/Slot_C_Save
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
+  - name: PE/Favorite/Slot_C_Load
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
