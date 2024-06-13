@@ -309,13 +309,13 @@ AnimatorStateMachine:
     m_Position: {x: 260, y: 120, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 2340271142577361430}
-    m_Position: {x: 260, y: 30, z: 0}
+    m_Position: {x: 260, y: 60, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5275981466199733658}
-    m_Position: {x: 490, y: 30, z: 0}
+    m_Position: {x: 490, y: 60, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 2497784063648661385}
-    m_Position: {x: 550, y: 110, z: 0}
+    m_Position: {x: 490, y: 120, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5155870933304892334}
     m_Position: {x: 490, y: 190, z: 0}
@@ -800,21 +800,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parameters:
-  - type: 3
-    name: PE/Set
-    source: PE/Favorite/Slot_B_Set
-    value: 0
-    valueMin: 0
-    valueMax: 0
-    chance: 0
-    convertRange: 0
-    sourceMin: 0
-    sourceMax: 0
-    destMin: 0
-    destMax: 0
-  - type: 3
-    name: PE/Float
-    source: PE/Favorite/Slot_B_Pose
+  - type: 0
+    name: PE/Favorite/Slot_B_Load
+    source: 
     value: 0
     valueMin: 0
     valueMax: 0
@@ -1139,19 +1127,19 @@ AnimatorStateMachine:
     m_Position: {x: 260, y: 120, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1276693626560348281}
-    m_Position: {x: 260, y: 10, z: 0}
+    m_Position: {x: 30, y: 140, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4431813044882720377}
-    m_Position: {x: 260, y: -30, z: 0}
+    m_Position: {x: 30, y: 100, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4810624211599200948}
-    m_Position: {x: 500, y: 10, z: 0}
+    m_Position: {x: 30, y: -20, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 2985774744989258193}
-    m_Position: {x: 500, y: 130, z: 0}
+    m_Position: {x: 500, y: 90, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3710372394234988465}
-    m_Position: {x: 500, y: 180, z: 0}
+    m_Position: {x: 500, y: 140, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7660058635059952608}
     m_Position: {x: 50, y: 270, z: 0}
@@ -1172,15 +1160,15 @@ AnimatorStateMachine:
     m_Position: {x: 470, y: 230, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6472446566111227046}
-    m_Position: {x: 500, y: 50, z: 0}
+    m_Position: {x: 30, y: 20, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 50, y: 0, z: 0}
-  m_EntryPosition: {x: 50, y: 50, z: 0}
-  m_ExitPosition: {x: 50, y: -50, z: 0}
+  m_AnyStatePosition: {x: 280, y: -20, z: 0}
+  m_EntryPosition: {x: 280, y: 30, z: 0}
+  m_ExitPosition: {x: 280, y: -70, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 4389759033438623209}
 --- !u!1101 &-5802113665018535930
@@ -2410,21 +2398,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parameters:
-  - type: 3
-    name: PE/Set
-    source: PE/Favorite/Slot_A_Set
-    value: 0
-    valueMin: 0
-    valueMax: 0
-    chance: 0
-    convertRange: 0
-    sourceMin: 0
-    sourceMax: 0
-    destMin: 0
-    destMax: 0
-  - type: 3
-    name: PE/Float
-    source: PE/Favorite/Slot_A_Pose
+  - type: 0
+    name: PE/Favorite/Slot_A_Load
+    source: 
     value: 0
     valueMin: 0
     valueMax: 0
@@ -2904,31 +2880,7 @@ MonoBehaviour:
     destMin: 0
     destMax: 0
   - type: 0
-    name: PE/Mirror
-    source: 
-    value: 0
-    valueMin: 0
-    valueMax: 0
-    chance: 0
-    convertRange: 0
-    sourceMin: 0
-    sourceMax: 0
-    destMin: 0
-    destMax: 0
-  - type: 0
     name: PE/Height
-    source: 
-    value: 0.25
-    valueMin: 0
-    valueMax: 0
-    chance: 0
-    convertRange: 0
-    sourceMin: 0
-    sourceMax: 0
-    destMin: 0
-    destMax: 0
-  - type: 0
-    name: PE/Float
     source: 
     value: 0.25
     valueMin: 0
@@ -6102,21 +6054,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parameters:
-  - type: 3
-    name: PE/Set
-    source: PE/Favorite/Slot_C_Set
-    value: 0
-    valueMin: 0
-    valueMax: 0
-    chance: 0
-    convertRange: 0
-    sourceMin: 0
-    sourceMax: 0
-    destMin: 0
-    destMax: 0
-  - type: 3
-    name: PE/Float
-    source: PE/Favorite/Slot_C_Pose
+  - type: 0
+    name: PE/Favorite/Slot_C_Load
+    source: 
     value: 0
     valueMin: 0
     valueMax: 0
