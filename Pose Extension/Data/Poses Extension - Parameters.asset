@@ -113,3 +113,13 @@ MonoBehaviour:
     saved: 0
     defaultValue: 0.25
     networkSynced: 0
+  - name: PE/Settings/ViewPointCorrection
+    valueType: 2
+    saved: 1
+    defaultValue: 1
+    networkSynced: 0
+  - name: PE/Settings/ViewPointProne
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0

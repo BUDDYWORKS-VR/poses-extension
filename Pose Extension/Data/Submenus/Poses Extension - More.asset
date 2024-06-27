@@ -45,3 +45,14 @@ MonoBehaviour:
     subParameters:
     - name: 
     labels: []
+  - name: <color=#FDDA0D><b>Settings</b></color>
+    icon: {fileID: 2800000, guid: 66d7829e698d3ab4ea0a90e354213b4b, type: 3}
+    type: 103
+    parameter:
+      name: 
+    value: 1
+    style: 0
+    subMenu: {fileID: 11400000, guid: 90ce50922395ca54c96c9a607381f7c6, type: 2}
+    subParameters:
+    - name: 
+    labels: []
