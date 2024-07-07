@@ -113,6 +113,21 @@ MonoBehaviour:
     saved: 0
     defaultValue: 0.25
     networkSynced: 0
+  - name: PE/Eyelook/Active
+    valueType: 2
+    saved: 0
+    defaultValue: 0
+    networkSynced: 0
+  - name: PE/Eyelook/Axis-X
+    valueType: 1
+    saved: 1
+    defaultValue: 0.5
+    networkSynced: 0
+  - name: PE/Eyelook/Axis-Y
+    valueType: 1
+    saved: 1
+    defaultValue: 0.5
+    networkSynced: 0
   - name: PE/Settings/ViewPointCorrection
     valueType: 2
     saved: 1
