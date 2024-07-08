@@ -68,3 +68,14 @@ MonoBehaviour:
     subParameters:
     - name: PE/Float
     labels: []
+  - name: <b><color=#FCD90D>Custom</color></b>
+    icon: {fileID: 2800000, guid: c3ae69a0b4b77094abe1996a8fad6bb1, type: 3}
+    type: 103
+    parameter:
+      name: 
+    value: 1
+    style: 0
+    subMenu: {fileID: 11400000, guid: cde4c8b465249f74087a928703074256, type: 2}
+    subParameters:
+    - name: 
+    labels: []
