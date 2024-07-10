@@ -56,6 +56,17 @@ MonoBehaviour:
     subParameters:
     - name: 
     labels: []
+  - name: <b><color=#FCD90D>Eyelook</color></b>
+    icon: {fileID: 0}
+    type: 103
+    parameter:
+      name: 
+    value: 1
+    style: 0
+    subMenu: {fileID: 11400000, guid: 2f3a3ac512daa214586250831c427647, type: 2}
+    subParameters:
+    - name: 
+    labels: []
   - name: <color=#FDDA0D><b>Settings</b></color>
     icon: {fileID: 2800000, guid: 66d7829e698d3ab4ea0a90e354213b4b, type: 3}
     type: 103
