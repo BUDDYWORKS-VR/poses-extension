@@ -998,7 +998,7 @@ BlendTree:
   m_Name: Sitting Upright - HeightAdjust
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 61086cdd30e2e8943a90731e518364a7, type: 2}
+    m_Motion: {fileID: 7400000, guid: 249688ea6fa27104f8bcd912444c7596, type: 2}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -1006,7 +1006,7 @@ BlendTree:
     m_DirectBlendParameter: PE/Float
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 5b8e69d4d3c54ce479b245a59542e206, type: 2}
+    m_Motion: {fileID: 7400000, guid: 31911f7b11459e84b9724f19948cbf3f, type: 2}
     m_Threshold: 1
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -1650,7 +1650,7 @@ BlendTree:
   m_Name: Sitting Squat - HeightAdjust
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: c544e1960857f0f479d26a70f39d9d1a, type: 2}
+    m_Motion: {fileID: 7400000, guid: 8a4a005f457c361458ebdc545dc11c01, type: 2}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -1658,7 +1658,7 @@ BlendTree:
     m_DirectBlendParameter: PE/Float
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 371fd037fbe64184eb73b50b8b8a186a, type: 2}
+    m_Motion: {fileID: 7400000, guid: 312e740ea281024499720f533d2251ef, type: 2}
     m_Threshold: 1
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -5262,10 +5262,10 @@ BlendTree:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Standing Upright - HeightAdjust
+  m_Name: Standing Airborne - HeightAdjust
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 61086cdd30e2e8943a90731e518364a7, type: 2}
+    m_Motion: {fileID: 7400000, guid: 0e30f43d372f57e45b950e4c158704fd, type: 2}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -5273,7 +5273,7 @@ BlendTree:
     m_DirectBlendParameter: PE/Float
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 5b8e69d4d3c54ce479b245a59542e206, type: 2}
+    m_Motion: {fileID: 7400000, guid: 801f1f9dcd2f7a8479abe01a8d6a8048, type: 2}
     m_Threshold: 1
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -5346,7 +5346,7 @@ BlendTree:
   m_Name: Kneel Upright - HeightAdjust
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 61086cdd30e2e8943a90731e518364a7, type: 2}
+    m_Motion: {fileID: 7400000, guid: 90f37ad428bd9e746a49760ef38ea883, type: 2}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -5354,7 +5354,7 @@ BlendTree:
     m_DirectBlendParameter: PE/Float
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 5b8e69d4d3c54ce479b245a59542e206, type: 2}
+    m_Motion: {fileID: 7400000, guid: 576f9627a9b428d428d1909486bc93e8, type: 2}
     m_Threshold: 1
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
