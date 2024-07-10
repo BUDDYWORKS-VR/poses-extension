@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controls:
   - name: <color=#FCA70D><b>Dial Eyes</b></color>
-    icon: {fileID: 2800000, guid: 66d7829e698d3ab4ea0a90e354213b4b, type: 3}
+    icon: {fileID: 2800000, guid: 74f8c9046f4a8a04d9273266950c5e33, type: 3}
     type: 201
     parameter:
       name: 
@@ -33,18 +33,8 @@ MonoBehaviour:
       icon: {fileID: 0}
     - name: 
       icon: {fileID: 0}
-  - name: <b><size=23><line-height=100%><voffset=24.5em>Enable before Posing!
-    icon: {fileID: 0}
-    type: 101
-    parameter:
-      name: 
-    value: 1
-    style: 0
-    subMenu: {fileID: 0}
-    subParameters: []
-    labels: []
   - name: <b><color=#FCD90D>Active</color></b>
-    icon: {fileID: 0}
+    icon: {fileID: 2800000, guid: bd3b13aa997bbc24f9ff6df69bcc4bee, type: 3}
     type: 102
     parameter:
       name: PE/Eyelook/Active

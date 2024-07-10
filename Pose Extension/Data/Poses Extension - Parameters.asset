@@ -138,3 +138,48 @@ MonoBehaviour:
     saved: 0
     defaultValue: 0
     networkSynced: 0
+  - name: PE/Favorite/Eyelook/X_A
+    valueType: 1
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
+  - name: PE/Favorite/Eyelook/X_B
+    valueType: 1
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
+  - name: PE/Favorite/Eyelook/X_C
+    valueType: 1
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
+  - name: PE/Favorite/Eyelook/Y_A
+    valueType: 1
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
+  - name: PE/Favorite/Eyelook/Y_B
+    valueType: 1
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
+  - name: PE/Favorite/Eyelook/Y_C
+    valueType: 1
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
+  - name: PE/Favorite/Eyelook/Active_A
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
+  - name: PE/Favorite/Eyelook/Active_B
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
+  - name: PE/Favorite/Eyelook/Active_C
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
