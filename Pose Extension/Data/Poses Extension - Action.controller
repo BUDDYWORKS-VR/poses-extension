@@ -4517,7 +4517,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: VelocityMagnitude
+    m_DirectBlendParameter: PE/TreeWeight
     m_Mirror: 0
   m_BlendParameter: PE/Float
   m_BlendParameterY: PE/Float
@@ -5180,7 +5180,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: VelocityMagnitude
+    m_DirectBlendParameter: PE/TreeWeight
     m_Mirror: 0
   m_BlendParameter: PE/Float
   m_BlendParameterY: PE/Float
