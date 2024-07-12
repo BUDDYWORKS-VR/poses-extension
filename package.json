@@ -1,17 +1,17 @@
 {
   "name" : "wtf.buddyworks.posesextension",
   "displayName" : "BUDDYWORKS Poses Extension",
-  "version" : "2.4.2",
-  "unity" : "2019.4",
-  "description" : "Locomotion-agnostic Poses System.",
+  "version" : "3.0.0",
+  "unity" : "2022.3",
+  "description" : "Locomotion-agnostic Poses System for Photography.",
   "author": {
     "name": "BUDDYWORKS",
     "email": "hi@buddyworks.wtf"
   },
-	"legacyFolders" : {
-		"Assets\\BUDDYWORKS\\Pose Extension" : "65ae41b90b9b8eb4caddada23f7e9c32"
-	},
-    "vpmDependencies" : {
+  "legacyFolders" : {
+      "Assets\\BUDDYWORKS\\Pose Extension" : "65ae41b90b9b8eb4caddada23f7e9c32"
+  },
+  "vpmDependencies" : {
     "com.vrchat.avatars" : "3.x.x"
   }
 }
