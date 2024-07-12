@@ -6,13 +6,9 @@ namespace BUDDYWORKS.PosesExtension
     public class PrefabSpawner : MonoBehaviour
     {
         // VRCF Prefab definitions
-        #if UNITY_2022_3_OR_NEWER
         static string prefabPE_Standalone_VRCF = "ff714a403f2fe944aa77358222a4be1c";
         static string prefabPE_GGL_VRCF = "09cb0fd5fac430446b22b023b90bd66d";
-        #else
-        static string prefabPE_Standalone2019_VRCF = "c935052f7e5696b418d71df05cae7163";
-        static string prefabPE_GGL2019_VRCF = "208c3816e6a08c744bd98bcde7d8f09e";
-        #endif
+
         static string VRCF_Path = "Packages/com.vrcfury.vrcfury";
 
         // MA Prefab definitions
@@ -29,11 +25,7 @@ namespace BUDDYWORKS.PosesExtension
         [MenuItem("GameObject/BUDDYWORKS/Poses Extension/Spawn Standalone Prefab... [VRCFury] [Recommended]", false, 0)]
         private static void SpawnPE()
         {
-            #if UNITY_2022_3_OR_NEWER
             SpawnPrefab(prefabPE_Standalone_VRCF);
-            #else
-            SpawnPrefab(prefabPE_Standalone2019_VRCF);
-            #endif
             NotifyOrder();
         }
 
@@ -41,11 +33,7 @@ namespace BUDDYWORKS.PosesExtension
         [MenuItem("GameObject/BUDDYWORKS/Poses Extension/Spawn GGL-Variant Prefab... [VRCFury] [Lite]", false, 1)]
         private static void SpawnPEGGL()
         {
-            #if UNITY_2022_3_OR_NEWER
             SpawnPrefab(prefabPE_GGL_VRCF);
-            #else
-            SpawnPrefab(prefabPE_GGL2019_VRCF);
-            #endif
             NotifyOrder();
         }
 
