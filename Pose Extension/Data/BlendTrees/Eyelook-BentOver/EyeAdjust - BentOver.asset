@@ -9,7 +9,7 @@ BlendTree:
   m_Name: EyeAdjust - BentOver
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 0}
+    m_Motion: {fileID: 20600000, guid: d075eccaf4109cc4d87474661d7443f7, type: 2}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -17,7 +17,7 @@ BlendTree:
     m_DirectBlendParameter: PE/TreeWeight
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 0}
+    m_Motion: {fileID: 20600000, guid: 5d3ddfba6b341a846a50ddf91fb50dec, type: 2}
     m_Threshold: 1
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1

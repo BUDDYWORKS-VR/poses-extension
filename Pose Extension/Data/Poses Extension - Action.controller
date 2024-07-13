@@ -8793,13 +8793,13 @@ AnimatorStateMachine:
   m_AnyStateTransitions: []
   m_EntryTransitions: []
   m_StateMachineTransitions:
-  - first: {fileID: -1303933484420108400}
+  - first: {fileID: -6153478530626111802}
     second: []
   - first: {fileID: -6329898163519755868}
     second: []
-  - first: {fileID: -6153478530626111802}
-    second: []
   - first: {fileID: 6327533162134119115}
+    second: []
+  - first: {fileID: -1303933484420108400}
     second: []
   - first: {fileID: 6690827861298940684}
     second: []
