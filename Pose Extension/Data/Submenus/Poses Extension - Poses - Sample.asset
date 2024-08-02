@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controls:
   - name: <color=#FCA70D><b>Dial Pose</b></color>
-    icon: {fileID: 2800000, guid: 2d669a053008d3844977808c0bc0f203, type: 3}
+    icon: {fileID: 0}
     type: 203
     parameter:
       name: 
@@ -44,4 +44,15 @@ MonoBehaviour:
     subMenu: {fileID: 0}
     subParameters:
     - name: PE/Height
+    labels: []
+  - name: <color=#FCA70D><b>Eyelook</b></color>
+    icon: {fileID: 2800000, guid: bd3b13aa997bbc24f9ff6df69bcc4bee, type: 3}
+    type: 103
+    parameter:
+      name: 
+    value: 1
+    style: 0
+    subMenu: {fileID: 11400000, guid: 2f3a3ac512daa214586250831c427647, type: 2}
+    subParameters:
+    - name: 
     labels: []
