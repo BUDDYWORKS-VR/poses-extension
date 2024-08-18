@@ -763,7 +763,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: VRSuya_Loli_Kami_Requiem
+  m_Name: Club Penguin
   m_Speed: 4
   m_CycleOffset: 0
   m_Transitions:
@@ -777,7 +777,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 43775cb95cc0afd41bfec3e7bbd09f65, type: 2}
+  m_Motion: {fileID: 7400000, guid: fba1c671f2d7add4b8c5601bff8f8ffe, type: 2}
   m_Tag: 
   m_SpeedParameter: Go/Float
   m_MirrorParameter: 
@@ -3066,13 +3066,13 @@ AnimatorStateMachine:
   m_StateMachineTransitions:
   - first: {fileID: -8051087093639712590}
     second: []
-  - first: {fileID: -197203129761353342}
-    second: []
-  - first: {fileID: 3189193312419959222}
+  - first: {fileID: 8351836200097443852}
     second: []
   - first: {fileID: 4132330216544022681}
     second: []
-  - first: {fileID: 8351836200097443852}
+  - first: {fileID: -197203129761353342}
+    second: []
+  - first: {fileID: 3189193312419959222}
     second: []
   - first: {fileID: -2662452646260706966}
     second: []
