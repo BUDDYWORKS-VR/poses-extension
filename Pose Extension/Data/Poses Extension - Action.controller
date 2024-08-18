@@ -59,7 +59,7 @@ BlendTree:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BT - Standing BentOver
+  m_Name: BT - Standing Leaning
   m_Childs:
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 818effe0179fb064187d6c2e35e897a0, type: 2}
@@ -10398,7 +10398,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Standing - Bent over
+  m_Name: Standing - Leaning
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
