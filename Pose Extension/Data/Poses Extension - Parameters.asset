@@ -123,6 +123,11 @@ MonoBehaviour:
     saved: 1
     defaultValue: 0
     networkSynced: 0
+  - name: PE/Settings/TrackingOverride
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
   - name: PE/Eyelook/Active
     valueType: 2
     saved: 1
