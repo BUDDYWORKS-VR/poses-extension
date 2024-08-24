@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: -340790334, guid: 67cc4cb7839cd3741b63733d5adf0442, type: 3}
   m_Name: Poses Extension - More - Settings
   m_EditorClassIdentifier: 
+  Parameters: {fileID: 0}
   controls:
   - name: <color=#FDDA0D><b>Adjust Viewpoint</b></color>
     icon: {fileID: 2800000, guid: 746fde86436037b4e9bed4545fc8a807, type: 3}
@@ -33,7 +34,7 @@ MonoBehaviour:
     subMenu: {fileID: 0}
     subParameters: []
     labels: []
-  - name: <color=#FDDA0D><b>VR-Tracking (Experimental)</b></color>
+  - name: <color=#FDDA0D><b>Allow Partial Tracking</b></color>
     icon: {fileID: 2800000, guid: 746fde86436037b4e9bed4545fc8a807, type: 3}
     type: 102
     parameter:

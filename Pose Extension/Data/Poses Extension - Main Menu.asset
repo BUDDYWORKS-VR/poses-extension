@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: -340790334, guid: 67cc4cb7839cd3741b63733d5adf0442, type: 3}
   m_Name: Poses Extension - Main Menu
   m_EditorClassIdentifier: 
+  Parameters: {fileID: 0}
   controls:
   - name: <color=#FCA70D><b>Reset</b></color>
     icon: {fileID: 2800000, guid: 1121a5b9140303142a7e69b3eeb5b57b, type: 3}
