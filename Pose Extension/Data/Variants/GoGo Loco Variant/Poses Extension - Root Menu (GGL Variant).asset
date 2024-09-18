@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: -340790334, guid: 67cc4cb7839cd3741b63733d5adf0442, type: 3}
   m_Name: Poses Extension - Root Menu (GGL Variant)
   m_EditorClassIdentifier: 
+  Parameters: {fileID: 0}
   controls:
   - name: <b><color=#FCD90D>Poses Extension</color></b>
     icon: {fileID: 2800000, guid: f4b2b831ee86e0c499d7dfeb74106705, type: 3}

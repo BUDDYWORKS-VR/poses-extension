@@ -17,9 +17,28 @@ namespace BUDDYWORKS.PosesExtension
         static string MA_Path = "Packages/nadena.dev.modular-avatar";
 
         // GGL Prefab definitions
-        static string prefabGGL_Beyond = "10b55c87769faa544ae55a6de658bf86";
-        static string prefabGGL_All = "d1e19656881f0994b880e2ea7164e6bf";  
+        static string prefabGGL_Beyond_Legacy = "10b55c87769faa544ae55a6de658bf86";
+        static string prefabGGL_All_Legacy = "d1e19656881f0994b880e2ea7164e6bf";  
+        static string prefabGGL_Beyond_Latest = "c901be5fd0387e04a86ff8d3496cfbcc";
+        static string prefabGGL_All_Latest = "9f8fef6a5494d444c9165fb462015da2";
+        static string prefabGGL_Beyond;
+        static string prefabGGL_All;
 
+        [InitializeOnLoadMethod]
+        private static void GGL_Assoc()
+        {
+            if (AssetDatabase.LoadAssetAtPath<GameObject>(AssetDatabase.GUIDToAssetPath(prefabGGL_Beyond_Latest)) != null)
+            {
+                prefabGGL_Beyond = prefabGGL_Beyond_Latest;
+                prefabGGL_All = prefabGGL_All_Latest;
+            }
+            if (AssetDatabase.LoadAssetAtPath<GameObject>(AssetDatabase.GUIDToAssetPath(prefabGGL_Beyond_Legacy)) != null)
+            {
+                prefabGGL_Beyond = prefabGGL_Beyond_Legacy;
+                prefabGGL_All = prefabGGL_All_Legacy;
+            }
+        }
+        
         // Toolbar Menu
         [MenuItem("BUDDYWORKS/Poses Extension/Spawn Standalone Prefab... [VRCFury] [Recommended]", false, 0)]
         [MenuItem("GameObject/BUDDYWORKS/Poses Extension/Spawn Standalone Prefab... [VRCFury] [Recommended]", false, 0)]
@@ -86,6 +105,7 @@ namespace BUDDYWORKS.PosesExtension
         [MenuItem("GameObject/BUDDYWORKS/Poses Extension/Spawn Prefab... [ModularAvatar] (Experimental)", true)]
         private static bool ValidateSpawnPE_MA()
         {
+            GGL_Assoc();
             return AssetDatabase.IsValidFolder(MA_Path) != false;
         }
 
@@ -94,6 +114,7 @@ namespace BUDDYWORKS.PosesExtension
         [MenuItem("GameObject/BUDDYWORKS/Poses Extension/---------------", true)]
         private static bool ValidateSpawnGGLBeyond()
         {
+            GGL_Assoc();
             return AssetDatabase.LoadAssetAtPath<GameObject>(AssetDatabase.GUIDToAssetPath(prefabGGL_Beyond)) != null;
         }
 

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: -340790334, guid: 67cc4cb7839cd3741b63733d5adf0442, type: 3}
   m_Name: Poses Extension - Dances (GGL)
   m_EditorClassIdentifier: 
+  Parameters: {fileID: 0}
   controls:
   - name: <b><color=#FCD90D>Hipsway</color></b>
     icon: {fileID: 2800000, guid: 04687f6376686994bb7904e91bb7a5eb, type: 3}
