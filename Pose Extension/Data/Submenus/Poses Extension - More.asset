@@ -68,6 +68,16 @@ MonoBehaviour:
     subParameters:
     - name: 
     labels: []
+  - name: <b><color=#FCD90D>Random Pose</color></b>
+    icon: {fileID: 2800000, guid: d5a371e1c1056a040bc72695e64d5b4c, type: 3}
+    type: 101
+    parameter:
+      name: PE/RandomPose/Trigger
+    value: 1
+    style: 0
+    subMenu: {fileID: 11400000, guid: 2f3a3ac512daa214586250831c427647, type: 2}
+    subParameters: []
+    labels: []
   - name: <color=#FDDA0D><b>Settings</b></color>
     icon: {fileID: 2800000, guid: 66d7829e698d3ab4ea0a90e354213b4b, type: 3}
     type: 103
