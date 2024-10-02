@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 3
-  unityVersion: 2022.3.6f1
-  vrcfuryVersion: 1.836.0
+  unityVersion: 2022.3.22f1
+  vrcfuryVersion: 1.1071.0
   somethingIsBroken: 0
   config:
     features: []
@@ -97,8 +97,15 @@ MonoBehaviour:
         toggleParam: 
         rootObjOverride: {fileID: 0}
         rootBindingsApplyToAvatar: 0
-        rewriteBindings: []
+        rewriteBindings:
+        - from: With <3 by BUDDYWORKS
+          to: 
+          delete: 1
+        - from: Dance Hipsway - Source File by Evendora
+          to: 
+          delete: 1
         allowMissingAssets: 0
+        injectSpsDepthParam: 
         controller:
           version: 1
           fileID: 0
