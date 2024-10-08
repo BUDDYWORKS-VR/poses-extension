@@ -128,6 +128,11 @@ MonoBehaviour:
     saved: 0
     defaultValue: 0
     networkSynced: 0
+  - name: PE/RandomPose/Trigger
+    valueType: 2
+    saved: 0
+    defaultValue: 0
+    networkSynced: 0
   - name: PE/Eyelook/Active
     valueType: 2
     saved: 1
@@ -188,8 +193,8 @@ MonoBehaviour:
     saved: 1
     defaultValue: 0
     networkSynced: 0
-  - name: PE/RandomPose/Trigger
-    valueType: 2
+  - name: PE/Eyelook/PoseBuffer
+    valueType: 0
     saved: 1
     defaultValue: 0
     networkSynced: 0
