@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1071.0
+  vrcfuryVersion: 1.1112.0
   somethingIsBroken: 0
   config:
     features: []
@@ -90,6 +90,7 @@ MonoBehaviour:
         - Grounded
         - Go/VRCEmote
         - Go/Locomotion
+        - Go/Action
         - PE/Active
         - PE/Set
         - PE/Reset

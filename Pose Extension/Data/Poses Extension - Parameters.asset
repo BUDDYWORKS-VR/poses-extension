@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: -1506855854, guid: 67cc4cb7839cd3741b63733d5adf0442, type: 3}
   m_Name: Poses Extension - Parameters
   m_EditorClassIdentifier: 
+  isEmpty: 0
   parameters:
   - name: PE/Set
     valueType: 0
@@ -126,6 +127,11 @@ MonoBehaviour:
   - name: PE/Settings/TrackingOverride
     valueType: 2
     saved: 0
+    defaultValue: 0
+    networkSynced: 0
+  - name: PE/Settings/GGL-Mode
+    valueType: 2
+    saved: 1
     defaultValue: 0
     networkSynced: 0
   - name: PE/RandomPose/Trigger
