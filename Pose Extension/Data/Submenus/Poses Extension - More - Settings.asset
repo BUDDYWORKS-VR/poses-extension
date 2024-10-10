@@ -44,11 +44,11 @@ MonoBehaviour:
     subMenu: {fileID: 0}
     subParameters: []
     labels: []
-  - name: <color=#FDDA0D><b>Gogo Loco Mode</b></color>
+  - name: <color=#FDDA0D><b>Force Jump Reset</b></color>
     icon: {fileID: 2800000, guid: 746fde86436037b4e9bed4545fc8a807, type: 3}
     type: 102
     parameter:
-      name: PE/Settings/GGL-Mode
+      name: PE/Settings/ForceJumpReset
     value: 1
     style: 0
     subMenu: {fileID: 0}
