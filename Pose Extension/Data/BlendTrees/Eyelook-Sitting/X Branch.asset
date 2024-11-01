@@ -24,7 +24,7 @@ BlendTree:
     m_CycleOffset: 0
     m_DirectBlendParameter: VelocityMagnitude
     m_Mirror: 0
-  m_BlendParameter: PE/Eyelook/Active
+  m_BlendParameter: PE/GazeAdjust/Active
   m_BlendParameterY: Blend
   m_MinThreshold: 0
   m_MaxThreshold: 1

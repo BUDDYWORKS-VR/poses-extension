@@ -139,68 +139,128 @@ MonoBehaviour:
     saved: 0
     defaultValue: 0
     networkSynced: 0
-  - name: PE/Eyelook/Active
+  - name: PE/GazeAdjust/Active
     valueType: 2
     saved: 1
     defaultValue: 0
     networkSynced: 0
-  - name: PE/Eyelook/X
+  - name: PE/GazeAdjust/X
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 0
-  - name: PE/Eyelook/Y
+  - name: PE/GazeAdjust/Y
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 0
-  - name: PE/Favorite/Eyelook/X_A
-    valueType: 1
-    saved: 1
-    defaultValue: 0
-    networkSynced: 0
-  - name: PE/Favorite/Eyelook/X_B
-    valueType: 1
-    saved: 1
-    defaultValue: 0
-    networkSynced: 0
-  - name: PE/Favorite/Eyelook/X_C
-    valueType: 1
-    saved: 1
-    defaultValue: 0
-    networkSynced: 0
-  - name: PE/Favorite/Eyelook/Y_A
-    valueType: 1
-    saved: 1
-    defaultValue: 0
-    networkSynced: 0
-  - name: PE/Favorite/Eyelook/Y_B
-    valueType: 1
-    saved: 1
-    defaultValue: 0
-    networkSynced: 0
-  - name: PE/Favorite/Eyelook/Y_C
-    valueType: 1
-    saved: 1
-    defaultValue: 0
-    networkSynced: 0
-  - name: PE/Favorite/Eyelook/Active_A
-    valueType: 2
-    saved: 1
-    defaultValue: 0
-    networkSynced: 0
-  - name: PE/Favorite/Eyelook/Active_B
-    valueType: 2
-    saved: 1
-    defaultValue: 0
-    networkSynced: 0
-  - name: PE/Favorite/Eyelook/Active_C
-    valueType: 2
-    saved: 1
-    defaultValue: 0
-    networkSynced: 0
-  - name: PE/Eyelook/PoseBuffer
+  - name: PE/GazeAdjust/PoseBuffer
     valueType: 0
     saved: 1
     defaultValue: 0
+    networkSynced: 0
+  - name: PE/Favorite/GazeAdjust/X_A
+    valueType: 1
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
+  - name: PE/Favorite/GazeAdjust/X_B
+    valueType: 1
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
+  - name: PE/Favorite/GazeAdjust/X_C
+    valueType: 1
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
+  - name: PE/Favorite/GazeAdjust/Y_A
+    valueType: 1
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
+  - name: PE/Favorite/GazeAdjust/Y_B
+    valueType: 1
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
+  - name: PE/Favorite/GazeAdjust/Y_C
+    valueType: 1
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
+  - name: PE/Favorite/GazeAdjust/Active_A
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
+  - name: PE/Favorite/GazeAdjust/Active_B
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
+  - name: PE/Favorite/GazeAdjust/Active_C
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
+  - name: PE/HandAdjust/Active
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
+  - name: PE/HandAdjust/L
+    valueType: 1
+    saved: 1
+    defaultValue: 0.25
+    networkSynced: 0
+  - name: PE/HandAdjust/R
+    valueType: 1
+    saved: 1
+    defaultValue: 0.25
+    networkSynced: 0
+  - name: PE/Favorite/HandAdjust/WasActive_A
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
+  - name: PE/Favorite/HandAdjust/WasActive_B
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
+  - name: PE/Favorite/HandAdjust/WasActive_C
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
+  - name: PE/Favorite/HandAdjust/L_A
+    valueType: 1
+    saved: 1
+    defaultValue: 0.25
+    networkSynced: 0
+  - name: PE/Favorite/HandAdjust/L_B
+    valueType: 1
+    saved: 1
+    defaultValue: 0.25
+    networkSynced: 0
+  - name: PE/Favorite/HandAdjust/L_C
+    valueType: 1
+    saved: 1
+    defaultValue: 0.25
+    networkSynced: 0
+  - name: PE/Favorite/HandAdjust/R_A
+    valueType: 1
+    saved: 1
+    defaultValue: 0.25
+    networkSynced: 0
+  - name: PE/Favorite/HandAdjust/R_B
+    valueType: 1
+    saved: 1
+    defaultValue: 0.25
+    networkSynced: 0
+  - name: PE/Favorite/HandAdjust/R_C
+    valueType: 1
+    saved: 1
+    defaultValue: 0.25
     networkSynced: 0
