@@ -26,7 +26,7 @@ https://docs.buddyworks.wtf
 # Installation:
 1. Import the package.
 2. In the Toolbar, find BUDDYWORKS - Poses Extension.
-3. Click “Spawn Prefab…”, whichever applies to you.
+3. Click “Spawn Prefab…”, whichever applies to you.  
 *When in doubt, use the first option, it will always have the latest features.*
 
 That should be it, upload and use.
