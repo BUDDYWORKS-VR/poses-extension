@@ -43,8 +43,8 @@ namespace BUDDYWORKS.PosesExtension
             NotifyOrder();
         }
 
-        [MenuItem("BUDDYWORKS/Poses Extension/Spawn GGL-Variant Prefab... [VRCFury] [Lite]", false, 1)]
-        [MenuItem("GameObject/BUDDYWORKS/Poses Extension/Spawn GGL-Variant Prefab... [VRCFury] [Lite]", false, 1)]
+        [MenuItem("BUDDYWORKS/Poses Extension/Spawn GGL-Variant Prefab... [VRCFury] [Limited Features!]", false, 1)]
+        [MenuItem("GameObject/BUDDYWORKS/Poses Extension/Spawn GGL-Variant Prefab... [VRCFury] [Limited Features!]", false, 1)]
         private static void SpawnPEGGL()
         {
             SpawnPrefab(prefabPE_GGL_VRCF);
