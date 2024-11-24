@@ -68,22 +68,22 @@ namespace BUDDYWORKS.PosesExtension
 
                 if (nameProp == null || networkSyncedProp == null) continue;
 
-                string name = nameProp.stringValue;
+                string parameterName = nameProp.stringValue;
                 bool networkSynced = networkSyncedProp.intValue == 1;
 
-                if (name == "PE/Height")
+                if (parameterName == "PE/Height")
                 {
                     _heightSynced = networkSynced;
                 }
-                else if (name == "PE/Mirror")
+                else if (parameterName == "PE/Mirror")
                 {
                     _mirrorSynced = networkSynced;
                 }
-                else if (name.StartsWith("PE/ViewAdjust"))
+                else if (parameterName.StartsWith("PE/ViewAdjust"))
                 {
                     _viewAdjustGroupSynced &= networkSynced;
                 }
-                else if (name.StartsWith("PE/HandAdjust"))
+                else if (parameterName.StartsWith("PE/HandAdjust"))
                 {
                     _handAdjustGroupSynced &= networkSynced;
                 }
@@ -159,7 +159,7 @@ namespace BUDDYWORKS.PosesExtension
             }
         }
 
-        private void UpdateAssetValue(string name, bool value)
+        private void UpdateAssetValue(string parameterName, bool value)
         {
             for (int i = 0; i < _parameters.arraySize; i++)
             {
@@ -167,7 +167,7 @@ namespace BUDDYWORKS.PosesExtension
                 var nameProp = entry.FindPropertyRelative("name");
                 var networkSyncedProp = entry.FindPropertyRelative("networkSynced");
 
-                if (nameProp != null && networkSyncedProp != null && nameProp.stringValue == name)
+                if (nameProp != null && networkSyncedProp != null && nameProp.stringValue == parameterName)
                 {
                     networkSyncedProp.intValue = value ? 1 : 0;
                     SaveChanges();
