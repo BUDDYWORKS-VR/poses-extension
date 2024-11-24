@@ -1,34 +1,25 @@
 using UnityEditor;
 using UnityEngine;
-using System.Collections.Generic;
 
 namespace BUDDYWORKS.PosesExtension
 {
     public class Options : EditorWindow
     {
-        private const string AssetGUID = "67064e00373d93f448c3fc7565cebecc";
-        private string assetPath;
-        private SerializedObject serializedObject;
-        private SerializedProperty parameters;
+        private const string AssetGuid = "67064e00373d93f448c3fc7565cebecc";
+        private string _assetPath;
+        private SerializedObject _serializedObject;
+        private SerializedProperty _parameters;
 
-        private bool viewAdjustGroupSynced;
-        private bool handAdjustGroupSynced;
-        private bool heightSynced;
-        private bool mirrorSynced;
+        private bool _viewAdjustGroupSynced;
+        private bool _handAdjustGroupSynced;
+        private bool _heightSynced;
+        private bool _mirrorSynced;
 
         private const int BaseCost = 16;
         private const int HeightCost = 8;
         private const int MirrorCost = 1;
         private const int ViewAdjustCost = 17;
         private const int HandAdjustCost = 17;
-
-        private static readonly HashSet<string> FilteredParameters = new HashSet<string>
-        {
-            "PE/Height",
-            "PE/Mirror",
-            "PE/ViewAdjust",
-            "PE/HandAdjust"
-        };
 
         [MenuItem("BUDDYWORKS/Poses Extension/Settings...")]
         public static void ShowWindow()
@@ -38,40 +29,40 @@ namespace BUDDYWORKS.PosesExtension
 
         private void OnEnable()
         {
-            assetPath = AssetDatabase.GUIDToAssetPath(AssetGUID);
+            _assetPath = AssetDatabase.GUIDToAssetPath(AssetGuid);
 
-            if (string.IsNullOrEmpty(assetPath))
+            if (string.IsNullOrEmpty(_assetPath))
             {
-                Debug.LogError($"Asset with GUID {AssetGUID} not found.");
+                Debug.LogError($"Asset with GUID {AssetGuid} not found.");
                 return;
             }
 
-            Object asset = AssetDatabase.LoadAssetAtPath<Object>(assetPath);
+            Object asset = AssetDatabase.LoadAssetAtPath<Object>(_assetPath);
             if (asset == null)
             {
-                Debug.LogError($"Failed to load asset at path {assetPath}");
+                Debug.LogError($"Failed to load asset at path {_assetPath}");
                 return;
             }
 
-            serializedObject = new SerializedObject(asset);
-            parameters = serializedObject.FindProperty("parameters");
+            _serializedObject = new SerializedObject(asset);
+            _parameters = _serializedObject.FindProperty("parameters");
 
-            if (parameters == null || !parameters.isArray)
+            if (_parameters == null || !_parameters.isArray)
             {
                 Debug.LogError("'parameters' property not found or not an array.");
                 return;
             }
 
             // Initialize group states
-            viewAdjustGroupSynced = true;
-            handAdjustGroupSynced = true;
-            heightSynced = false;
-            mirrorSynced = false;
+            _viewAdjustGroupSynced = true;
+            _handAdjustGroupSynced = true;
+            _heightSynced = false;
+            _mirrorSynced = false;
 
             // Analyze relevant parameters
-            for (int i = 0; i < parameters.arraySize; i++)
+            for (int i = 0; i < _parameters.arraySize; i++)
             {
-                var entry = parameters.GetArrayElementAtIndex(i);
+                var entry = _parameters.GetArrayElementAtIndex(i);
                 var nameProp = entry.FindPropertyRelative("name");
                 var networkSyncedProp = entry.FindPropertyRelative("networkSynced");
 
@@ -82,32 +73,32 @@ namespace BUDDYWORKS.PosesExtension
 
                 if (name == "PE/Height")
                 {
-                    heightSynced = networkSynced;
+                    _heightSynced = networkSynced;
                 }
                 else if (name == "PE/Mirror")
                 {
-                    mirrorSynced = networkSynced;
+                    _mirrorSynced = networkSynced;
                 }
                 else if (name.StartsWith("PE/ViewAdjust"))
                 {
-                    viewAdjustGroupSynced &= networkSynced;
+                    _viewAdjustGroupSynced &= networkSynced;
                 }
                 else if (name.StartsWith("PE/HandAdjust"))
                 {
-                    handAdjustGroupSynced &= networkSynced;
+                    _handAdjustGroupSynced &= networkSynced;
                 }
             }
         }
 
         private void OnGUI()
         {
-            if (serializedObject == null || parameters == null)
+            if (_serializedObject == null || _parameters == null)
             {
                 EditorGUILayout.LabelField("Asset not loaded or 'parameters' not found.");
                 return;
             }
 
-            serializedObject.Update();
+            _serializedObject.Update();
 
             GUILayout.Label("Here you can select which features are synced to other players.", EditorStyles.boldLabel);
             GUILayout.Label("This is neat if you have someone else as photographer, but comes at a parameter cost.");
@@ -117,43 +108,43 @@ namespace BUDDYWORKS.PosesExtension
             EditorGUI.DrawRect(r, Color.gray);
             
             // Mirror checkbox
-            bool newMirrorSynced = EditorGUILayout.Toggle("Mirror Pose", mirrorSynced);
-            if (newMirrorSynced != mirrorSynced)
+            bool newMirrorSynced = EditorGUILayout.Toggle("Mirror Pose", _mirrorSynced);
+            if (newMirrorSynced != _mirrorSynced)
             {
-                mirrorSynced = newMirrorSynced;
-                UpdateAssetValue("PE/Mirror", mirrorSynced);
+                _mirrorSynced = newMirrorSynced;
+                UpdateAssetValue("PE/Mirror", _mirrorSynced);
             }
             
             // Height checkbox
-            bool newHeightSynced = EditorGUILayout.Toggle("HeightAdjust", heightSynced);
-            if (newHeightSynced != heightSynced)
+            bool newHeightSynced = EditorGUILayout.Toggle("HeightAdjust", _heightSynced);
+            if (newHeightSynced != _heightSynced)
             {
-                heightSynced = newHeightSynced;
-                UpdateAssetValue("PE/Height", heightSynced);
+                _heightSynced = newHeightSynced;
+                UpdateAssetValue("PE/Height", _heightSynced);
             }
 
             // ViewAdjust group checkbox
-            bool newViewAdjustGroupSynced = EditorGUILayout.Toggle("ViewAdjust", viewAdjustGroupSynced);
-            if (newViewAdjustGroupSynced != viewAdjustGroupSynced)
+            bool newViewAdjustGroupSynced = EditorGUILayout.Toggle("ViewAdjust", _viewAdjustGroupSynced);
+            if (newViewAdjustGroupSynced != _viewAdjustGroupSynced)
             {
-                viewAdjustGroupSynced = newViewAdjustGroupSynced;
-                UpdateGroupedValues("PE/ViewAdjust", viewAdjustGroupSynced);
+                _viewAdjustGroupSynced = newViewAdjustGroupSynced;
+                UpdateGroupedValues("PE/ViewAdjust", _viewAdjustGroupSynced);
             }
 
             // HandAdjust group checkbox
-            bool newHandAdjustGroupSynced = EditorGUILayout.Toggle("HandAdjust", handAdjustGroupSynced);
-            if (newHandAdjustGroupSynced != handAdjustGroupSynced)
+            bool newHandAdjustGroupSynced = EditorGUILayout.Toggle("HandAdjust", _handAdjustGroupSynced);
+            if (newHandAdjustGroupSynced != _handAdjustGroupSynced)
             {
-                handAdjustGroupSynced = newHandAdjustGroupSynced;
-                UpdateGroupedValues("PE/HandAdjust", handAdjustGroupSynced);
+                _handAdjustGroupSynced = newHandAdjustGroupSynced;
+                UpdateGroupedValues("PE/HandAdjust", _handAdjustGroupSynced);
             }
 
             // Calculate cost
             int parameterCost = BaseCost;
-            if (heightSynced) parameterCost += HeightCost;
-            if (mirrorSynced) parameterCost += MirrorCost;
-            if (viewAdjustGroupSynced) parameterCost += ViewAdjustCost;
-            if (handAdjustGroupSynced) parameterCost += HandAdjustCost;
+            if (_heightSynced) parameterCost += HeightCost;
+            if (_mirrorSynced) parameterCost += MirrorCost;
+            if (_viewAdjustGroupSynced) parameterCost += ViewAdjustCost;
+            if (_handAdjustGroupSynced) parameterCost += HandAdjustCost;
 
             // Display cost
             GUILayout.Space(10);
@@ -170,9 +161,9 @@ namespace BUDDYWORKS.PosesExtension
 
         private void UpdateAssetValue(string name, bool value)
         {
-            for (int i = 0; i < parameters.arraySize; i++)
+            for (int i = 0; i < _parameters.arraySize; i++)
             {
-                var entry = parameters.GetArrayElementAtIndex(i);
+                var entry = _parameters.GetArrayElementAtIndex(i);
                 var nameProp = entry.FindPropertyRelative("name");
                 var networkSyncedProp = entry.FindPropertyRelative("networkSynced");
 
@@ -186,9 +177,9 @@ namespace BUDDYWORKS.PosesExtension
 
         private void UpdateGroupedValues(string prefix, bool value)
         {
-            for (int i = 0; i < parameters.arraySize; i++)
+            for (int i = 0; i < _parameters.arraySize; i++)
             {
-                var entry = parameters.GetArrayElementAtIndex(i);
+                var entry = _parameters.GetArrayElementAtIndex(i);
                 var nameProp = entry.FindPropertyRelative("name");
                 var networkSyncedProp = entry.FindPropertyRelative("networkSynced");
 
@@ -202,7 +193,7 @@ namespace BUDDYWORKS.PosesExtension
 
         private new void SaveChanges()
         {
-            serializedObject.ApplyModifiedProperties();
+            _serializedObject.ApplyModifiedProperties();
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
         }
