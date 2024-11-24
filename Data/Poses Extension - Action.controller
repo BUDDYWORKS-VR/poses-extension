@@ -542,7 +542,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: PE/GazeAdjust/Migrate
+    m_ConditionEvent: PE/ViewAdjust/Migrate
     m_EventTreshold: 0
   - m_ConditionMode: 3
     m_ConditionEvent: PE/ViewAdjust/Active
@@ -974,7 +974,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Warmup (>0) (No Eyelook) (Track)
+  m_Name: Warmup (>0) (No ViewAdjust) (Track)
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -1837,7 +1837,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parameters:
   - type: 0
-    name: PE/GazeAdjust/Migrate
+    name: PE/ViewAdjust/Migrate
     source: 
     value: 1
     valueMin: 0
@@ -4302,7 +4302,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parameters:
   - type: 0
-    name: PE/GazeAdjust/Migrate
+    name: PE/ViewAdjust/Migrate
     source: 
     value: 1
     valueMin: 0
@@ -6786,7 +6786,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parameters:
   - type: 0
-    name: PE/GazeAdjust/Migrate
+    name: PE/ViewAdjust/Migrate
     source: 
     value: 0
     valueMin: 0
@@ -6883,7 +6883,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Warmup (>0) (Eyelook) (Track)
+  m_Name: Warmup (>0) (ViewAdjust) (Track)
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -7234,7 +7234,7 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: PE/GazeAdjust/Migrate
+  - m_Name: PE/ViewAdjust/Migrate
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -8205,7 +8205,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Warmup (>0) (No Eyelook)
+  m_Name: Warmup (>0) (No ViewAdjust)
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -8310,7 +8310,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Warmup (>0) (Eyelook)
+  m_Name: Warmup (>0) (ViewAdjust)
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -13511,7 +13511,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: PE/GazeAdjust/Migrate
+    m_ConditionEvent: PE/ViewAdjust/Migrate
     m_EventTreshold: 0
   - m_ConditionMode: 4
     m_ConditionEvent: PE/ViewAdjust/Active
@@ -14301,7 +14301,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parameters:
   - type: 0
-    name: PE/GazeAdjust/Migrate
+    name: PE/ViewAdjust/Migrate
     source: 
     value: 0
     valueMin: 0
