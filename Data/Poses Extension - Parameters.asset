@@ -28,12 +28,12 @@ MonoBehaviour:
     valueType: 1
     saved: 0
     defaultValue: 0.25
-    networkSynced: 1
+    networkSynced: 0
   - name: PE/Mirror
     valueType: 2
     saved: 0
     defaultValue: 0
-    networkSynced: 1
+    networkSynced: 0
   - name: PE/Reset
     valueType: 2
     saved: 0
@@ -152,11 +152,6 @@ MonoBehaviour:
   - name: PE/ViewAdjust/Y
     valueType: 1
     saved: 0
-    defaultValue: 0
-    networkSynced: 0
-  - name: PE/ViewAdjust/PoseBuffer
-    valueType: 0
-    saved: 1
     defaultValue: 0
     networkSynced: 0
   - name: PE/Favorite/ViewAdjust/X_A
