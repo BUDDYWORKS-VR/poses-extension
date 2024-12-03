@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1112.0
+  vrcfuryVersion: 1.1137.0
   somethingIsBroken: 0
   config:
     features: []
@@ -64,8 +64,8 @@ MonoBehaviour:
             version: 1
             fileID: 0
             guid: 
-            id: 860fa19ea5c08d741ad8bace141a52d3|Packages/wtf.buddyworks.posesextension/Pose
-              Extension/Data/Poses Extension - Action.controller
+            id: 860fa19ea5c08d741ad8bace141a52d3|Packages/wtf.buddyworks.posesextension/Data/Poses
+              Extension - Action.controller
             objRef: {fileID: 9100000, guid: 860fa19ea5c08d741ad8bace141a52d3, type: 2}
           type: 4
         menus:
@@ -73,8 +73,8 @@ MonoBehaviour:
             version: 1
             fileID: 0
             guid: 
-            id: 0139880b23f00c6478d654b3092ca7d5|Packages/wtf.buddyworks.posesextension/Pose
-              Extension/Data/Poses Extension - Root Menu.asset
+            id: 0139880b23f00c6478d654b3092ca7d5|Packages/wtf.buddyworks.posesextension/Data/Poses
+              Extension - Root Menu.asset
             objRef: {fileID: 11400000, guid: 0139880b23f00c6478d654b3092ca7d5, type: 2}
           prefix: 
         prms:
@@ -82,9 +82,23 @@ MonoBehaviour:
             version: 1
             fileID: 0
             guid: 
-            id: 67064e00373d93f448c3fc7565cebecc|Packages/wtf.buddyworks.posesextension/Pose
-              Extension/Data/Poses Extension - Parameters.asset
+            id: 67064e00373d93f448c3fc7565cebecc|Packages/wtf.buddyworks.posesextension/Data/Poses
+              Extension - Parameters - 1-Main.asset
             objRef: {fileID: 11400000, guid: 67064e00373d93f448c3fc7565cebecc, type: 2}
+        - parameters:
+            version: 1
+            fileID: 0
+            guid: 
+            id: 8f6dcdcd844330244b0621dc24d9bfa8|Packages/wtf.buddyworks.posesextension/Data/Poses
+              Extension - Parameters - 2-Favorite.asset
+            objRef: {fileID: 11400000, guid: 8f6dcdcd844330244b0621dc24d9bfa8, type: 2}
+        - parameters:
+            version: 1
+            fileID: 0
+            guid: 
+            id: a1a7af8a9c6934e48b4806dfa4bbd88b|Packages/wtf.buddyworks.posesextension/Data/Poses
+              Extension - Parameters - 3-API.asset
+            objRef: {fileID: 11400000, guid: a1a7af8a9c6934e48b4806dfa4bbd88b, type: 2}
         smoothedPrms: []
         globalParams:
         - Grounded
@@ -95,6 +109,8 @@ MonoBehaviour:
         - PE/Active
         - PE/Set
         - PE/Reset
+        - PE/API/IsInstalled
+        - PE/API/IsActive
         allNonsyncedAreGlobal: 0
         ignoreSaved: 0
         toggleParam: 
@@ -109,6 +125,7 @@ MonoBehaviour:
           delete: 1
         allowMissingAssets: 0
         injectSpsDepthParam: 
+        injectSpsVelocityParam: 
         controller:
           version: 1
           fileID: 0
