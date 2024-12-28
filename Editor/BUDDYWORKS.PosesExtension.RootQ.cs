@@ -8,11 +8,19 @@ namespace BUDDYWORKS.PosesExtension
     {
         private static string sourceFolderPath = "Packages/wtf.buddyworks.posesextension/Data/AnimationClips/Poses";
         private static string targetRootPath = "Packages/wtf.buddyworks.posesextension/Data/AnimationClips/Adjustments";
+        
+        private static string devPath = "Packages/wtf.buddyworks.posesextension/isDeveloper";
 
         [MenuItem("BUDDYWORKS/Development/Animation Clip Root.Q Transfer")]
         public static void RunTransfer()
         {
             TransferRootQData();
+        }
+
+        [MenuItem("BUDDYWORKS/Development/Animation Clip Root.Q Transfer", true)]
+        public static bool ValidateRunTransfer()
+        {
+            return AssetDatabase.IsValidFolder(devPath);
         }
 
         private static void TransferRootQData()
