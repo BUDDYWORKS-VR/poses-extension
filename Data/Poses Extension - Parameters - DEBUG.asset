@@ -16,32 +16,32 @@ MonoBehaviour:
   parameters:
   - name: PE/Set
     valueType: 0
-    saved: 0
+    saved: 1
     defaultValue: 0
     networkSynced: 1
   - name: PE/Float
     valueType: 1
-    saved: 0
+    saved: 1
     defaultValue: 0.25
     networkSynced: 1
   - name: PE/Height
     valueType: 1
-    saved: 0
+    saved: 1
     defaultValue: 0.25
     networkSynced: 1
   - name: PE/Mirror
     valueType: 2
-    saved: 0
+    saved: 1
     defaultValue: 0
     networkSynced: 1
   - name: PE/Reset
     valueType: 2
-    saved: 0
+    saved: 1
     defaultValue: 0
     networkSynced: 0
   - name: PE/ViewPortAdjust
     valueType: 2
-    saved: 0
+    saved: 1
     defaultValue: 0
     networkSynced: 0
   - name: PE/Settings/ViewPointCorrection
@@ -56,7 +56,7 @@ MonoBehaviour:
     networkSynced: 0
   - name: PE/Settings/TrackingOverride
     valueType: 2
-    saved: 0
+    saved: 1
     defaultValue: 0
     networkSynced: 0
   - name: PE/Settings/ForceJumpReset
@@ -66,7 +66,7 @@ MonoBehaviour:
     networkSynced: 0
   - name: PE/RandomPose/Trigger
     valueType: 2
-    saved: 0
+    saved: 1
     defaultValue: 0
     networkSynced: 0
   - name: PE/ViewAdjust/Active
@@ -76,12 +76,12 @@ MonoBehaviour:
     networkSynced: 0
   - name: PE/ViewAdjust/X
     valueType: 1
-    saved: 0
+    saved: 1
     defaultValue: 0
     networkSynced: 0
   - name: PE/ViewAdjust/Y
     valueType: 1
-    saved: 0
+    saved: 1
     defaultValue: 0
     networkSynced: 0
   - name: PE/HandAdjust/Active
@@ -109,6 +109,11 @@ MonoBehaviour:
     saved: 1
     defaultValue: 0.1
     networkSynced: 0
+  - name: PE/Favorite/Slot_A_Mirror
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
   - name: PE/Favorite/Slot_A_Save
     valueType: 2
     saved: 1
@@ -129,6 +134,11 @@ MonoBehaviour:
     saved: 1
     defaultValue: 0.2
     networkSynced: 0
+  - name: PE/Favorite/Slot_B_Mirror
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
   - name: PE/Favorite/Slot_B_Save
     valueType: 2
     saved: 1
@@ -148,6 +158,11 @@ MonoBehaviour:
     valueType: 1
     saved: 1
     defaultValue: 0.3
+    networkSynced: 0
+  - name: PE/Favorite/Slot_C_Mirror
+    valueType: 2
+    saved: 1
+    defaultValue: 0
     networkSynced: 0
   - name: PE/Favorite/Slot_C_Save
     valueType: 2
