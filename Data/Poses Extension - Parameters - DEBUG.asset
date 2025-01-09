@@ -274,13 +274,3 @@ MonoBehaviour:
     saved: 1
     defaultValue: 0.25
     networkSynced: 0
-  - name: PE/API/IsInstalled
-    valueType: 2
-    saved: 1
-    defaultValue: 1
-    networkSynced: 0
-  - name: PE/API/IsActive
-    valueType: 2
-    saved: 1
-    defaultValue: 0
-    networkSynced: 0
