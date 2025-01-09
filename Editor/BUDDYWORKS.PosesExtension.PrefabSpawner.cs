@@ -82,7 +82,8 @@ namespace BUDDYWORKS.PosesExtension
             return AssetDatabase.IsValidFolder(VRCF_Path) != false;
         }
 
-        [MenuItem("BUDDYWORKS/Poses Extension/Spawn GGL-Variant Prefab... [VRCFury] [Lite]", true)]
+        [MenuItem("BUDDYWORKS/Poses Extension/Spawn GGL-Variant Prefab... [VRCFury] [Limited Features!]", true)]
+        [MenuItem("GameObject/BUDDYWORKS/Poses Extension/Spawn GGL-Variant Prefab... [VRCFury] [Limited Features!]", true)]
         private static bool ValidateSpawnPEGGL()
         {
             return AssetDatabase.IsValidFolder(VRCF_Path) != false;
