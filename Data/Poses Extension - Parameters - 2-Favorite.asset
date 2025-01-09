@@ -27,7 +27,7 @@ MonoBehaviour:
   - name: PE/Favorite/Slot_A_Mirror
     valueType: 2
     saved: 1
-    defaultValue: 0.25
+    defaultValue: 0
     networkSynced: 0
   - name: PE/Favorite/Slot_A_Save
     valueType: 2
@@ -50,9 +50,9 @@ MonoBehaviour:
     defaultValue: 0.2
     networkSynced: 0
   - name: PE/Favorite/Slot_B_Mirror
-    valueType: 1
+    valueType: 2
     saved: 1
-    defaultValue: 0.25
+    defaultValue: 0
     networkSynced: 0
   - name: PE/Favorite/Slot_B_Save
     valueType: 2
@@ -75,9 +75,9 @@ MonoBehaviour:
     defaultValue: 0.3
     networkSynced: 0
   - name: PE/Favorite/Slot_C_Mirror
-    valueType: 1
+    valueType: 2
     saved: 1
-    defaultValue: 0.25
+    defaultValue: 0
     networkSynced: 0
   - name: PE/Favorite/Slot_C_Save
     valueType: 2
