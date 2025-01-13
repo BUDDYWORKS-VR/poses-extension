@@ -64,6 +64,11 @@ MonoBehaviour:
     saved: 1
     defaultValue: 0
     networkSynced: 0
+  - name: PE/Settings/DisableProxy
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
   - name: PE/RandomPose/Trigger
     valueType: 2
     saved: 1
@@ -98,6 +103,16 @@ MonoBehaviour:
     valueType: 1
     saved: 1
     defaultValue: 0.25
+    networkSynced: 0
+  - name: PE/Proxy/HandAdjust
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
+  - name: PE/Proxy/ViewAdjust
+    valueType: 2
+    saved: 1
+    defaultValue: 0
     networkSynced: 0
   - name: PE/Favorite/Slot_A_Set
     valueType: 0
@@ -273,4 +288,19 @@ MonoBehaviour:
     valueType: 1
     saved: 1
     defaultValue: 0.25
+    networkSynced: 0
+  - name: PE/API/IsInstalled
+    valueType: 2
+    saved: 1
+    defaultValue: 1
+    networkSynced: 0
+  - name: PE/API/IsActive
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
+  - name: PE/API/currentState
+    valueType: 0
+    saved: 1
+    defaultValue: 0
     networkSynced: 0
