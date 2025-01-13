@@ -92,6 +92,13 @@ MonoBehaviour:
             id: 8f6dcdcd844330244b0621dc24d9bfa8|Packages/wtf.buddyworks.posesextension/Data/Poses
               Extension - Parameters - 2-Favorite.asset
             objRef: {fileID: 11400000, guid: 8f6dcdcd844330244b0621dc24d9bfa8, type: 2}
+        - parameters:
+            version: 1
+            fileID: 0
+            guid: 
+            id: 703af0322d11d614dbf31631713a196b|Packages/wtf.buddyworks.posesextension/Data/Poses
+              Extension - Parameters - 4-Proxy.asset
+            objRef: {fileID: 11400000, guid: 703af0322d11d614dbf31631713a196b, type: 2}
         smoothedPrms: []
         globalParams:
         - Grounded

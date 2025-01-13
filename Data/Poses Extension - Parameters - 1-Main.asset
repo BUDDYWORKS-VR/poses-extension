@@ -104,13 +104,3 @@ MonoBehaviour:
     saved: 1
     defaultValue: 0.25
     networkSynced: 0
-  - name: PE/Proxy/HandAdjust
-    valueType: 2
-    saved: 0
-    defaultValue: 0
-    networkSynced: 0
-  - name: PE/Proxy/ViewAdjust
-    valueType: 2
-    saved: 0
-    defaultValue: 0
-    networkSynced: 0
