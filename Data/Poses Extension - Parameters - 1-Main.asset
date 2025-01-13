@@ -64,11 +64,6 @@ MonoBehaviour:
     saved: 1
     defaultValue: 0
     networkSynced: 0
-  - name: PE/Settings/DisableProxy
-    valueType: 2
-    saved: 1
-    defaultValue: 0
-    networkSynced: 0
   - name: PE/RandomPose/Trigger
     valueType: 2
     saved: 0
