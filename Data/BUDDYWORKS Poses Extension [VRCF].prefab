@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1153.0
+  vrcfuryVersion: 1.1162.0
   somethingIsBroken: 0
   config:
     features: []
@@ -82,9 +82,9 @@ MonoBehaviour:
             version: 1
             fileID: 0
             guid: 
-            id: 67064e00373d93f448c3fc7565cebecc|Packages/wtf.buddyworks.posesextension/Data/Poses
+            id: 17cce2e1703370a41b2f584d6364944a|Packages/wtf.buddyworks.posesextension/Data/Poses
               Extension - Parameters - 1-Main.asset
-            objRef: {fileID: 11400000, guid: 67064e00373d93f448c3fc7565cebecc, type: 2}
+            objRef: {fileID: 11400000, guid: 17cce2e1703370a41b2f584d6364944a, type: 2}
         - parameters:
             version: 1
             fileID: 0
@@ -97,7 +97,7 @@ MonoBehaviour:
             fileID: 0
             guid: 
             id: 703af0322d11d614dbf31631713a196b|Packages/wtf.buddyworks.posesextension/Data/Poses
-              Extension - Parameters - 4-Proxy.asset
+              Extension - Parameters - 3-Proxy.asset
             objRef: {fileID: 11400000, guid: 703af0322d11d614dbf31631713a196b, type: 2}
         smoothedPrms: []
         globalParams:
