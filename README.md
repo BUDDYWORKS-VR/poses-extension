@@ -4,8 +4,7 @@
 # BUDDYWORKS Poses Extension
 *Locomotion-agnostic pose system for VRChat Avatars, meant to be used for photography.*
 
-[![Generic badge](https://img.shields.io/github/downloads/BUDDYWORKS-VR/poses-extension/total?label=Downloads)](https://github.com/BUDDYWORKS-VR/poses-extension/releases/latest)
-[![Static Badge](https://img.shields.io/badge/%2B1.6k*-blue)](https://github.com/BUDDYWORKS-VR/poses-extension/releases/latest)
+[![Generic badge](https://img.shields.io/github/downloads/BUDDYWORKS-VR/poses-extension/total?label=Downloads)](https://github.com/BUDDYWORKS-VR/poses-extension/releases/latest)[![Static Badge](https://img.shields.io/badge/%2B1.6k*-blue)](https://github.com/BUDDYWORKS-VR/poses-extension/releases/latest)
 [![Generic badge](https://img.shields.io/badge/License-BDAL-yellow)](https://github.com/BUDDYWORKS-VR/poses-extension/blob/main/LICENSE)
 [![Generic badge](https://img.shields.io/badge/Unity-2022.3.22f1-red.svg)](https://unity3d.com/unity/whats-new/2022.3.22)
 
