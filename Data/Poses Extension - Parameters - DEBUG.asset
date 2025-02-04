@@ -119,6 +119,11 @@ MonoBehaviour:
     saved: 1
     defaultValue: 0.5
     networkSynced: 0
+  - name: PE/HeadAdjust/Z
+    valueType: 1
+    saved: 1
+    defaultValue: 0.5
+    networkSynced: 0
   - name: PE/Favorite/Slot_A_Set
     valueType: 0
     saved: 1
@@ -294,6 +299,66 @@ MonoBehaviour:
     saved: 1
     defaultValue: 0.25
     networkSynced: 0
+  - name: PE/Favorite/HeadAdjust/WasActive_A
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
+  - name: PE/Favorite/HeadAdjust/WasActive_B
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
+  - name: PE/Favorite/HeadAdjust/WasActive_C
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
+  - name: PE/Favorite/HeadAdjust/X_A
+    valueType: 1
+    saved: 1
+    defaultValue: 0.5
+    networkSynced: 0
+  - name: PE/Favorite/HeadAdjust/X_B
+    valueType: 1
+    saved: 1
+    defaultValue: 0.5
+    networkSynced: 0
+  - name: PE/Favorite/HeadAdjust/X_C
+    valueType: 1
+    saved: 1
+    defaultValue: 0.5
+    networkSynced: 0
+  - name: PE/Favorite/HeadAdjust/Y_A
+    valueType: 1
+    saved: 1
+    defaultValue: 0.5
+    networkSynced: 0
+  - name: PE/Favorite/HeadAdjust/Y_B
+    valueType: 1
+    saved: 1
+    defaultValue: 0.5
+    networkSynced: 0
+  - name: PE/Favorite/HeadAdjust/Y_C
+    valueType: 1
+    saved: 1
+    defaultValue: 0.5
+    networkSynced: 0
+  - name: PE/Favorite/HeadAdjust/Z_A
+    valueType: 1
+    saved: 1
+    defaultValue: 0.5
+    networkSynced: 0
+  - name: PE/Favorite/HeadAdjust/Z_B
+    valueType: 1
+    saved: 1
+    defaultValue: 0.5
+    networkSynced: 0
+  - name: PE/Favorite/HeadAdjust/Z_C
+    valueType: 1
+    saved: 1
+    defaultValue: 0.5
+    networkSynced: 0
   - name: PE/Settings/DisableProxy
     valueType: 2
     saved: 1
@@ -309,8 +374,8 @@ MonoBehaviour:
     saved: 1
     defaultValue: 0
     networkSynced: 0
-  - name: PE/HeadAdjust/Z
-    valueType: 1
-    saved: 0
-    defaultValue: 0.5
+  - name: PE/Proxy/HeadAdjust
+    valueType: 2
+    saved: 1
+    defaultValue: 0
     networkSynced: 0
