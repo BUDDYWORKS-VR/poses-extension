@@ -101,7 +101,7 @@ namespace BUDDYWORKS.PosesExtension
         {
             if (_serializedObject == null || _parameters == null)
             {
-                EditorGUILayout.LabelField("Asset not loaded or 'parameters' not found.");
+                EditorGUILayout.LabelField("Unable to access the parameter file, please report this!");
                 return;
             }
 
