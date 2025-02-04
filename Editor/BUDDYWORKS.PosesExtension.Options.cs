@@ -5,7 +5,7 @@ namespace BUDDYWORKS.PosesExtension
 {
     public class Options : EditorWindow
     {
-        private const string AssetGuid = "67064e00373d93f448c3fc7565cebecc";
+        private const string AssetGuid = "17cce2e1703370a41b2f584d6364944a";
         private string _assetPath;
         private SerializedObject _serializedObject;
         private SerializedProperty _parameters;
