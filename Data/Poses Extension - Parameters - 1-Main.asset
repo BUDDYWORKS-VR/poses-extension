@@ -96,11 +96,31 @@ MonoBehaviour:
     networkSynced: 0
   - name: PE/HandAdjust/L
     valueType: 1
-    saved: 1
+    saved: 0
     defaultValue: 0.25
     networkSynced: 0
   - name: PE/HandAdjust/R
     valueType: 1
-    saved: 1
+    saved: 0
     defaultValue: 0.25
+    networkSynced: 0
+  - name: PE/HeadAdjust/Active
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
+  - name: PE/HeadAdjust/X
+    valueType: 1
+    saved: 0
+    defaultValue: 0.5
+    networkSynced: 0
+  - name: PE/HeadAdjust/Y
+    valueType: 1
+    saved: 0
+    defaultValue: 0.5
+    networkSynced: 0
+  - name: PE/HeadAdjust/Z
+    valueType: 1
+    saved: 0
+    defaultValue: 0.5
     networkSynced: 0

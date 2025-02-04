@@ -22,12 +22,12 @@ MonoBehaviour:
   - name: PE/Float
     valueType: 1
     saved: 1
-    defaultValue: 0.22
+    defaultValue: 0.25
     networkSynced: 1
   - name: PE/Height
     valueType: 1
     saved: 1
-    defaultValue: 0.25
+    defaultValue: 0.23
     networkSynced: 1
   - name: PE/Mirror
     valueType: 2
@@ -64,7 +64,7 @@ MonoBehaviour:
     saved: 1
     defaultValue: 0
     networkSynced: 0
-  - name: PE/Settings/DisableProxy
+  - name: PE/Settings/SkipAnimation
     valueType: 2
     saved: 1
     defaultValue: 0
@@ -104,15 +104,20 @@ MonoBehaviour:
     saved: 1
     defaultValue: 0.25
     networkSynced: 0
-  - name: PE/Proxy/HandAdjust
+  - name: PE/HeadAdjust/Active
     valueType: 2
     saved: 1
     defaultValue: 0
     networkSynced: 0
-  - name: PE/Proxy/ViewAdjust
-    valueType: 2
+  - name: PE/HeadAdjust/X
+    valueType: 1
     saved: 1
-    defaultValue: 0
+    defaultValue: 0.5
+    networkSynced: 0
+  - name: PE/HeadAdjust/Y
+    valueType: 1
+    saved: 1
+    defaultValue: 0.5
     networkSynced: 0
   - name: PE/Favorite/Slot_A_Set
     valueType: 0
@@ -289,23 +294,23 @@ MonoBehaviour:
     saved: 1
     defaultValue: 0.25
     networkSynced: 0
-  - name: PE/API/IsInstalled
-    valueType: 2
-    saved: 1
-    defaultValue: 1
-    networkSynced: 0
-  - name: PE/API/IsActive
+  - name: PE/Settings/DisableProxy
     valueType: 2
     saved: 1
     defaultValue: 0
     networkSynced: 0
-  - name: PE/API/currentState
-    valueType: 0
-    saved: 1
-    defaultValue: 0
-    networkSynced: 0
-  - name: PE/Settings/SkipAnimation
+  - name: PE/Proxy/HandAdjust
     valueType: 2
     saved: 1
     defaultValue: 0
+    networkSynced: 0
+  - name: PE/Proxy/ViewAdjust
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
+  - name: PE/HeadAdjust/Z
+    valueType: 1
+    saved: 0
+    defaultValue: 0.5
     networkSynced: 0
