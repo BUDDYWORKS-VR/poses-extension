@@ -10,8 +10,9 @@ namespace BUDDYWORKS.PosesExtension
         private SerializedObject _serializedObject;
         private SerializedProperty _parameters;
 
-        private bool _viewAdjustGroupSynced;
-        private bool _handAdjustGroupSynced;
+        private bool _viewAdjustGroupSynced = true;
+        private bool _handAdjustGroupSynced = true;
+        private bool _headAdjustGroupSynced = true;
         private bool _heightSynced;
         private bool _mirrorSynced;
 
@@ -20,6 +21,7 @@ namespace BUDDYWORKS.PosesExtension
         private const int MirrorCost = 1;
         private const int ViewAdjustCost = 17;
         private const int HandAdjustCost = 17;
+        private const int HeadAdjustCost = 25;
 
         [MenuItem("BUDDYWORKS/Poses Extension/Settings...")]
         public static void ShowWindow()
@@ -54,10 +56,11 @@ namespace BUDDYWORKS.PosesExtension
             }
 
             // Initialize group states
-            _viewAdjustGroupSynced = true;
-            _handAdjustGroupSynced = true;
-            _heightSynced = false;
-            _mirrorSynced = false;
+            //_viewAdjustGroupSynced = true;
+            //_handAdjustGroupSynced = true;
+            //_headAdjustGroupSynced = false;
+            //_heightSynced = false;
+            //_mirrorSynced = false;
 
             // Analyze relevant parameters
             for (int i = 0; i < _parameters.arraySize; i++)
@@ -75,17 +78,21 @@ namespace BUDDYWORKS.PosesExtension
                 {
                     _heightSynced = networkSynced;
                 }
-                else if (parameterName == "PE/Mirror")
+                if (parameterName == "PE/Mirror")
                 {
                     _mirrorSynced = networkSynced;
                 }
-                else if (parameterName.StartsWith("PE/ViewAdjust"))
+                if (parameterName.StartsWith("PE/ViewAdjust"))
                 {
                     _viewAdjustGroupSynced &= networkSynced;
                 }
-                else if (parameterName.StartsWith("PE/HandAdjust"))
+                if (parameterName.StartsWith("PE/HandAdjust"))
                 {
                     _handAdjustGroupSynced &= networkSynced;
+                }
+                if (parameterName.StartsWith("PE/HeadAdjust"))
+                {
+                    _headAdjustGroupSynced &= networkSynced;
                 }
             }
         }
@@ -116,7 +123,7 @@ namespace BUDDYWORKS.PosesExtension
             }
             
             // Height checkbox
-            bool newHeightSynced = EditorGUILayout.Toggle("HeightAdjust", _heightSynced);
+            bool newHeightSynced = EditorGUILayout.Toggle("Height Adjust", _heightSynced);
             if (newHeightSynced != _heightSynced)
             {
                 _heightSynced = newHeightSynced;
@@ -124,7 +131,7 @@ namespace BUDDYWORKS.PosesExtension
             }
 
             // ViewAdjust group checkbox
-            bool newViewAdjustGroupSynced = EditorGUILayout.Toggle("ViewAdjust", _viewAdjustGroupSynced);
+            bool newViewAdjustGroupSynced = EditorGUILayout.Toggle("View Adjust", _viewAdjustGroupSynced);
             if (newViewAdjustGroupSynced != _viewAdjustGroupSynced)
             {
                 _viewAdjustGroupSynced = newViewAdjustGroupSynced;
@@ -132,11 +139,19 @@ namespace BUDDYWORKS.PosesExtension
             }
 
             // HandAdjust group checkbox
-            bool newHandAdjustGroupSynced = EditorGUILayout.Toggle("HandAdjust", _handAdjustGroupSynced);
+            bool newHandAdjustGroupSynced = EditorGUILayout.Toggle("Hand Adjust", _handAdjustGroupSynced);
             if (newHandAdjustGroupSynced != _handAdjustGroupSynced)
             {
                 _handAdjustGroupSynced = newHandAdjustGroupSynced;
                 UpdateGroupedValues("PE/HandAdjust", _handAdjustGroupSynced);
+            }
+            
+            // HeadAdjust group checkbox
+            bool newHeadAdjustGroupSynced = EditorGUILayout.Toggle("Head Adjust", _headAdjustGroupSynced);
+            if (newHeadAdjustGroupSynced != _headAdjustGroupSynced)
+            {
+                _headAdjustGroupSynced = newHeadAdjustGroupSynced;
+                UpdateGroupedValues("PE/HeadAdjust", _headAdjustGroupSynced);
             }
 
             // Calculate cost
@@ -145,6 +160,7 @@ namespace BUDDYWORKS.PosesExtension
             if (_mirrorSynced) parameterCost += MirrorCost;
             if (_viewAdjustGroupSynced) parameterCost += ViewAdjustCost;
             if (_handAdjustGroupSynced) parameterCost += HandAdjustCost;
+            if (_headAdjustGroupSynced) parameterCost += HeadAdjustCost;
 
             // Display cost
             GUILayout.Space(10);
