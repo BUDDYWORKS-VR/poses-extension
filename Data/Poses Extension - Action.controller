@@ -310,6 +310,7 @@ AnimatorState:
   m_StateMachineBehaviours:
   - {fileID: 6598362330154056718}
   - {fileID: -1494752731731558659}
+  - {fileID: 3984290037033365012}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -1762,6 +1763,69 @@ BlendTree:
   m_UseAutomaticThresholds: 1
   m_NormalizedBlendValues: 0
   m_BlendType: 0
+--- !u!114 &-6935215730603810157
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -706344726, guid: 67cc4cb7839cd3741b63733d5adf0442, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parameters:
+  - type: 3
+    name: PE/Favorite/HeadAdjust/WasActive_A
+    source: PE/HandAdjust/Active
+    value: 0
+    valueMin: 0
+    valueMax: 0
+    chance: 0
+    convertRange: 0
+    sourceMin: 0
+    sourceMax: 0
+    destMin: 0
+    destMax: 0
+  - type: 3
+    name: PE/Favorite/HeadAdjust/X_A
+    source: PE/HeadAdjust/X
+    value: 0
+    valueMin: 0
+    valueMax: 0
+    chance: 0
+    convertRange: 0
+    sourceMin: 0
+    sourceMax: 0
+    destMin: 0
+    destMax: 0
+  - type: 3
+    name: PE/Favorite/HeadAdjust/Y_A
+    source: PE/HeadAdjust/Y
+    value: 0
+    valueMin: 0
+    valueMax: 0
+    chance: 0
+    convertRange: 0
+    sourceMin: 0
+    sourceMax: 0
+    destMin: 0
+    destMax: 0
+  - type: 3
+    name: PE/Favorite/HeadAdjust/Z_A
+    source: PE/HeadAdjust/Z
+    value: 0
+    valueMin: 0
+    valueMax: 0
+    chance: 0
+    convertRange: 0
+    sourceMin: 0
+    sourceMax: 0
+    destMin: 0
+    destMax: 0
+  localOnly: 1
+  debugString: 
 --- !u!114 &-6925235032238644058
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4050,6 +4114,69 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!114 &-4700157295375123575
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -706344726, guid: 67cc4cb7839cd3741b63733d5adf0442, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parameters:
+  - type: 3
+    name: PE/HeadAdjust/Active
+    source: PE/Favorite/HeadAdjust/WasActive_B
+    value: 0
+    valueMin: 0
+    valueMax: 0
+    chance: 0
+    convertRange: 0
+    sourceMin: 0
+    sourceMax: 0
+    destMin: 0
+    destMax: 0
+  - type: 3
+    name: PE/HeadAdjust/X
+    source: PE/Favorite/HeadAdjust/X_B
+    value: 0
+    valueMin: 0
+    valueMax: 0
+    chance: 0
+    convertRange: 0
+    sourceMin: 0
+    sourceMax: 0
+    destMin: 0
+    destMax: 0
+  - type: 3
+    name: PE/HeadAdjust/Y
+    source: PE/Favorite/HeadAdjust/Y_B
+    value: 0
+    valueMin: 0
+    valueMax: 0
+    chance: 0
+    convertRange: 0
+    sourceMin: 0
+    sourceMax: 0
+    destMin: 0
+    destMax: 0
+  - type: 3
+    name: PE/HeadAdjust/Z
+    source: PE/Favorite/HeadAdjust/Z_B
+    value: 0
+    valueMin: 0
+    valueMax: 0
+    chance: 0
+    convertRange: 0
+    sourceMin: 0
+    sourceMax: 0
+    destMin: 0
+    destMax: 0
+  localOnly: 1
+  debugString: 
 --- !u!114 &-4679176606569227371
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5421,6 +5548,7 @@ AnimatorState:
   m_StateMachineBehaviours:
   - {fileID: 8654641928074286650}
   - {fileID: -6568476228656131361}
+  - {fileID: -6935215730603810157}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -5897,6 +6025,7 @@ AnimatorState:
   m_StateMachineBehaviours:
   - {fileID: -6925235032238644058}
   - {fileID: 356761571151092657}
+  - {fileID: 3603327037955980030}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -7091,6 +7220,7 @@ AnimatorState:
   m_StateMachineBehaviours:
   - {fileID: 584563215587294968}
   - {fileID: -5425103685260839874}
+  - {fileID: -4700157295375123575}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -8147,6 +8277,78 @@ AnimatorController:
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
   - m_Name: PE/HeadAdjust/Z
+    m_Type: 1
+    m_DefaultFloat: 0.5
+    m_DefaultInt: 0
+    m_DefaultBool: 1
+    m_Controller: {fileID: 0}
+  - m_Name: PE/Favorite/HeadAdjust/WasActive_A
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: PE/Favorite/HeadAdjust/WasActive_B
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: PE/Favorite/HeadAdjust/WasActive_C
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: PE/Favorite/HeadAdjust/X_A
+    m_Type: 1
+    m_DefaultFloat: 0.5
+    m_DefaultInt: 0
+    m_DefaultBool: 1
+    m_Controller: {fileID: 0}
+  - m_Name: PE/Favorite/HeadAdjust/X_B
+    m_Type: 1
+    m_DefaultFloat: 0.5
+    m_DefaultInt: 0
+    m_DefaultBool: 1
+    m_Controller: {fileID: 0}
+  - m_Name: PE/Favorite/HeadAdjust/X_C
+    m_Type: 1
+    m_DefaultFloat: 0.5
+    m_DefaultInt: 0
+    m_DefaultBool: 1
+    m_Controller: {fileID: 0}
+  - m_Name: PE/Favorite/HeadAdjust/Y_A
+    m_Type: 1
+    m_DefaultFloat: 0.5
+    m_DefaultInt: 0
+    m_DefaultBool: 1
+    m_Controller: {fileID: 0}
+  - m_Name: PE/Favorite/HeadAdjust/Y_B
+    m_Type: 1
+    m_DefaultFloat: 0.5
+    m_DefaultInt: 0
+    m_DefaultBool: 1
+    m_Controller: {fileID: 0}
+  - m_Name: PE/Favorite/HeadAdjust/Y_C
+    m_Type: 1
+    m_DefaultFloat: 0.5
+    m_DefaultInt: 0
+    m_DefaultBool: 1
+    m_Controller: {fileID: 0}
+  - m_Name: PE/Favorite/HeadAdjust/Z_A
+    m_Type: 1
+    m_DefaultFloat: 0.5
+    m_DefaultInt: 0
+    m_DefaultBool: 1
+    m_Controller: {fileID: 0}
+  - m_Name: PE/Favorite/HeadAdjust/Z_B
+    m_Type: 1
+    m_DefaultFloat: 0.5
+    m_DefaultInt: 0
+    m_DefaultBool: 1
+    m_Controller: {fileID: 0}
+  - m_Name: PE/Favorite/HeadAdjust/Z_C
     m_Type: 1
     m_DefaultFloat: 0.5
     m_DefaultInt: 0
@@ -11550,6 +11752,69 @@ MonoBehaviour:
   fixedDelay: 1
   delayTime: 0.26
   debugString: 
+--- !u!114 &3603327037955980030
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -706344726, guid: 67cc4cb7839cd3741b63733d5adf0442, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parameters:
+  - type: 3
+    name: PE/HeadAdjust/Active
+    source: PE/Favorite/HeadAdjust/WasActive_C
+    value: 0
+    valueMin: 0
+    valueMax: 0
+    chance: 0
+    convertRange: 0
+    sourceMin: 0
+    sourceMax: 0
+    destMin: 0
+    destMax: 0
+  - type: 3
+    name: PE/HeadAdjust/X
+    source: PE/Favorite/HeadAdjust/X_C
+    value: 0
+    valueMin: 0
+    valueMax: 0
+    chance: 0
+    convertRange: 0
+    sourceMin: 0
+    sourceMax: 0
+    destMin: 0
+    destMax: 0
+  - type: 3
+    name: PE/HeadAdjust/Y
+    source: PE/Favorite/HeadAdjust/Y_C
+    value: 0
+    valueMin: 0
+    valueMax: 0
+    chance: 0
+    convertRange: 0
+    sourceMin: 0
+    sourceMax: 0
+    destMin: 0
+    destMax: 0
+  - type: 3
+    name: PE/HeadAdjust/Z
+    source: PE/Favorite/HeadAdjust/Z_C
+    value: 0
+    valueMin: 0
+    valueMax: 0
+    chance: 0
+    convertRange: 0
+    sourceMin: 0
+    sourceMax: 0
+    destMin: 0
+    destMax: 0
+  localOnly: 1
+  debugString: 
 --- !u!1101 &3608633753487733681
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -11694,6 +11959,69 @@ MonoBehaviour:
     value: 0
     valueMin: 0.002
     valueMax: 0.997
+    chance: 0
+    convertRange: 0
+    sourceMin: 0
+    sourceMax: 0
+    destMin: 0
+    destMax: 0
+  localOnly: 1
+  debugString: 
+--- !u!114 &3734815259667690307
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -706344726, guid: 67cc4cb7839cd3741b63733d5adf0442, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parameters:
+  - type: 3
+    name: PE/HeadAdjust/Active
+    source: PE/Favorite/HeadAdjust/WasActive_A
+    value: 0
+    valueMin: 0
+    valueMax: 0
+    chance: 0
+    convertRange: 0
+    sourceMin: 0
+    sourceMax: 0
+    destMin: 0
+    destMax: 0
+  - type: 3
+    name: PE/HeadAdjust/X
+    source: PE/Favorite/HeadAdjust/X_A
+    value: 0
+    valueMin: 0
+    valueMax: 0
+    chance: 0
+    convertRange: 0
+    sourceMin: 0
+    sourceMax: 0
+    destMin: 0
+    destMax: 0
+  - type: 3
+    name: PE/HeadAdjust/Y
+    source: PE/Favorite/HeadAdjust/Y_A
+    value: 0
+    valueMin: 0
+    valueMax: 0
+    chance: 0
+    convertRange: 0
+    sourceMin: 0
+    sourceMax: 0
+    destMin: 0
+    destMax: 0
+  - type: 3
+    name: PE/HeadAdjust/Z
+    source: PE/Favorite/HeadAdjust/Z_A
+    value: 0
+    valueMin: 0
+    valueMax: 0
     chance: 0
     convertRange: 0
     sourceMin: 0
@@ -11880,6 +12208,69 @@ MonoBehaviour:
     destMin: 0
     destMax: 0
   localOnly: 0
+  debugString: 
+--- !u!114 &3984290037033365012
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -706344726, guid: 67cc4cb7839cd3741b63733d5adf0442, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parameters:
+  - type: 3
+    name: PE/Favorite/HeadAdjust/WasActive_B
+    source: PE/HandAdjust/Active
+    value: 0
+    valueMin: 0
+    valueMax: 0
+    chance: 0
+    convertRange: 0
+    sourceMin: 0
+    sourceMax: 0
+    destMin: 0
+    destMax: 0
+  - type: 3
+    name: PE/Favorite/HeadAdjust/X_B
+    source: PE/HeadAdjust/X
+    value: 0
+    valueMin: 0
+    valueMax: 0
+    chance: 0
+    convertRange: 0
+    sourceMin: 0
+    sourceMax: 0
+    destMin: 0
+    destMax: 0
+  - type: 3
+    name: PE/Favorite/HeadAdjust/Y_B
+    source: PE/HeadAdjust/Y
+    value: 0
+    valueMin: 0
+    valueMax: 0
+    chance: 0
+    convertRange: 0
+    sourceMin: 0
+    sourceMax: 0
+    destMin: 0
+    destMax: 0
+  - type: 3
+    name: PE/Favorite/HeadAdjust/Z_B
+    source: PE/HeadAdjust/Z
+    value: 0
+    valueMin: 0
+    valueMax: 0
+    chance: 0
+    convertRange: 0
+    sourceMin: 0
+    sourceMax: 0
+    destMin: 0
+    destMax: 0
+  localOnly: 1
   debugString: 
 --- !u!206 &4005802192029241914
 BlendTree:
@@ -15316,6 +15707,7 @@ AnimatorState:
   m_StateMachineBehaviours:
   - {fileID: -2143918386220388608}
   - {fileID: -3356080919399058190}
+  - {fileID: 3734815259667690307}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -15513,6 +15905,7 @@ AnimatorState:
   m_StateMachineBehaviours:
   - {fileID: 2915755917088430679}
   - {fileID: 8343978414174013609}
+  - {fileID: 9104164228253045855}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -16781,6 +17174,69 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: PE/Float
+--- !u!114 &9104164228253045855
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -706344726, guid: 67cc4cb7839cd3741b63733d5adf0442, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parameters:
+  - type: 3
+    name: PE/Favorite/HeadAdjust/WasActive_C
+    source: PE/HandAdjust/Active
+    value: 0
+    valueMin: 0
+    valueMax: 0
+    chance: 0
+    convertRange: 0
+    sourceMin: 0
+    sourceMax: 0
+    destMin: 0
+    destMax: 0
+  - type: 3
+    name: PE/Favorite/HeadAdjust/X_C
+    source: PE/HeadAdjust/X
+    value: 0
+    valueMin: 0
+    valueMax: 0
+    chance: 0
+    convertRange: 0
+    sourceMin: 0
+    sourceMax: 0
+    destMin: 0
+    destMax: 0
+  - type: 3
+    name: PE/Favorite/HeadAdjust/Y_C
+    source: PE/HeadAdjust/Y
+    value: 0
+    valueMin: 0
+    valueMax: 0
+    chance: 0
+    convertRange: 0
+    sourceMin: 0
+    sourceMax: 0
+    destMin: 0
+    destMax: 0
+  - type: 3
+    name: PE/Favorite/HeadAdjust/Z_C
+    source: PE/HeadAdjust/Z
+    value: 0
+    valueMin: 0
+    valueMax: 0
+    chance: 0
+    convertRange: 0
+    sourceMin: 0
+    sourceMax: 0
+    destMin: 0
+    destMax: 0
+  localOnly: 1
+  debugString: 
 --- !u!206 &9111067923602207613
 BlendTree:
   m_ObjectHideFlags: 0
