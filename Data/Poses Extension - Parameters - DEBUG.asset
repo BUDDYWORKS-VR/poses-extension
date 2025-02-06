@@ -379,3 +379,8 @@ MonoBehaviour:
     saved: 1
     defaultValue: 0
     networkSynced: 0
+  - name: PE/HeadAdjust/Reset
+    valueType: 2
+    saved: 0
+    defaultValue: 0
+    networkSynced: 0
