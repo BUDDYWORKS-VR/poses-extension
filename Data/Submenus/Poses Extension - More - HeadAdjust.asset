@@ -103,7 +103,7 @@ MonoBehaviour:
       icon: {fileID: 0}
   - name: <b><color=#FCD90D>Reset</color></b>
     icon: {fileID: 2800000, guid: 1121a5b9140303142a7e69b3eeb5b57b, type: 3}
-    type: 102
+    type: 101
     parameter:
       name: PE/HeadAdjust/Reset
     value: 1
