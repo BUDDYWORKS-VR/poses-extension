@@ -110,7 +110,7 @@ namespace BUDDYWORKS.PosesExtension
             GUILayout.Space(4); // Adjust the value for more or less padding
 
             GUILayout.BeginVertical();
-            GUILayout.Label("Here you can select which features are synced to other players.", EditorStyles.boldLabel);
+            GUILayout.Label("Select which features are synced to other players.", EditorStyles.boldLabel);
             EditorGUILayout.HelpBox("Useful if you have a photographer, though it does incur a parameter cost.\nYou'll still have access to all features locally, regardless of your selection.\nThis applies only to PE Standalone!", MessageType.Info);
             Rect r = EditorGUILayout.GetControlRect(false, 1, new GUIStyle() { margin = new RectOffset(0, 0, 4, 4) });
             EditorGUI.DrawRect(r, Color.gray);
@@ -185,6 +185,7 @@ namespace BUDDYWORKS.PosesExtension
             }
 
             GUILayout.EndVertical();
+            GUILayout.Space(4); // Right padding
             GUILayout.EndHorizontal();
         }
 
