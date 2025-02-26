@@ -26,7 +26,12 @@ namespace BUDDYWORKS.PosesExtension
         [MenuItem("BUDDYWORKS/Poses Extension/Settings...")]
         public static void ShowWindow()
         {
-            GetWindow<Options>("Poses Extension Settings");
+            Options window = GetWindow<Options>("Poses Extension Settings");
+            Texture2D icon = EditorGUIUtility.IconContent("Settings").image as Texture2D;
+            if (icon != null)
+            {
+                window.titleContent = new GUIContent("Poses Extension Settings", icon);
+            }
         }
 
         private void OnEnable()
@@ -54,13 +59,6 @@ namespace BUDDYWORKS.PosesExtension
                 Debug.LogError("'parameters' property not found or not an array.");
                 return;
             }
-
-            // Initialize group states
-            //_viewAdjustGroupSynced = true;
-            //_handAdjustGroupSynced = true;
-            //_headAdjustGroupSynced = false;
-            //_heightSynced = false;
-            //_mirrorSynced = false;
 
             // Analyze relevant parameters
             for (int i = 0; i < _parameters.arraySize; i++)
@@ -107,15 +105,25 @@ namespace BUDDYWORKS.PosesExtension
 
             _serializedObject.Update();
 
+            // Add padding to the left
+            GUILayout.BeginHorizontal();
+            GUILayout.Space(4); // Adjust the value for more or less padding
+
+            GUILayout.BeginVertical();
             GUILayout.Label("Here you can select which features are synced to other players.", EditorStyles.boldLabel);
-            GUILayout.Label("This is neat if you have someone else as photographer, but comes at a parameter cost.");
-            GUILayout.Label("Note that you will have access to all features locally, regardless of your selection.");
-            GUILayout.Label("This only applies to PE Standalone!");
+            EditorGUILayout.HelpBox("Useful if you have a photographer, though it does incur a parameter cost.\nYou'll still have access to all features locally, regardless of your selection.\nThis applies only to PE Standalone!", MessageType.Info);
             Rect r = EditorGUILayout.GetControlRect(false, 1, new GUIStyle() { margin = new RectOffset(0, 0, 4, 4) });
             EditorGUI.DrawRect(r, Color.gray);
             
+            // Tooltips and Labels
+            GUIContent mirrorContent = new GUIContent("Mirror Pose", "Mirror Pose will flip your current pose, useful if you want to face a different direction.\n\nWe recommend leaving this core feature synced.");
+            GUIContent heightContent = new GUIContent("Height Adjust", "Height Adjust allows you to adjust the height of your avatar during posing.\nUseful to account for colliders or the lack thereof.\n\nWe recommend leaving this core feature synced.");
+            GUIContent viewContent = new GUIContent("View Adjust", "View Adjust lets you change your avatars viewing direction, giving more control.\n\nTakes quite a few parameters, sync if needed.");
+            GUIContent handContent = new GUIContent("Hand Adjust", "Hand Adjust allows you to change the hand gestures of poses from a set of generic ones.\n\nTakes quite a few parameters, sync if needed.");
+            GUIContent headContent = new GUIContent("Head Adjust", "Head Adjust lets you change your avatars head rotation and tilt, allowing for many new angles.\n\nThis costs many parameters, sync if needed.");
+            
             // Mirror checkbox
-            bool newMirrorSynced = EditorGUILayout.Toggle("Mirror Pose", _mirrorSynced);
+            bool newMirrorSynced = EditorGUILayout.Toggle(mirrorContent, _mirrorSynced);
             if (newMirrorSynced != _mirrorSynced)
             {
                 _mirrorSynced = newMirrorSynced;
@@ -123,7 +131,7 @@ namespace BUDDYWORKS.PosesExtension
             }
             
             // Height checkbox
-            bool newHeightSynced = EditorGUILayout.Toggle("Height Adjust", _heightSynced);
+            bool newHeightSynced = EditorGUILayout.Toggle(heightContent, _heightSynced);
             if (newHeightSynced != _heightSynced)
             {
                 _heightSynced = newHeightSynced;
@@ -131,7 +139,7 @@ namespace BUDDYWORKS.PosesExtension
             }
 
             // ViewAdjust group checkbox
-            bool newViewAdjustGroupSynced = EditorGUILayout.Toggle("View Adjust", _viewAdjustGroupSynced);
+            bool newViewAdjustGroupSynced = EditorGUILayout.Toggle(viewContent, _viewAdjustGroupSynced);
             if (newViewAdjustGroupSynced != _viewAdjustGroupSynced)
             {
                 _viewAdjustGroupSynced = newViewAdjustGroupSynced;
@@ -139,7 +147,7 @@ namespace BUDDYWORKS.PosesExtension
             }
 
             // HandAdjust group checkbox
-            bool newHandAdjustGroupSynced = EditorGUILayout.Toggle("Hand Adjust", _handAdjustGroupSynced);
+            bool newHandAdjustGroupSynced = EditorGUILayout.Toggle(handContent, _handAdjustGroupSynced);
             if (newHandAdjustGroupSynced != _handAdjustGroupSynced)
             {
                 _handAdjustGroupSynced = newHandAdjustGroupSynced;
@@ -147,7 +155,7 @@ namespace BUDDYWORKS.PosesExtension
             }
             
             // HeadAdjust group checkbox
-            bool newHeadAdjustGroupSynced = EditorGUILayout.Toggle("Head Adjust", _headAdjustGroupSynced);
+            bool newHeadAdjustGroupSynced = EditorGUILayout.Toggle(headContent, _headAdjustGroupSynced);
             if (newHeadAdjustGroupSynced != _headAdjustGroupSynced)
             {
                 _headAdjustGroupSynced = newHeadAdjustGroupSynced;
@@ -163,8 +171,10 @@ namespace BUDDYWORKS.PosesExtension
             if (_headAdjustGroupSynced) parameterCost += HeadAdjustCost;
 
             // Display cost
+            GUIContent parameterCostContent = new GUIContent($"Parameter Cost: {parameterCost}",
+                "This value represents how much syncing Poses Extension with you current selection will cost by itself. It does not consider your current avatars synced parameters.");
             GUILayout.Space(10);
-            EditorGUILayout.LabelField($"Parameter Cost: {parameterCost}");
+            EditorGUILayout.LabelField(parameterCostContent);
             
             GUILayout.FlexibleSpace();
             GUILayout.Label("BUDDYWORKS Poses Extension", EditorStyles.boldLabel);
@@ -173,6 +183,9 @@ namespace BUDDYWORKS.PosesExtension
             {
                 Application.OpenURL("https://buddyworks.wtf");
             }
+
+            GUILayout.EndVertical();
+            GUILayout.EndHorizontal();
         }
 
         private void UpdateAssetValue(string parameterName, bool value)
