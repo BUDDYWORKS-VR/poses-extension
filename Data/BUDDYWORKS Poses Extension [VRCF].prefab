@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1162.0
+  vrcfuryVersion: 1.1190.0
   somethingIsBroken: 0
   config:
     features: []
@@ -109,9 +109,7 @@ MonoBehaviour:
         - PE/Active
         - PE/Set
         - PE/Reset
-        - PE/API/IsInstalled
-        - PE/API/IsActive
-        - PE/API/currentState
+        - PE/API/*
         allNonsyncedAreGlobal: 0
         ignoreSaved: 0
         toggleParam: 
