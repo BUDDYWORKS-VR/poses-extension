@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Align_Squat_High
+  m_Name: Align_Squat-Low
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -23,9 +23,9 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 2
-        inSlope: 58.5
-        outSlope: 0
+        value: -0.5
+        inSlope: 10.424414
+        outSlope: 58.5
         tangentMode: 69
         weightedMode: 0
         inWeight: 0.33333334
@@ -527,9 +527,9 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 2
-        inSlope: 58.5
-        outSlope: 0
+        value: -0.5
+        inSlope: 10.424414
+        outSlope: 58.5
         tangentMode: 69
         weightedMode: 0
         inWeight: 0.33333334
