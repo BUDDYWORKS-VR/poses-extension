@@ -90,9 +90,7 @@ namespace BUDDYWORKS.PosesExtension
             if (GUILayout.Button("Apply"))
             {
                 assetsWereDirty = false; // Reset the flag
-                ChangeHeightAdjustRange(
-                    heightAdjustSettings.heightAdjustMultiplier
-                );
+                ChangeHeightAdjustRange(heightAdjustSettings.heightAdjustMultiplier);
                 ChangeViewAdjustRange(viewAdjustSettings.viewAdjustMultiplier);
                 SaveAndRefreshAssets(); // Call the save function
             }
@@ -116,64 +114,48 @@ namespace BUDDYWORKS.PosesExtension
         private void ChangeHeightAdjustRange(float multiplier)
         {
             string rootPath =
-                "Packages/wtf.buddyworks.posesextension/Data/AnimationClips/Adjustments";
+                "Packages/wtf.buddyworks.posesextension/Data/AnimationClips/Adjustments/HeightAdjust";
 
-            // Get all subdirectories in the root path
-            string[] subDirectories = Directory.GetDirectories(rootPath);
+            string heightAdjustPath = rootPath;
 
-            foreach (string subDirectory in subDirectories)
+            if (Directory.Exists(heightAdjustPath))
             {
-                string heightAdjustPath = Path.Combine(
-                    subDirectory,
-                    "HeightAdjust"
-                );
-
-                if (Directory.Exists(heightAdjustPath))
-                {
-                    string lowClipPath =
-                        Directory.GetFiles(
-                            heightAdjustPath,
-                            "*-Low.anim",
-                            SearchOption.TopDirectoryOnly
-                        )
-                        .FirstOrDefault();
-                    string highClipPath =
-                        Directory.GetFiles(
-                            heightAdjustPath,
-                            "*-High.anim",
-                            SearchOption.TopDirectoryOnly
-                        )
-                        .FirstOrDefault();
-
-                    if (
-                        !string.IsNullOrEmpty(lowClipPath) &&
-                        !string.IsNullOrEmpty(highClipPath)
+                string lowClipPath =
+                    Directory.GetFiles(
+                        heightAdjustPath,
+                        "*-Low.anim",
+                        SearchOption.TopDirectoryOnly
                     )
-                    {
-                        AnimationClip lowClip = AssetDatabase.LoadAssetAtPath<
-                            AnimationClip
-                        >(lowClipPath);
-                        AnimationClip highClip = AssetDatabase.LoadAssetAtPath<
-                            AnimationClip
-                        >(highClipPath);
+                    .FirstOrDefault();
+                string highClipPath =
+                    Directory.GetFiles(
+                        heightAdjustPath,
+                        "*-High.anim",
+                        SearchOption.TopDirectoryOnly
+                    )
+                    .FirstOrDefault();
 
-                        if (lowClip != null && highClip != null)
-                        {
-                            ApplyHeightAdjust(lowClip, -0.5f, multiplier);
-                            ApplyHeightAdjust(highClip, 2f, multiplier);
-                        }
-                        else
-                        {
-                            Debug.LogError(
-                                "Could not load animation clips in " +
-                                heightAdjustPath
-                            );
-                        }
+                if (
+                    !string.IsNullOrEmpty(lowClipPath) &&
+                    !string.IsNullOrEmpty(highClipPath)
+                )
+                {
+                    AnimationClip lowClip = AssetDatabase.LoadAssetAtPath<
+                        AnimationClip
+                    >(lowClipPath);
+                    AnimationClip highClip = AssetDatabase.LoadAssetAtPath<
+                        AnimationClip
+                    >(highClipPath);
+
+                    if (lowClip != null && highClip != null)
+                    {
+                        ApplyHeightAdjust(lowClip, -0.5f, multiplier);
+                        ApplyHeightAdjust(highClip, 2f, multiplier);
                     }
                     else
                     {
                         Debug.LogError(
-                            "Could not find animation clips in " +
+                            "Could not load animation clips in " +
                             heightAdjustPath
                         );
                     }
@@ -181,166 +163,166 @@ namespace BUDDYWORKS.PosesExtension
                 else
                 {
                     Debug.LogError(
-                        "HeightAdjust folder not found in " + subDirectory
+                        "Could not find animation clips in " +
+                        heightAdjustPath
                     );
                 }
+            }
+            else
+            {
+                Debug.LogError(
+                    "HeightAdjust folder not found in " + rootPath
+                );
             }
         }
 
         private void ChangeViewAdjustRange(float multiplier)
         {
             string rootPath =
-                "Packages/wtf.buddyworks.posesextension/Data/AnimationClips/Adjustments";
+                "Packages/wtf.buddyworks.posesextension/Data/AnimationClips/Adjustments/ViewAdjust";
 
-            // Get all subdirectories in the root path
-            string[] subDirectories = Directory.GetDirectories(rootPath);
-
-            foreach (string subDirectory in subDirectories)
+            if (Directory.Exists(rootPath))
             {
-                string viewAdjustPath = Path.Combine(subDirectory, "ViewAdjust");
+                string xPlusClipPath =
+                    Directory.GetFiles(
+                        rootPath,
+                        "X+.anim",
+                        SearchOption.TopDirectoryOnly
+                    )
+                    .FirstOrDefault();
+                string xMinusClipPath =
+                    Directory.GetFiles(
+                        rootPath,
+                        "X-.anim",
+                        SearchOption.TopDirectoryOnly
+                    )
+                    .FirstOrDefault();
+                string yPlusClipPath =
+                    Directory.GetFiles(
+                        rootPath,
+                        "Y+.anim",
+                        SearchOption.TopDirectoryOnly
+                    )
+                    .FirstOrDefault();
+                string yMinusClipPath =
+                    Directory.GetFiles(
+                        rootPath,
+                        "Y-.anim",
+                        SearchOption.TopDirectoryOnly
+                    )
+                    .FirstOrDefault();
 
-                if (Directory.Exists(viewAdjustPath))
+                if (
+                    !string.IsNullOrEmpty(xPlusClipPath) &&
+                    !string.IsNullOrEmpty(xMinusClipPath) &&
+                    !string.IsNullOrEmpty(yPlusClipPath) &&
+                    !string.IsNullOrEmpty(yMinusClipPath)
+                )
                 {
-                    string xPlusClipPath =
-                        Directory.GetFiles(
-                            viewAdjustPath,
-                            "X+.anim",
-                            SearchOption.TopDirectoryOnly
-                        )
-                        .FirstOrDefault();
-                    string xMinusClipPath =
-                        Directory.GetFiles(
-                            viewAdjustPath,
-                            "X-.anim",
-                            SearchOption.TopDirectoryOnly
-                        )
-                        .FirstOrDefault();
-                    string yPlusClipPath =
-                        Directory.GetFiles(
-                            viewAdjustPath,
-                            "Y+.anim",
-                            SearchOption.TopDirectoryOnly
-                        )
-                        .FirstOrDefault();
-                    string yMinusClipPath =
-                        Directory.GetFiles(
-                            viewAdjustPath,
-                            "Y-.anim",
-                            SearchOption.TopDirectoryOnly
-                        )
-                        .FirstOrDefault();
+                    AnimationClip xPlusClip = AssetDatabase.LoadAssetAtPath<
+                        AnimationClip
+                    >(xPlusClipPath);
+                    AnimationClip xMinusClip = AssetDatabase.LoadAssetAtPath<
+                        AnimationClip
+                    >(xMinusClipPath);
+                    AnimationClip yPlusClip = AssetDatabase.LoadAssetAtPath<
+                        AnimationClip
+                    >(yPlusClipPath);
+                    AnimationClip yMinusClip = AssetDatabase.LoadAssetAtPath<
+                        AnimationClip
+                    >(yMinusClipPath);
 
                     if (
-                        !string.IsNullOrEmpty(xPlusClipPath) &&
-                        !string.IsNullOrEmpty(xMinusClipPath) &&
-                        !string.IsNullOrEmpty(yPlusClipPath) &&
-                        !string.IsNullOrEmpty(yMinusClipPath)
+                        xPlusClip != null &&
+                        xMinusClip != null &&
+                        yPlusClip != null &&
+                        yMinusClip != null
                     )
                     {
-                        AnimationClip xPlusClip = AssetDatabase.LoadAssetAtPath<
-                            AnimationClip
-                        >(xPlusClipPath);
-                        AnimationClip xMinusClip = AssetDatabase.LoadAssetAtPath<
-                            AnimationClip
-                        >(xMinusClipPath);
-                        AnimationClip yPlusClip = AssetDatabase.LoadAssetAtPath<
-                            AnimationClip
-                        >(yPlusClipPath);
-                        AnimationClip yMinusClip = AssetDatabase.LoadAssetAtPath<
-                            AnimationClip
-                        >(yMinusClipPath);
+                        float xPlusLeftEyeBase = 2f;
+                        float xPlusRightEyeBase = -2f;
+                        float xMinusLeftEyeBase = -2f;
+                        float xMinusRightEyeBase = 2f;
+                        float yPlusLeftEyeBase = 4f;
+                        float yPlusRightEyeBase = 4f;
+                        float yMinusLeftEyeBase = -4f;
+                        float yMinusRightEyeBase = -4f;
 
-                        if (
-                            xPlusClip != null &&
-                            xMinusClip != null &&
-                            yPlusClip != null &&
-                            yMinusClip != null
-                        )
-                        {
-                            float xPlusLeftEyeBase = 2f;
-                            float xPlusRightEyeBase = -2f;
-                            float xMinusLeftEyeBase = -2f;
-                            float xMinusRightEyeBase = 2f;
-                            float yPlusLeftEyeBase = 4f;
-                            float yPlusRightEyeBase = 4f;
-                            float yMinusLeftEyeBase = -4f;
-                            float yMinusRightEyeBase = -4f;
+                        ApplyViewAdjust(
+                            xPlusClip,
+                            "Left Eye In-Out",
+                            xPlusLeftEyeBase,
+                            multiplier
+                        );
+                        ApplyViewAdjust(
+                            xPlusClip,
+                            "Right Eye In-Out",
+                            xPlusRightEyeBase,
+                            multiplier
+                        );
 
-                            ApplyViewAdjust(
-                                xPlusClip,
-                                "Left Eye In-Out",
-                                xPlusLeftEyeBase,
-                                multiplier
-                            );
-                            ApplyViewAdjust(
-                                xPlusClip,
-                                "Right Eye In-Out",
-                                xPlusRightEyeBase,
-                                multiplier
-                            );
+                        ApplyViewAdjust(
+                            xMinusClip,
+                            "Left Eye In-Out",
+                            xMinusLeftEyeBase,
+                            multiplier
+                        );
+                        ApplyViewAdjust(
+                            xMinusClip,
+                            "Right Eye In-Out",
+                            xMinusRightEyeBase,
+                            multiplier
+                        );
 
-                            ApplyViewAdjust(
-                                xMinusClip,
-                                "Left Eye In-Out",
-                                xMinusLeftEyeBase,
-                                multiplier
-                            );
-                            ApplyViewAdjust(
-                                xMinusClip,
-                                "Right Eye In-Out",
-                                xMinusRightEyeBase,
-                                multiplier
-                            );
+                        ApplyViewAdjust(
+                            yPlusClip,
+                            "Left Eye Down-Up",
+                            yPlusLeftEyeBase,
+                            multiplier
+                        );
+                        ApplyViewAdjust(
+                            yPlusClip,
+                            "Right Eye Down-Up",
+                            yPlusRightEyeBase,
+                            multiplier
+                        );
 
-                            ApplyViewAdjust(
-                                yPlusClip,
-                                "Left Eye Down-Up",
-                                yPlusLeftEyeBase,
-                                multiplier
-                            );
-                            ApplyViewAdjust(
-                                yPlusClip,
-                                "Right Eye Down-Up",
-                                yPlusRightEyeBase,
-                                multiplier
-                            );
-
-                            ApplyViewAdjust(
-                                yMinusClip,
-                                "Left Eye Down-Up",
-                                yMinusLeftEyeBase,
-                                multiplier
-                            );
-                            ApplyViewAdjust(
-                                yMinusClip,
-                                "Right Eye Down-Up",
-                                yMinusRightEyeBase,
-                                multiplier
-                            );
-                        }
-                        else
-                        {
-                            Debug.LogError(
-                                "Could not load animation clips in " +
-                                viewAdjustPath
-                            );
-                        }
+                        ApplyViewAdjust(
+                            yMinusClip,
+                            "Left Eye Down-Up",
+                            yMinusLeftEyeBase,
+                            multiplier
+                        );
+                        ApplyViewAdjust(
+                            yMinusClip,
+                            "Right Eye Down-Up",
+                            yMinusRightEyeBase,
+                            multiplier
+                        );
                     }
                     else
                     {
                         Debug.LogError(
-                            "Could not find animation clips in " +
-                            viewAdjustPath
+                            "Could not load animation clips in " +
+                            rootPath
                         );
                     }
                 }
                 else
                 {
                     Debug.LogError(
-                        "ViewAdjust folder not found in " + subDirectory
+                        "Could not find animation clips in " +
+                        rootPath
                     );
                 }
             }
+            else
+            {
+                Debug.LogError(
+                    "ViewAdjust folder not found in " + rootPath
+                );
+            }
+            
         }
 
         private void ApplyHeightAdjust(
