@@ -129,3 +129,28 @@ MonoBehaviour:
     saved: 0
     defaultValue: 0
     networkSynced: 0
+  - name: PE/TiltAdjust/Active
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
+  - name: PE/TiltAdjust/Value
+    valueType: 1
+    saved: 0
+    defaultValue: 0.5
+    networkSynced: 0
+  - name: PE/OffsetAdjust/Active
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
+  - name: PE/OffsetAdjust/IO
+    valueType: 1
+    saved: 1
+    defaultValue: 0.5
+    networkSynced: 0
+  - name: PE/OffsetAdjust/LR
+    valueType: 1
+    saved: 1
+    defaultValue: 0.5
+    networkSynced: 0
