@@ -8,6 +8,8 @@ namespace BUDDYWORKS.PosesExtension
         private bool _viewAdjustGroupSynced = true;
         private bool _handAdjustGroupSynced = true;
         private bool _headAdjustGroupSynced = true;
+        private bool _tiltAdjustGroupSynced = true;
+        private bool _offsetAdjustGroupSynced = true;
         private bool _heightSynced;
         private bool _mirrorSynced;
 
@@ -17,6 +19,8 @@ namespace BUDDYWORKS.PosesExtension
         private const int ViewAdjustCost = 17;
         private const int HandAdjustCost = 17;
         private const int HeadAdjustCost = 25;
+        private const int TiltAdjustCost = 9;
+        private const int OffsetAdjustCost = 17;
 
         private SerializedObject _serializedObject;
         private SerializedProperty _parameters;
@@ -54,9 +58,17 @@ namespace BUDDYWORKS.PosesExtension
                 {
                     _handAdjustGroupSynced &= networkSynced;
                 }
-                if (parameterName.StartsWith("PE/HeadAdjust"))
+                if (parameterName.StartsWith("PE/HeadAdjust") && !parameterName.Contains("Reset"))
                 {
                     _headAdjustGroupSynced &= networkSynced;
+                }
+                if (parameterName.StartsWith("PE/TiltAdjust") && !parameterName.Contains("Reset"))
+                {
+                    _tiltAdjustGroupSynced &= networkSynced;
+                }
+                if (parameterName.StartsWith("PE/OffsetAdjust") && !parameterName.Contains("Reset"))
+                {
+                    _offsetAdjustGroupSynced &= networkSynced;
                 }
             }
         }
@@ -127,6 +139,16 @@ namespace BUDDYWORKS.PosesExtension
                 "allowing for many new angles.\n\nThis costs many parameters, sync " +
                 "if needed."
             );
+            GUIContent tiltContent = new GUIContent(
+                "Tilt Adjust",
+                "Tilt Adjust allows for more angles for your photos.\n\nThis costs quite a few parameters, " +
+                "sync if needed."
+            );
+            GUIContent offsetContent = new GUIContent(
+                "Offset Adjust",
+                "Offset Adjust lets you account for various body shapes.\n\nThis costs many parameters, sync " +
+                "if needed."
+            );
 
             // Mirror checkbox
             bool newMirrorSynced = EditorGUILayout.Toggle(mirrorContent, _mirrorSynced);
@@ -152,7 +174,7 @@ namespace BUDDYWORKS.PosesExtension
             if (newViewAdjustGroupSynced != _viewAdjustGroupSynced)
             {
                 _viewAdjustGroupSynced = newViewAdjustGroupSynced;
-                UpdateGroupedValues("PE/ViewAdjust", _viewAdjustGroupSynced);
+                UpdateGroupedValues("PE/ViewAdjust", _viewAdjustGroupSynced, false); // No "Reset" for ViewAdjust
             }
 
             // HandAdjust group checkbox
@@ -163,7 +185,7 @@ namespace BUDDYWORKS.PosesExtension
             if (newHandAdjustGroupSynced != _handAdjustGroupSynced)
             {
                 _handAdjustGroupSynced = newHandAdjustGroupSynced;
-                UpdateGroupedValues("PE/HandAdjust", _handAdjustGroupSynced);
+                UpdateGroupedValues("PE/HandAdjust", _handAdjustGroupSynced, false); // No "Reset" for HandAdjust
             }
 
             // HeadAdjust group checkbox
@@ -174,7 +196,29 @@ namespace BUDDYWORKS.PosesExtension
             if (newHeadAdjustGroupSynced != _headAdjustGroupSynced)
             {
                 _headAdjustGroupSynced = newHeadAdjustGroupSynced;
-                UpdateGroupedValues("PE/HeadAdjust", _headAdjustGroupSynced);
+                UpdateGroupedValues("PE/HeadAdjust", _headAdjustGroupSynced, true); // Exclude "Reset"
+            }
+            
+            // TiltAdjust group checkbox
+            bool newTiltAdjustGroupSynced = EditorGUILayout.Toggle(
+                tiltContent,
+                _tiltAdjustGroupSynced
+                );
+            if (newTiltAdjustGroupSynced != _tiltAdjustGroupSynced)
+            {
+                _tiltAdjustGroupSynced = newTiltAdjustGroupSynced;
+                UpdateGroupedValues("PE/TiltAdjust", _tiltAdjustGroupSynced, true); // Exclude "Reset"
+            }
+            
+            // OffsetAdjust group checkbox
+            bool newOffsetAdjustGroupSynced = EditorGUILayout.Toggle(
+                offsetContent,
+                _offsetAdjustGroupSynced
+                );
+            if (newOffsetAdjustGroupSynced != _offsetAdjustGroupSynced)
+            {
+                _offsetAdjustGroupSynced = newOffsetAdjustGroupSynced;
+                UpdateGroupedValues("PE/OffsetAdjust", _offsetAdjustGroupSynced, true); // Exclude "Reset"
             }
 
             // Calculate cost
@@ -184,6 +228,8 @@ namespace BUDDYWORKS.PosesExtension
             if (_viewAdjustGroupSynced) parameterCost += ViewAdjustCost;
             if (_handAdjustGroupSynced) parameterCost += HandAdjustCost;
             if (_headAdjustGroupSynced) parameterCost += HeadAdjustCost;
+            if (_tiltAdjustGroupSynced) parameterCost += TiltAdjustCost;
+            if (_offsetAdjustGroupSynced) parameterCost += OffsetAdjustCost;
 
             // Display cost
             GUIContent parameterCostContent = new GUIContent(
@@ -231,7 +277,8 @@ namespace BUDDYWORKS.PosesExtension
             }
         }
 
-        private void UpdateGroupedValues(string prefix, bool value)
+        // Modified UpdateGroupedValues to include an 'excludeReset' parameter
+        private void UpdateGroupedValues(string prefix, bool value, bool excludeReset)
         {
             for (int i = 0; i < _parameters.arraySize; i++)
             {
@@ -239,12 +286,18 @@ namespace BUDDYWORKS.PosesExtension
                 var nameProp = entry.FindPropertyRelative("name");
                 var networkSyncedProp = entry.FindPropertyRelative("networkSynced");
 
-                if (
-                    nameProp != null &&
-                    networkSyncedProp != null &&
-                    nameProp.stringValue.StartsWith(prefix)
-                )
+                if (nameProp == null || networkSyncedProp == null) continue;
+
+                string parameterName = nameProp.stringValue;
+
+                if (parameterName.StartsWith(prefix))
                 {
+                    // Add the "Reset" exclusion logic here
+                    if (excludeReset && parameterName.Contains("Reset"))
+                    {
+                        continue; // Skip parameters that contain "Reset" if excludeReset is true
+                    }
+
                     networkSyncedProp.intValue = value ? 1 : 0;
                 }
             }
