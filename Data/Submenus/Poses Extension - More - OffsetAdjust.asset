@@ -14,8 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Parameters: {fileID: 0}
   controls:
+  - name: <b><color=#FCD90D>Active</color></b>
+    icon: {fileID: 2800000, guid: 56a531c42c4a6374b8f68fda36f7d91f, type: 3}
+    type: 102
+    parameter:
+      name: PE/OffsetAdjust/Active
+    value: 1
+    style: 0
+    subMenu: {fileID: 0}
+    subParameters: []
+    labels: []
   - name: <color=#FCA70D><b>Arm In/Out</b></color>
-    icon: {fileID: 2800000, guid: da7d1564c9cf488428cf81294f7915c2, type: 3}
+    icon: {fileID: 2800000, guid: 7ab2155c99c48e94cbc2b01e9d1c5ea0, type: 3}
     type: 203
     parameter:
       name: 
@@ -33,18 +43,8 @@ MonoBehaviour:
       icon: {fileID: 0}
     - name: 
       icon: {fileID: 0}
-  - name: <b><color=#FCD90D>Active</color></b>
-    icon: {fileID: 2800000, guid: 56a531c42c4a6374b8f68fda36f7d91f, type: 3}
-    type: 102
-    parameter:
-      name: PE/OffsetAdjust/Active
-    value: 1
-    style: 0
-    subMenu: {fileID: 0}
-    subParameters: []
-    labels: []
   - name: <color=#FCA70D><b>Lower Arm Rotation</b></color>
-    icon: {fileID: 2800000, guid: 9ea0f3c14e8677d4ca6b7e8e89f20cf0, type: 3}
+    icon: {fileID: 2800000, guid: 7ab2155c99c48e94cbc2b01e9d1c5ea0, type: 3}
     type: 203
     parameter:
       name: 
@@ -62,3 +62,13 @@ MonoBehaviour:
       icon: {fileID: 0}
     - name: 
       icon: {fileID: 0}
+  - name: <b><color=#FCD90D>Reset</color></b>
+    icon: {fileID: 2800000, guid: 1121a5b9140303142a7e69b3eeb5b57b, type: 3}
+    type: 101
+    parameter:
+      name: PE/OffsetAdjust/Reset
+    value: 1
+    style: 0
+    subMenu: {fileID: 0}
+    subParameters: []
+    labels: []
