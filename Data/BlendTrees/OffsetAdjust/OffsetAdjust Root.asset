@@ -24,6 +24,14 @@ BlendTree:
     m_CycleOffset: 0
     m_DirectBlendParameter: PE/TreeWeight
     m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 20600000, guid: 921792667b6286c46bd3cdd5cf6eacf0, type: 2}
+    m_Threshold: 0
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: PE/TreeWeight
+    m_Mirror: 0
   m_BlendParameter: PE/Float
   m_BlendParameterY: Blend
   m_MinThreshold: 0

@@ -20,7 +20,7 @@ namespace BUDDYWORKS.PosesExtension
         private const int HandAdjustCost = 17;
         private const int HeadAdjustCost = 25;
         private const int TiltAdjustCost = 9;
-        private const int OffsetAdjustCost = 17;
+        private const int OffsetAdjustCost = 25;
 
         private SerializedObject _serializedObject;
         private SerializedProperty _parameters;

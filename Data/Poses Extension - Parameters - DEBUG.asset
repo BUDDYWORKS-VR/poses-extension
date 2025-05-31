@@ -124,6 +124,51 @@ MonoBehaviour:
     saved: 1
     defaultValue: 0.5
     networkSynced: 0
+  - name: PE/HeadAdjust/Reset
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
+  - name: PE/TiltAdjust/Active
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
+  - name: PE/TiltAdjust/Reset
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
+  - name: PE/TiltAdjust/Value
+    valueType: 1
+    saved: 1
+    defaultValue: 0.5
+    networkSynced: 0
+  - name: PE/OffsetAdjust/Active
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
+  - name: PE/OffsetAdjust/Reset
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
+  - name: PE/OffsetAdjust/IO
+    valueType: 1
+    saved: 1
+    defaultValue: 0.5
+    networkSynced: 0
+  - name: PE/OffsetAdjust/LR
+    valueType: 1
+    saved: 1
+    defaultValue: 0.5
+    networkSynced: 0
+  - name: PE/OffsetAdjust/UD
+    valueType: 1
+    saved: 1
+    defaultValue: 0.5
+    networkSynced: 0
   - name: PE/Favorite/Slot_A_Set
     valueType: 0
     saved: 1
@@ -359,6 +404,96 @@ MonoBehaviour:
     saved: 1
     defaultValue: 0.5
     networkSynced: 0
+  - name: PE/Favorite/TiltAdjust/WasActive_A
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
+  - name: PE/Favorite/TiltAdjust/WasActive_B
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
+  - name: PE/Favorite/TiltAdjust/WasActive_C
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
+  - name: PE/Favorite/TiltAdjust/Value_A
+    valueType: 1
+    saved: 1
+    defaultValue: 0.4
+    networkSynced: 0
+  - name: PE/Favorite/TiltAdjust/Value_B
+    valueType: 1
+    saved: 1
+    defaultValue: 0.5
+    networkSynced: 0
+  - name: PE/Favorite/TiltAdjust/Value_C
+    valueType: 1
+    saved: 1
+    defaultValue: 0.6
+    networkSynced: 0
+  - name: PE/Favorite/OffsetAdjust/WasActive_A
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
+  - name: PE/Favorite/OffsetAdjust/WasActive_B
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
+  - name: PE/Favorite/OffsetAdjust/WasActive_C
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+    networkSynced: 0
+  - name: PE/Favorite/OffsetAdjust/IO_A
+    valueType: 1
+    saved: 1
+    defaultValue: 0.4
+    networkSynced: 0
+  - name: PE/Favorite/OffsetAdjust/IO_B
+    valueType: 1
+    saved: 1
+    defaultValue: 0.5
+    networkSynced: 0
+  - name: PE/Favorite/OffsetAdjust/IO_C
+    valueType: 1
+    saved: 1
+    defaultValue: 0.6
+    networkSynced: 0
+  - name: PE/Favorite/OffsetAdjust/LR_A
+    valueType: 1
+    saved: 1
+    defaultValue: 0.4
+    networkSynced: 0
+  - name: PE/Favorite/OffsetAdjust/LR_B
+    valueType: 1
+    saved: 1
+    defaultValue: 0.5
+    networkSynced: 0
+  - name: PE/Favorite/OffsetAdjust/LR_C
+    valueType: 1
+    saved: 1
+    defaultValue: 0.6
+    networkSynced: 0
+  - name: PE/Favorite/OffsetAdjust/UD_A
+    valueType: 1
+    saved: 1
+    defaultValue: 0.4
+    networkSynced: 0
+  - name: PE/Favorite/OffsetAdjust/UD_B
+    valueType: 1
+    saved: 1
+    defaultValue: 0.5
+    networkSynced: 0
+  - name: PE/Favorite/OffsetAdjust/UD_C
+    valueType: 1
+    saved: 1
+    defaultValue: 0.6
+    networkSynced: 0
   - name: PE/Settings/DisableProxy
     valueType: 2
     saved: 1
@@ -384,48 +519,8 @@ MonoBehaviour:
     saved: 1
     defaultValue: 0
     networkSynced: 0
-  - name: PE/HeadAdjust/Reset
-    valueType: 2
-    saved: 0
-    defaultValue: 0
-    networkSynced: 0
-  - name: PE/TiltAdjust/Active
-    valueType: 2
-    saved: 1
-    defaultValue: 0
-    networkSynced: 0
-  - name: PE/TiltAdjust/Reset
-    valueType: 2
-    saved: 0
-    defaultValue: 0
-    networkSynced: 0
-  - name: PE/TiltAdjust/Value
-    valueType: 1
-    saved: 1
-    defaultValue: 0.5
-    networkSynced: 0
-  - name: PE/OffsetAdjust/Active
-    valueType: 2
-    saved: 1
-    defaultValue: 0
-    networkSynced: 0
-  - name: PE/OffsetAdjust/Reset
-    valueType: 2
-    saved: 0
-    defaultValue: 0
-    networkSynced: 0
-  - name: PE/OffsetAdjust/IO
-    valueType: 1
-    saved: 1
-    defaultValue: 0.5
-    networkSynced: 0
-  - name: PE/OffsetAdjust/LR
-    valueType: 1
-    saved: 1
-    defaultValue: 0.5
-    networkSynced: 0
   - name: PE/Proxy/OffsetAdjust
     valueType: 2
     saved: 1
-    defaultValue: 0.5
-    networkSynced: 1
+    defaultValue: 0
+    networkSynced: 0
