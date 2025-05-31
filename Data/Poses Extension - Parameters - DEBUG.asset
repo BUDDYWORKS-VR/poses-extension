@@ -424,3 +424,8 @@ MonoBehaviour:
     saved: 1
     defaultValue: 0.5
     networkSynced: 0
+  - name: PE/Proxy/OffsetAdjust
+    valueType: 2
+    saved: 1
+    defaultValue: 0.5
+    networkSynced: 1
