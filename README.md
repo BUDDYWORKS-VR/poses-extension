@@ -36,6 +36,3 @@ Toggle the type of pose, and use the dial to select the desired pose.
 
 Need Help?
 https://discord.buddyworks.wtf
-
-
-\*Estimate of downloads of deprecated/removed releases.
