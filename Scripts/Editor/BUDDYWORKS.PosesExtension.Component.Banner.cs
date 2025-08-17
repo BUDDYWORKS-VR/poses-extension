@@ -8,7 +8,7 @@ namespace BUDDYWORKS.PosesExtension
     public static class BannerUtility
     {
         private static Texture2D banner;
-        private static Color backgroundColor = new Color(0.992f, 0.855f, 0.051f); // #FDDA0D
+        private static Color backgroundColor = new Color(0.09411764705882353f, 0.09803921f, 0.09411764705882353f); // #181918
 
         static BannerUtility()
         {
@@ -25,46 +25,89 @@ namespace BUDDYWORKS.PosesExtension
             // Calculate the aspect ratio of the banner
             float bannerAspectRatio = (float)banner.width / banner.height;
 
-            // Determine the ideal width for the banner based on inspector width
-            // We want the banner to take up as much width as possible, up to the inspector width.
-            float targetBannerWidth = inspectorWidth;
+            // 1. Determine the maximum available width for the banner.
+            // This is simply the current inspector width.
+            float maxAvailableWidth = inspectorWidth;
 
-            // Calculate the corresponding height to maintain aspect ratio
-            float targetBannerHeight = targetBannerWidth / bannerAspectRatio;
+            // 2. Determine the maximum available height for the banner.
+            // We can define a reasonable maximum height to prevent the banner from
+            // taking up too much vertical space in the inspector, especially on smaller screens.
+            // If you don't want a vertical limit, set this to a very large number like float.MaxValue.
+            float maxAvailableHeight = 300f; // Example: Cap banner height to 300px
 
-            // --- Optional: Cap the height if it gets too large ---
-            // Define a maximum desired height for the banner.
-            // Adjust this value based on how tall you want the banner to be at its maximum.
-            float maxAllowedHeight = 320f; // Example: A reasonable max height for a banner
+            // Calculate the ideal dimensions if the banner were scaled to fit within
+            // the maximum available width, preserving aspect ratio.
+            float scaleByWidth = maxAvailableWidth;
+            float heightWhenScaledByWidth = scaleByWidth / bannerAspectRatio;
 
-            if (targetBannerHeight > maxAllowedHeight)
+            // Calculate the ideal dimensions if the banner were scaled to fit within
+            // the maximum available height, preserving aspect ratio.
+            float scaleByHeight = maxAvailableHeight;
+            float widthWhenScaledByHeight = scaleByHeight * bannerAspectRatio;
+
+
+            // Now, we need to choose the dimensions that fit BOTH constraints (max width and max height)
+            // without exceeding either, while maintaining the aspect ratio.
+            float finalBannerWidth;
+            float finalBannerHeight;
+
+            // If scaling to fit by width makes it too tall, then we must scale by height instead.
+            if (heightWhenScaledByWidth > maxAvailableHeight)
             {
-                // If the calculated height exceeds the maximum, recalculate width based on max height
-                targetBannerHeight = maxAllowedHeight;
-                targetBannerWidth = targetBannerHeight * bannerAspectRatio;
+                finalBannerHeight = maxAvailableHeight;
+                finalBannerWidth = widthWhenScaledByHeight;
             }
-            // --- End Optional Cap ---
-
-
-            // Calculate padding to center the banner horizontally
-            float paddingX = (inspectorWidth - targetBannerWidth) / 2;
-
-            // Request layout space for the entire area, including background, based on the *actual* scaled banner height
-            // GUILayoutUtility.GetRect will advance the layout cursor
-            Rect bannerAreaRect = GUILayoutUtility.GetRect(inspectorWidth, targetBannerHeight);
-
-            // Draw the background color for the entire allocated area
-            EditorGUI.DrawRect(new Rect(bannerAreaRect.x, bannerAreaRect.y, inspectorWidth, bannerAreaRect.height), backgroundColor);
-
-            // Create the Rect for the clickable banner image
-            // This Rect must precisely match the calculated targetBannerWidth and targetBannerHeight
-            Rect clickableBannerRect = new Rect(bannerAreaRect.x + paddingX, bannerAreaRect.y, targetBannerWidth, targetBannerHeight);
-
-            // Draw the button/image with the exact calculated dimensions
-            // GUIStyle.none is important to avoid any default button styling that might interfere
-            if (GUI.Button(clickableBannerRect, banner, GUIStyle.none))
+            else
             {
-                Process.Start(new ProcessStartInfo("https://buddyworks.wtf") { UseShellExecute = true });
+                // Otherwise, scaling by width works perfectly.
+                finalBannerWidth = scaleByWidth;
+                finalBannerHeight = heightWhenScaledByWidth;
+            }
+            
+            // Ensure the banner doesn't exceed its original dimensions if the inspector is very large
+            if (finalBannerWidth > banner.width)
+            {
+                finalBannerWidth = banner.width;
+                finalBannerHeight = banner.height;
+            }
+
+            // Request layout space for the background. This rect determines how much vertical
+            // space is reserved in the layout.
+            // We use the 'finalBannerHeight' for this. The width should be the full inspector width
+            // for the background fill.
+            Rect bannerBackgroundRect = GUILayoutUtility.GetRect(
+                inspectorWidth, // Request full inspector width for layout purposes
+                finalBannerHeight, // Request the calculated final height
+                GUILayout.ExpandWidth(true) // Allow it to expand with the inspector width
+            );
+
+            // Draw the background color. This rect covers the full width of the inspector
+            // and the calculated final height.
+            EditorGUI.DrawRect(
+                new Rect(
+                    bannerBackgroundRect.x,
+                    bannerBackgroundRect.y,
+                    inspectorWidth,
+                    bannerBackgroundRect.height
+                ),
+                backgroundColor
+            );
+
+            // Calculate the position for the actual banner image to be drawn,
+            // centering it horizontally within the allocated background space.
+            Rect bannerImageRect = new Rect(
+                bannerBackgroundRect.x + (inspectorWidth - finalBannerWidth) / 2,
+                bannerBackgroundRect.y,
+                finalBannerWidth,
+                finalBannerHeight
+            );
+
+            // Draw the button/image with the calculated final dimensions.
+            if (GUI.Button(bannerImageRect, banner, GUIStyle.none))
+            {
+                Process.Start(
+                    new ProcessStartInfo("https://buddyworks.wtf") { UseShellExecute = true }
+                );
             }
         }
     }
