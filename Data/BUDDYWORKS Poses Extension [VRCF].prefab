@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5304920859011447211}
+  - component: {fileID: 175865579340222968}
   - component: {fileID: 2305606716160327652}
   m_Layer: 0
   m_Name: BUDDYWORKS Poses Extension [VRCF]
@@ -32,6 +33,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &175865579340222968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505672427823461560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df58f6a6e612d234396cce2b08210871, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _syncMirror: 1
+  _syncHeight: 1
+  _syncViewAdjustGroup: 0
+  _syncHandAdjustGroup: 0
+  _syncHeadAdjustGroup: 0
+  _syncTiltAdjustGroup: 0
+  _syncOffsetAdjustGroup: 0
 --- !u!114 &2305606716160327652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46,7 +66,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1227.0
+  vrcfuryVersion: 1.1240.0
   somethingIsBroken: 0
   config:
     features: []

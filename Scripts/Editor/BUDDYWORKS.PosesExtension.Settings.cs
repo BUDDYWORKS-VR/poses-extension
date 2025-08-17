@@ -1,6 +1,8 @@
 using UnityEditor;
 using UnityEngine;
 
+#if UNITY_EDITOR
+
 namespace BUDDYWORKS.PosesExtension
 {
     public class Settings : EditorWindow
@@ -73,3 +75,4 @@ namespace BUDDYWORKS.PosesExtension
         }
     }
 }
+#endif

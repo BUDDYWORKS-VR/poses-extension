@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEditor;
 
+#if UNITY_EDITOR
+
 namespace BUDDYWORKS.PosesExtension
 {  
     public class PrefabSpawner : MonoBehaviour
@@ -150,3 +152,4 @@ namespace BUDDYWORKS.PosesExtension
         }
     }
 }
+#endif
