@@ -69,6 +69,7 @@ namespace BUDDYWORKS.PosesExtension
 
         [MenuItem("BUDDYWORKS/Poses Extension/Prefab must go after Locomotion in Hierarchy!", false, 1000)]
         [MenuItem("GameObject/BUDDYWORKS/Poses Extension/Prefab must go after Locomotion in Hierarchy!", false, 1000)]
+        [MenuItem("BUDDYWORKS/Poses Extension/Settings moved to Prefab!", false, 1000)]
         [MenuItem("GameObject/BUDDYWORKS/Poses Extension/---------------", false, 4)]
         [MenuItem("GameObject/BUDDYWORKS/Poses Extension/----------------", false, 7)]
         private static void DISCLAIMER()

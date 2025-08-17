@@ -60,9 +60,8 @@ namespace BUDDYWORKS.PosesExtension
         public override void OnInspectorGUI()
         {
             BannerUtility.DrawBanner();
-
-            EditorGUILayout.HelpBox("Thank you for using Poses Extension!\n\nThis component let's you adjust some parameters and also introduce custom data.",
-                MessageType.Info);
+            
+            GUILayout.Space(4); 
             
             serializedObject.Update(); // Update SerializedObject for BWPosesExtension
 
@@ -74,7 +73,7 @@ namespace BUDDYWORKS.PosesExtension
                     DrawSyncTab(); 
                     break;
                 case 1: // Modding Tab
-                    EditorGUILayout.HelpBox("Modding tab content goes here.", MessageType.None);
+                    DrawModdingTab();
                     break;
                 case 2: // Other Tab
                     DrawOtherTab();
@@ -92,7 +91,6 @@ namespace BUDDYWORKS.PosesExtension
             GUILayout.BeginVertical();
 
             GUILayout.Label("Select which features are synced to other players.", EditorStyles.boldLabel);
-            EditorGUILayout.HelpBox("Useful if you have a photographer, though it does incur a parameter cost.\nYou'll still have access to all features locally, regardless of your selection.\nThis applies only to PE Standalone!", MessageType.Info);
             Rect r = EditorGUILayout.GetControlRect(false, 1, new GUIStyle() { margin = new RectOffset(0, 0, 4, 4) });
             EditorGUI.DrawRect(r, Color.gray);
 
@@ -118,18 +116,41 @@ namespace BUDDYWORKS.PosesExtension
             EditorGUILayout.LabelField(parameterCostContent);
 
             GUILayout.FlexibleSpace();
-            GUILayout.Label("BUDDYWORKS Poses Extension", EditorStyles.boldLabel);
-            Rect labelRect = GUILayoutUtility.GetLastRect();
-            if (Event.current.type == EventType.MouseDown && labelRect.Contains(Event.current.mousePosition))
-            {
-                Application.OpenURL("https://buddyworks.wtf");
-            }
 
+            EditorGUILayout.HelpBox("Useful if you have a photographer, though it does incur a parameter cost.\nYou'll still have access to all features locally, regardless of your selection.", MessageType.Info);
+            
             GUILayout.EndVertical();
             GUILayout.Space(4); 
             GUILayout.EndHorizontal();
         }
 
+        // --- DrawModdingTab() ---
+        private void DrawModdingTab()
+        {
+            GUILayout.BeginHorizontal();
+            GUILayout.Space(4); 
+            GUILayout.BeginVertical();
+
+            GUILayout.Label("Add your own pose and dance data.", EditorStyles.boldLabel);
+            Rect r = EditorGUILayout.GetControlRect(false, 1, new GUIStyle() { margin = new RectOffset(0, 0, 4, 4) });
+            EditorGUI.DrawRect(r, Color.gray);
+
+            GUIContent customPosebankA = new GUIContent("Custom Pose Bank", "Insert the posebank animationclip here.");
+            GUIContent customPosebankB = new GUIContent("Custom Pose Bank Mirror",
+                "Slot in an animation here if you want to use the mirror slot for an additional pose bank. Note that this replaces the mirror option for the custom pose bank.");
+            GUIContent customDanceA = new GUIContent("Custom Dance A", "Insert the dance animationclip here.");
+            GUIContent customDanceB = new GUIContent("Custom Dance B", "Insert the dance animationclip here.");
+            GUIContent customDanceC = new GUIContent("Custom Dance C", "Insert the dance animationclip here.");
+            
+            GUILayout.FlexibleSpace();
+            
+            EditorGUILayout.HelpBox("Introduce your own dances and pose banks here.\nPlease review the docs for proper setup of those animation clips.", MessageType.Info);
+            
+            GUILayout.EndVertical();
+            GUILayout.Space(4); 
+            GUILayout.EndHorizontal();
+        }
+        
         // --- DrawOtherTab() ---
         private void DrawOtherTab()
         {
@@ -144,7 +165,6 @@ namespace BUDDYWORKS.PosesExtension
             GUILayout.BeginVertical();
 
             GUILayout.Label("Modify various aspects of Poses Extension.", EditorStyles.boldLabel);
-            EditorGUILayout.HelpBox("These settings allow you to change some ranges of PE adjustment features.\nThey are meant to offset some specific avatar setups, so use with care.\n\nThese settings will be applied during avatar build.", MessageType.Info);
             Rect r = EditorGUILayout.GetControlRect(false, 1, new GUIStyle() { margin = new RectOffset(0, 0, 4, 4) });
             EditorGUI.DrawRect(r, Color.gray);
 
@@ -159,13 +179,9 @@ namespace BUDDYWORKS.PosesExtension
             }
             
             GUILayout.FlexibleSpace();
-            GUILayout.Label("BUDDYWORKS Poses Extension", EditorStyles.boldLabel);
-            Rect labelRect = GUILayoutUtility.GetLastRect();
-            if (Event.current.type == EventType.MouseDown && labelRect.Contains(Event.current.mousePosition))
-            {
-                Application.OpenURL("https://buddyworks.wtf");
-            }
 
+            EditorGUILayout.HelpBox("These settings allow you to change some ranges of PE adjustment features.\nThey are meant to offset some specific avatar setups, so use with care.", MessageType.Info);
+            
             GUILayout.EndVertical();
             GUILayout.Space(4); 
             GUILayout.EndHorizontal();
