@@ -1,9 +1,12 @@
-﻿using UnityEditor;
+﻿#if UNITY_EDITOR
+
+using UnityEditor;
 using UnityEngine;
 using System.IO;
 using System.Linq; // Still needed for Directory, File.Exists in processor, but not in editor UI
+using UnityEditor.Animations; // Needed for AnimatorController and related classes
 
-#if UNITY_EDITOR
+
 
 namespace BUDDYWORKS.PosesExtension
 {
@@ -18,6 +21,11 @@ namespace BUDDYWORKS.PosesExtension
         private SerializedProperty _propSyncOffsetAdjustGroup;
         private SerializedProperty _propSyncHeight;
         private SerializedProperty _propSyncMirror;
+
+        // --- Properties for Modding Tab ---
+        private SerializedProperty _propCustomDanceA;
+        private SerializedProperty _propCustomDanceB;
+        private SerializedProperty _propCustomDanceC;
 
         // Reference to the target component (BWPosesExtension) for cost calculation
         private BWPosesExtension _targetComponent;
@@ -47,6 +55,11 @@ namespace BUDDYWORKS.PosesExtension
             _propSyncHeight = serializedObject.FindProperty("_syncHeight");
             _propSyncMirror = serializedObject.FindProperty("_syncMirror");
             
+            // --- Modding Tab Property Initialization ---
+            _propCustomDanceA = serializedObject.FindProperty("_customDanceA");
+            _propCustomDanceB = serializedObject.FindProperty("_customDanceB");
+            _propCustomDanceC = serializedObject.FindProperty("_customDanceC");
+
             // --- Other Tab Property Initialization from BWPosesExtension ---
             _propHeightAdjustMultiplier = serializedObject.FindProperty("_heightAdjustMultiplier");
             _propViewAdjustSensitivity = serializedObject.FindProperty("_viewAdjustSensitivity");
@@ -138,10 +151,17 @@ namespace BUDDYWORKS.PosesExtension
             GUIContent customPosebankA = new GUIContent("Custom Pose Bank", "Insert the posebank animationclip here.");
             GUIContent customPosebankB = new GUIContent("Custom Pose Bank Mirror",
                 "Slot in an animation here if you want to use the mirror slot for an additional pose bank. Note that this replaces the mirror option for the custom pose bank.");
-            GUIContent customDanceA = new GUIContent("Custom Dance A", "Insert the dance animationclip here.");
-            GUIContent customDanceB = new GUIContent("Custom Dance B", "Insert the dance animationclip here.");
-            GUIContent customDanceC = new GUIContent("Custom Dance C", "Insert the dance animationclip here.");
             
+            // Custom Dance Slots
+            GUIContent customDanceA = new GUIContent("Custom Dance A", "Insert the dance animation clip for slot A here. If empty, a fallback animation will be used.");
+            GUIContent customDanceB = new GUIContent("Custom Dance B", "Insert the dance animation clip for slot B here. If empty, a fallback animation will be used.");
+            GUIContent customDanceC = new GUIContent("Custom Dance C", "Insert the dance animation clip for slot C here. If empty, a fallback animation will be used.");
+            
+            // Draw the property fields for custom dances
+            if (_propCustomDanceA != null) EditorGUILayout.PropertyField(_propCustomDanceA, customDanceA);
+            if (_propCustomDanceB != null) EditorGUILayout.PropertyField(_propCustomDanceB, customDanceB);
+            if (_propCustomDanceC != null) EditorGUILayout.PropertyField(_propCustomDanceC, customDanceC);
+
             GUILayout.FlexibleSpace();
             
             EditorGUILayout.HelpBox("Introduce your own dances and pose banks here.\nPlease review the docs for proper setup of those animation clips.", MessageType.Info);

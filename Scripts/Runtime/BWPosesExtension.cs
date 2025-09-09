@@ -8,6 +8,7 @@ using VRC.SDKBase;
 using VRC.SDKBase.Editor.BuildPipeline;
 using UnityEditor;
 using VRC.SDK3.Avatars.ScriptableObjects;
+using UnityEditor.Animations; // Needed for AnimatorController, AnimatorStateMachine, AnimatorState
 
 namespace BUDDYWORKS.PosesExtension
 {
@@ -44,6 +45,19 @@ namespace BUDDYWORKS.PosesExtension
         public bool SyncOffsetAdjustGroup => _syncOffsetAdjustGroup;
         public bool SyncHeight => _syncHeight;
         public bool SyncMirror => _syncMirror;
+
+        [Header("Modding Settings")]
+        [Tooltip("Optional: Assign a custom AnimationClip for Dance A. If left empty, a fallback motion will be used.")]
+        [SerializeField] private AnimationClip _customDanceA;
+        [Tooltip("Optional: Assign a custom AnimationClip for Dance B. If left empty, a fallback motion will be used.")]
+        [SerializeField] private AnimationClip _customDanceB;
+        [Tooltip("Optional: Assign a custom AnimationClip for Dance C. If left empty, a fallback motion will be used.")]
+        [SerializeField] private AnimationClip _customDanceC;
+
+        public AnimationClip CustomDanceA => _customDanceA;
+        public AnimationClip CustomDanceB => _customDanceB;
+        public AnimationClip CustomDanceC => _customDanceC;
+
 
         [Header("Adjustment Ranges")]
         [Tooltip("Multiplies the default height adjustment range. 1 = default, 2 = double range.")]
@@ -87,6 +101,20 @@ namespace BUDDYWORKS.PosesExtension
         public int callbackOrder => -100000000;
 
         private const string SyncParameterAssetGUID = "17cce2e1703370a41b2f584d6364944a";
+        private const string AnimatorControllerGUID = "860fa19ea5c08d741ad8bace141a52d3";
+
+        // Dance A
+        private const long DanceALocalID = -4942040831587697338L;
+        private const string DanceAFallbackGUID = "84c8e95c507fba643a7f8e30d7f8707b";
+
+        // Dance B
+        private const long DanceBLocalID = 7611955647017116060L;
+        private const string DanceBFallbackGUID = "85536172e9c0d0740ab34a1e90fac770";
+
+        // Dance C
+        private const long DanceCLocalID = 8017281320110375518L;
+        private const string DanceCFallbackGUID = "eaa4dd4845114f14186da152d65ef35f";
+
         private bool _processorAssetsWereDirty = false;
 
         public bool OnPreprocessAvatar(GameObject avatarGameObject)
@@ -108,6 +136,9 @@ namespace BUDDYWORKS.PosesExtension
             // --- Step 2: Apply Height/View Adjustments to Animation Clips ---
             ApplyAnimationAdjustments(poseExtension.HeightAdjustMultiplier, poseExtension.ViewAdjustSensitivity);
 
+            // --- Step 3: Apply Custom Dances to Animator Controller ---
+            ApplyCustomDances(poseExtension, avatarGameObject.name);
+
             if (_processorAssetsWereDirty)
             {
                 AssetDatabase.SaveAssets(); 
@@ -116,7 +147,7 @@ namespace BUDDYWORKS.PosesExtension
             }
             else
             {
-                Debug.Log($"[PosesExtension] No animation clip adjustments applied for {avatarGameObject.name}.");
+                Debug.Log($"[PosesExtension] No animation clip adjustments or controller changes applied for {avatarGameObject.name}.");
             }
 
             Debug.Log($"[PosesExtension] Finished Poses Extension preprocessing for avatar: {avatarGameObject.name}. Total Parameter Cost: {poseExtension.CalculateParameterCost()}");
@@ -232,11 +263,157 @@ namespace BUDDYWORKS.PosesExtension
         private void ApplyAnimationAdjustments(float heightMultiplier, float viewSensitivity)
         {
             Debug.Log($"[PosesExtension] (Adjustments) Applying height adjustment multiplier: {heightMultiplier}");
-            ChangeHeightAdjustRange(heightMultiplier);
+            ChangeHeightAdjustRange(multiplier: heightMultiplier);
 
             Debug.Log($"[PosesExtension] (Adjustments) Applying view adjustment sensitivity: {viewSensitivity}");
-            ChangeViewAdjustRange(viewSensitivity);
+            ChangeViewAdjustRange(multiplier: viewSensitivity);
         }
+
+        private void ApplyCustomDances(BWPosesExtension poseExtension, string avatarName)
+        {
+            Debug.Log($"[PosesExtension] (Modding) Applying custom dance animations for {avatarName}.");
+
+            string controllerPath = AssetDatabase.GUIDToAssetPath(AnimatorControllerGUID);
+            if (string.IsNullOrEmpty(controllerPath))
+            {
+                Debug.LogError($"[PosesExtension] (Modding) Failed to find AnimatorController asset path for GUID: {AnimatorControllerGUID}. Is the asset missing or corrupted? Cannot apply custom dances.");
+                return;
+            }
+
+            AnimatorController animatorController = AssetDatabase.LoadAssetAtPath<AnimatorController>(controllerPath);
+            if (animatorController == null)
+            {
+                Debug.LogError($"[PosesExtension] (Modding) Failed to load AnimatorController asset at path: {controllerPath} (GUID: {AnimatorControllerGUID}). Cannot apply custom dances.");
+                return;
+            }
+
+            bool controllerModified = false;
+
+            // Helper to get motion by GUID
+            Motion GetMotionByGUID(string guid)
+            {
+                string path = AssetDatabase.GUIDToAssetPath(guid);
+                if (!string.IsNullOrEmpty(path))
+                {
+                    return AssetDatabase.LoadAssetAtPath<Motion>(path);
+                }
+                Debug.LogError($"[PosesExtension] (Modding) Failed to load Motion asset for GUID: {guid}.");
+                return null;
+            }
+
+            // Load all sub-assets of the Animator Controller to find states by local ID
+            Object[] allAssets = AssetDatabase.LoadAllAssetsAtPath(controllerPath);
+            Dictionary<long, AnimatorState> statesByLocalId = new Dictionary<long, AnimatorState>();
+
+            foreach (Object obj in allAssets)
+            {
+                if (obj is AnimatorState state)
+                {
+                    if (AssetDatabase.TryGetGUIDAndLocalFileIdentifier(state, out _, out long localId))
+                    {
+                        statesByLocalId[localId] = state;
+                    }
+                }
+            }
+
+            // Apply custom dance A
+            if (statesByLocalId.TryGetValue(DanceALocalID, out AnimatorState danceAState))
+            {
+                Motion targetMotion = poseExtension.CustomDanceA;
+                if (targetMotion == null) targetMotion = GetMotionByGUID(DanceAFallbackGUID);
+
+                if (targetMotion != null && danceAState.motion != targetMotion)
+                {
+                    danceAState.motion = targetMotion;
+                    controllerModified = true;
+                    Debug.Log($"[PosesExtension] (Modding) Changed motion for state '{danceAState.name}' (ID: {DanceALocalID}) to '{targetMotion.name}' in controller '{animatorController.name}'.");
+                }
+                else if (targetMotion == null)
+                {
+                    Debug.LogWarning($"[PosesExtension] (Modding) No motion found for Dance A state (ID: {DanceALocalID}). This state might be empty or missing its fallback. Skipping.");
+                }
+            }
+            else
+            {
+                Debug.LogWarning($"[PosesExtension] (Modding) AnimatorState with Local ID {DanceALocalID} (Dance A) not found in controller '{animatorController.name}'. Skipping dance A modification.");
+            }
+
+            // Apply custom dance B
+            if (statesByLocalId.TryGetValue(DanceBLocalID, out AnimatorState danceBState))
+            {
+                Motion targetMotion = poseExtension.CustomDanceB;
+                if (targetMotion == null) targetMotion = GetMotionByGUID(DanceBFallbackGUID);
+
+                if (targetMotion != null && danceBState.motion != targetMotion)
+                {
+                    danceBState.motion = targetMotion;
+                    controllerModified = true;
+                    Debug.Log($"[PosesExtension] (Modding) Changed motion for state '{danceBState.name}' (ID: {DanceBLocalID}) to '{targetMotion.name}' in controller '{animatorController.name}'.");
+                }
+                else if (targetMotion == null)
+                {
+                    Debug.LogWarning($"[PosesExtension] (Modding) No motion found for Dance B state (ID: {DanceBLocalID}). This state might be empty or missing its fallback. Skipping.");
+                }
+            }
+            else
+            {
+                Debug.LogWarning($"[PosesExtension] (Modding) AnimatorState with Local ID {DanceBLocalID} (Dance B) not found in controller '{animatorController.name}'. Skipping dance B modification.");
+            }
+
+            // Apply custom dance C
+            if (statesByLocalId.TryGetValue(DanceCLocalID, out AnimatorState danceCState))
+            {
+                Motion targetMotion = poseExtension.CustomDanceC;
+                if (targetMotion == null) targetMotion = GetMotionByGUID(DanceCFallbackGUID);
+
+                if (targetMotion != null && danceCState.motion != targetMotion)
+                {
+                    danceCState.motion = targetMotion;
+                    controllerModified = true;
+                    Debug.Log($"[PosesExtension] (Modding) Changed motion for state '{danceCState.name}' (ID: {DanceCLocalID}) to '{targetMotion.name}' in controller '{animatorController.name}'.");
+                }
+                else if (targetMotion == null)
+                {
+                    Debug.LogWarning($"[PosesExtension] (Modding) No motion found for Dance C state (ID: {DanceCLocalID}). This state might be empty or missing its fallback. Skipping.");
+                }
+            }
+            else
+            {
+                Debug.LogWarning($"[PosesExtension] (Modding) AnimatorState with Local ID {DanceCLocalID} (Dance C) not found in controller '{animatorController.name}'. Skipping dance C modification.");
+            }
+
+            if (controllerModified)
+            {
+                EditorUtility.SetDirty(animatorController);
+                _processorAssetsWereDirty = true;
+                Debug.Log($"[PosesExtension] (Modding) AnimatorController {animatorController.name} modified and marked dirty.");
+            }
+            else
+            {
+                Debug.Log($"[PosesExtension] (Modding) No changes made to AnimatorController {animatorController.name}.");
+            }
+        }
+
+        // The GetAllStates method is no longer strictly needed for this specific local ID approach
+        // as we are loading all sub-assets and querying them directly.
+        // I'll keep it commented out for now, as it might be useful for other scenarios.
+        /*
+        private IEnumerable<AnimatorState> GetAllStates(AnimatorStateMachine stateMachine)
+        {
+            foreach (AnimatorState state in stateMachine.states.Select(s => s.state))
+            {
+                yield return state;
+            }
+
+            foreach (ChildAnimatorStateMachine subStateMachine in stateMachine.stateMachine)
+            {
+                foreach (AnimatorState state in GetAllStates(subStateMachine.stateMachine))
+                {
+                    yield return state;
+                }
+            }
+        }
+        */
 
         private void ChangeHeightAdjustRange(float multiplier)
         {
