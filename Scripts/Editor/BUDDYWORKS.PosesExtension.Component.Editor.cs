@@ -26,6 +26,7 @@ namespace BUDDYWORKS.PosesExtension
         private SerializedProperty _propCustomDanceA;
         private SerializedProperty _propCustomDanceB;
         private SerializedProperty _propCustomDanceC;
+        private SerializedProperty _propCustomPose; // ADDED: New Custom Pose field
 
         // Reference to the target component (BWPosesExtension) for cost calculation
         private BWPosesExtension _targetComponent;
@@ -44,9 +45,10 @@ namespace BUDDYWORKS.PosesExtension
 
         private void OnEnable()
         {
-            // --- Sync Tab Initialization ---
+            // --- Target Component Reference ---
             _targetComponent = (BWPosesExtension)target;
 
+            // --- Sync Tab Initialization ---
             _propSyncViewAdjustGroup = serializedObject.FindProperty("_syncViewAdjustGroup");
             _propSyncHandAdjustGroup = serializedObject.FindProperty("_syncHandAdjustGroup");
             _propSyncHeadAdjustGroup = serializedObject.FindProperty("_syncHeadAdjustGroup");
@@ -59,6 +61,7 @@ namespace BUDDYWORKS.PosesExtension
             _propCustomDanceA = serializedObject.FindProperty("_customDanceA");
             _propCustomDanceB = serializedObject.FindProperty("_customDanceB");
             _propCustomDanceC = serializedObject.FindProperty("_customDanceC");
+            _propCustomPose = serializedObject.FindProperty("_customPose"); // ADDED: Initialize new custom pose property
 
             // --- Other Tab Property Initialization from BWPosesExtension ---
             _propHeightAdjustMultiplier = serializedObject.FindProperty("_heightAdjustMultiplier");
@@ -72,6 +75,9 @@ namespace BUDDYWORKS.PosesExtension
 
         public override void OnInspectorGUI()
         {
+            // IMPORTANT: This line remains as per your original provided code.
+            // If DrawBanner() needs a specific implementation, it should be provided by you.
+            // I will not alter or uncomment this line or assume its implementation.
             BannerUtility.DrawBanner();
             
             GUILayout.Space(4); 
@@ -157,10 +163,17 @@ namespace BUDDYWORKS.PosesExtension
             GUIContent customDanceB = new GUIContent("Custom Dance B", "Insert the dance animation clip for slot B here. If empty, a fallback animation will be used.");
             GUIContent customDanceC = new GUIContent("Custom Dance C", "Insert the dance animation clip for slot C here. If empty, a fallback animation will be used.");
             
+            // ADDED: Custom Pose Slot
+            GUIContent customPoseContent = new GUIContent("Custom Posebank", "Insert a custom animation clip here for the Custom Pose. If empty, a fallback animation will be used.");
+            
             // Draw the property fields for custom dances
             if (_propCustomDanceA != null) EditorGUILayout.PropertyField(_propCustomDanceA, customDanceA);
             if (_propCustomDanceB != null) EditorGUILayout.PropertyField(_propCustomDanceB, customDanceB);
             if (_propCustomDanceC != null) EditorGUILayout.PropertyField(_propCustomDanceC, customDanceC);
+            
+            // ADDED: Draw the new property field for the custom pose
+            if (_propCustomPose != null) EditorGUILayout.PropertyField(_propCustomPose, customPoseContent);
+
 
             GUILayout.FlexibleSpace();
             
