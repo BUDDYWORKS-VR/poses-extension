@@ -2,29 +2,17 @@
 using UnityEditor;
 using UnityEditor.Animations;
 using UnityEngine;
-using System.IO;
-// Removed: using System.Linq; // No longer explicitly needed here
 
 namespace BUDDYWORKS.PosesExtension
 {
     public static class PosesExtensionCustomPoseProcessor
     {
         private const string BlendTreeAssetGUID = "39fbea230978ef64191b3f573024f4a3";
-        // The TargetMotionLocalID is now primarily for verification/logging if the initial state is as expected,
-        // rather than the primary means to identify the *slot* to modify.
         private const long ExpectedFirstSlotMotionLocalID = 7400000L;
         private const string FallbackAnimationGUID = "1b0e592d46144124c994764898c7a9bc";
 
         private const string TargetAlignmentClipGUID = "89328a774b3eb2242be85e49abeb9599";
-
-        /// <summary>
-        /// Applies a custom pose AnimationClip to the FIRST motion entry (index 0) within a Direct BlendTree.
-        /// If no custom clip is provided, a fallback animation is used.
-        /// Also applies RootQ data from the chosen custom pose/fallback clip to a specific alignment clip.
-        /// </summary>
-        /// <param name="poseExtension">The BWPosesExtension component containing the custom pose setting.</param>
-        /// <param name="avatarName">The name of the avatar being processed (for logging).</param>
-        /// <returns>True if any assets (BlendTree or the single Alignment clip) were modified, false otherwise.</returns>
+        
         public static bool ApplyCustomPose(BWPosesExtension poseExtension, string avatarName)
         {
             Debug.Log($"[PosesExtension] (CustomPose) Applying custom pose for {avatarName}.");
@@ -146,12 +134,7 @@ namespace BUDDYWORKS.PosesExtension
 
             return assetsWereModified;
         }
-
-        /// <summary>
-        /// Applies the RootQ data from a source AnimationClip to a single target alignment clip.
-        /// </summary>
-        /// <param name="sourceClip">The AnimationClip whose RootQ data will be copied.</param>
-        /// <returns>True if the target alignment clip was modified, false otherwise.</returns>
+        
         private static bool ApplyRootQDataToSingleAlignmentClip(AnimationClip sourceClip)
         {
             if (sourceClip == null)

@@ -8,13 +8,7 @@ namespace BUDDYWORKS.PosesExtension
     public static class PosesExtensionSyncProcessor
     {
         private const string SyncParameterAssetGUID = "17cce2e1703370a41b2f584d6364944a";
-
-        /// <summary>
-        /// Applies the network sync settings from the BWPosesExtension component to the VRCExpressionParameters asset.
-        /// </summary>
-        /// <param name="poseExtension">The BWPosesExtension component containing sync settings.</param>
-        /// <param name="avatarName">The name of the avatar being processed (for logging).</param>
-        /// <returns>True if the VRCExpressionParameters asset was modified, false otherwise.</returns>
+        
         public static bool ApplySyncParameterChanges(
             BWPosesExtension poseExtension,
             string avatarName

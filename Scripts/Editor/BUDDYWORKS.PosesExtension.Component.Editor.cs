@@ -2,10 +2,6 @@
 
 using UnityEditor;
 using UnityEngine;
-using System.IO;
-using System.Linq; // Still needed for Directory, File.Exists in processor, but not in editor UI
-using UnityEditor.Animations; // Needed for AnimatorController and related classes
-
 
 
 namespace BUDDYWORKS.PosesExtension
@@ -66,11 +62,6 @@ namespace BUDDYWORKS.PosesExtension
             // --- Other Tab Property Initialization from BWPosesExtension ---
             _propHeightAdjustMultiplier = serializedObject.FindProperty("_heightAdjustMultiplier");
             _propViewAdjustSensitivity = serializedObject.FindProperty("_viewAdjustSensitivity");
-        }
-
-        private void OnDisable()
-        {
-            // No custom cleanup needed; Unity handles saving for SerializedProperties.
         }
 
         public override void OnInspectorGUI()
@@ -153,17 +144,13 @@ namespace BUDDYWORKS.PosesExtension
             GUILayout.Label("Add your own pose and dance data.", EditorStyles.boldLabel);
             Rect r = EditorGUILayout.GetControlRect(false, 1, new GUIStyle() { margin = new RectOffset(0, 0, 4, 4) });
             EditorGUI.DrawRect(r, Color.gray);
-
-            GUIContent customPosebankA = new GUIContent("Custom Pose Bank", "Insert the posebank animationclip here.");
-            GUIContent customPosebankB = new GUIContent("Custom Pose Bank Mirror",
-                "Slot in an animation here if you want to use the mirror slot for an additional pose bank. Note that this replaces the mirror option for the custom pose bank.");
             
             // Custom Dance Slots
             GUIContent customDanceA = new GUIContent("Custom Dance A", "Insert the dance animation clip for slot A here. If empty, a fallback animation will be used.");
             GUIContent customDanceB = new GUIContent("Custom Dance B", "Insert the dance animation clip for slot B here. If empty, a fallback animation will be used.");
             GUIContent customDanceC = new GUIContent("Custom Dance C", "Insert the dance animation clip for slot C here. If empty, a fallback animation will be used.");
             
-            // ADDED: Custom Pose Slot
+            // Custom Pose Slot
             GUIContent customPoseContent = new GUIContent("Custom Posebank", "Insert a custom animation clip here for the Custom Pose. If empty, a fallback animation will be used.");
             
             // Draw the property fields for custom dances

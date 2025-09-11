@@ -8,12 +8,6 @@ namespace BUDDYWORKS.PosesExtension
 {
     public static class PosesExtensionAdjustmentsProcessor
     {
-        /// <summary>
-        /// Applies height and view adjustments to the relevant animation clips.
-        /// </summary>
-        /// <param name="heightMultiplier">Multiplier for height adjustment range.</param>
-        /// <param name="viewSensitivity">Sensitivity for view adjustments.</param>
-        /// <returns>True if any animation clips were modified, false otherwise.</returns>
         public static bool ApplyAnimationAdjustments(
             float heightMultiplier,
             float viewSensitivity

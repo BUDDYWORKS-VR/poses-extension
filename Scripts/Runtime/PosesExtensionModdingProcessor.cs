@@ -21,13 +21,7 @@ namespace BUDDYWORKS.PosesExtension
         // Dance C
         private const long DanceCLocalID = 8017281320110375518L;
         private const string DanceCFallbackGUID = "eaa4dd4845114f14186da152d65ef35f";
-
-        /// <summary>
-        /// Applies custom dance AnimationClips to the main Animator Controller.
-        /// </summary>
-        /// <param name="poseExtension">The BWPosesExtension component containing custom dance settings.</param>
-        /// <param name="avatarName">The name of the avatar being processed (for logging).</param>
-        /// <returns>True if the AnimatorController was modified, false otherwise.</returns>
+        
         public static bool ApplyCustomDances(BWPosesExtension poseExtension, string avatarName)
         {
             Debug.Log(
