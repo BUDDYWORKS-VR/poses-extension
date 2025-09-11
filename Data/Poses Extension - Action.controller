@@ -3731,7 +3731,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 3
     m_ConditionEvent: PE/Set
-    m_EventTreshold: 29
+    m_EventTreshold: 90
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -5520167483327460871}
   m_Solo: 0
@@ -12624,7 +12624,7 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 4
     m_ConditionEvent: PE/Set
-    m_EventTreshold: 30
+    m_EventTreshold: 90
   - m_ConditionMode: 2
     m_ConditionEvent: PE/ViewPortAdjust
     m_EventTreshold: 0
@@ -19120,7 +19120,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 3
     m_ConditionEvent: PE/Set
-    m_EventTreshold: 29
+    m_EventTreshold: 90
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -5520167483327460871}
   m_Solo: 0
