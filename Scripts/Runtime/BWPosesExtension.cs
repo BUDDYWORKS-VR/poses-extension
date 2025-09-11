@@ -1,10 +1,9 @@
 #if UNITY_EDITOR
 using UnityEngine;
-using VRC.SDKBase; // For IEditorOnly
+using VRC.SDKBase;
 
 namespace BUDDYWORKS.PosesExtension
 {
-    // BWPosesExtension.cs (No changes, remains as the component holding all settings)
     [AddComponentMenu("BUDDYWORKS/Poses Extension")]
     public class BWPosesExtension : MonoBehaviour, IEditorOnly
     {
@@ -66,7 +65,7 @@ namespace BUDDYWORKS.PosesExtension
         public float HeightAdjustMultiplier => _heightAdjustMultiplier;
         public float ViewAdjustSensitivity => _viewAdjustSensitivity;
 
-        // Constants for parameter costs (these can stay here as they are directly tied to the settings)
+        // Constants for parameter costs of each function.
         private const int BaseCost = 16;
         private const int HeightCost = 8;
         private const int MirrorCost = 1;
