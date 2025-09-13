@@ -9,7 +9,6 @@ namespace BUDDYWORKS.PosesExtension
     {
         // VRCF Prefab definitions
         static string prefabPE_Standalone_VRCF = "ff714a403f2fe944aa77358222a4be1c";
-        static string prefabPE_GGL_VRCF = "09cb0fd5fac430446b22b023b90bd66d";
 
         static string VRCF_Path = "Packages/com.vrcfury.vrcfury";
 
@@ -37,19 +36,11 @@ namespace BUDDYWORKS.PosesExtension
         }
         
         // Toolbar Menu
-        [MenuItem("BUDDYWORKS/Poses Extension/Spawn Standalone Prefab... [VRCFury] [Recommended]", false, 0)]
-        [MenuItem("GameObject/BUDDYWORKS/Poses Extension/Spawn Standalone Prefab... [VRCFury] [Recommended]", false, 0)]
+        [MenuItem("BUDDYWORKS/Poses Extension/Spawn Standalone Prefab... [VRCFury]", false, 0)]
+        [MenuItem("GameObject/BUDDYWORKS/Poses Extension/Spawn Standalone Prefab... [VRCFury]", false, 0)]
         private static void SpawnPE()
         {
             SpawnPrefab(prefabPE_Standalone_VRCF);
-            NotifyOrder();
-        }
-
-        [MenuItem("BUDDYWORKS/Poses Extension/Spawn GGL-Variant Prefab... [VRCFury] [Limited Features!]", false, 1)]
-        [MenuItem("GameObject/BUDDYWORKS/Poses Extension/Spawn GGL-Variant Prefab... [VRCFury] [Limited Features!]", false, 1)]
-        private static void SpawnPEGGL()
-        {
-            SpawnPrefab(prefabPE_GGL_VRCF);
             NotifyOrder();
         }
 
@@ -79,15 +70,8 @@ namespace BUDDYWORKS.PosesExtension
 
         // Enable or disable menu items dynamically
 
-        [MenuItem("BUDDYWORKS/Poses Extension/Spawn Standalone Prefab... [VRCFury] [Recommended]", true)]
+        [MenuItem("BUDDYWORKS/Poses Extension/Spawn Standalone Prefab... [VRCFury]", true)]
         private static bool ValidateSpawnPE()
-        {
-            return AssetDatabase.IsValidFolder(VRCF_Path) != false;
-        }
-
-        [MenuItem("BUDDYWORKS/Poses Extension/Spawn GGL-Variant Prefab... [VRCFury] [Limited Features!]", true)]
-        [MenuItem("GameObject/BUDDYWORKS/Poses Extension/Spawn GGL-Variant Prefab... [VRCFury] [Limited Features!]", true)]
-        private static bool ValidateSpawnPEGGL()
         {
             return AssetDatabase.IsValidFolder(VRCF_Path) != false;
         }
