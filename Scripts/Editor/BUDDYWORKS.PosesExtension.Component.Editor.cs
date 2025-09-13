@@ -66,9 +66,6 @@ namespace BUDDYWORKS.PosesExtension
 
         public override void OnInspectorGUI()
         {
-            // IMPORTANT: This line remains as per your original provided code.
-            // If DrawBanner() needs a specific implementation, it should be provided by you.
-            // I will not alter or uncomment this line or assume its implementation.
             BannerUtility.DrawBanner();
             
             GUILayout.Space(4); 
@@ -127,7 +124,7 @@ namespace BUDDYWORKS.PosesExtension
 
             GUILayout.FlexibleSpace();
 
-            EditorGUILayout.HelpBox("Useful if you have a photographer, though it does incur a parameter cost.\nYou'll still have access to all features locally, regardless of your selection.", MessageType.Info);
+            EditorGUILayout.HelpBox("Useful if you have a photographer, though it does incur a parameter cost.\n\nYou'll still have access to all features locally, regardless of your selection.", MessageType.Info);
             
             GUILayout.EndVertical();
             GUILayout.Space(4); 
@@ -145,27 +142,39 @@ namespace BUDDYWORKS.PosesExtension
             Rect r = EditorGUILayout.GetControlRect(false, 1, new GUIStyle() { margin = new RectOffset(0, 0, 4, 4) });
             EditorGUI.DrawRect(r, Color.gray);
             
-            // Custom Dance Slots
-            GUIContent customDanceA = new GUIContent("Custom Dance A", "Insert the dance animation clip for slot A here. If empty, a fallback animation will be used.");
-            GUIContent customDanceB = new GUIContent("Custom Dance B", "Insert the dance animation clip for slot B here. If empty, a fallback animation will be used.");
-            GUIContent customDanceC = new GUIContent("Custom Dance C", "Insert the dance animation clip for slot C here. If empty, a fallback animation will be used.");
-            
             // Custom Pose Slot
-            GUIContent customPoseContent = new GUIContent("Custom Posebank", "Insert a custom animation clip here for the Custom Pose. If empty, a fallback animation will be used.");
+            GUIContent customPoseContent = new GUIContent("Posebank", "Insert a custom animation clip here for the Custom Pose. If empty, a fallback animation will be used.");
+            
+            // Custom Dance Slots
+            GUIContent customDanceA = new GUIContent("Dance A", "Insert the dance animation clip for slot A here. If empty, a fallback animation will be used.");
+            GUIContent customDanceB = new GUIContent("Dance B", "Insert the dance animation clip for slot B here. If empty, a fallback animation will be used.");
+            GUIContent customDanceC = new GUIContent("Dance C", "Insert the dance animation clip for slot C here. If empty, a fallback animation will be used.");
+            
+            // ADDED: Draw the new property field for the custom pose
+            if (_propCustomPose != null) EditorGUILayout.PropertyField(_propCustomPose, customPoseContent);
             
             // Draw the property fields for custom dances
             if (_propCustomDanceA != null) EditorGUILayout.PropertyField(_propCustomDanceA, customDanceA);
             if (_propCustomDanceB != null) EditorGUILayout.PropertyField(_propCustomDanceB, customDanceB);
             if (_propCustomDanceC != null) EditorGUILayout.PropertyField(_propCustomDanceC, customDanceC);
             
-            // ADDED: Draw the new property field for the custom pose
-            if (_propCustomPose != null) EditorGUILayout.PropertyField(_propCustomPose, customPoseContent);
-
 
             GUILayout.FlexibleSpace();
             
-            EditorGUILayout.HelpBox("Introduce your own dances and pose banks here.\nPlease review the docs for proper setup of those animation clips.", MessageType.Info);
-            
+            // Get the rect where the HelpBox will be drawn
+            Rect helpBoxRect = EditorGUILayout.BeginVertical();
+            EditorGUILayout.HelpBox("Poses: Combine all the poses you want to add into a single animation clip, one keyframe for each pose.\n\nDances: Put your dance animations into the respective slots.\n\nFor more information, consult the docs at:\nhttps://docs.buddyworks.wtf", MessageType.Info);
+            EditorGUILayout.EndVertical();
+
+            // Check if the mouse click happened within the HelpBox's rect
+            if (Event.current.type == EventType.MouseDown && helpBoxRect.Contains(Event.current.mousePosition))
+            {
+                if (Event.current.button == 0) // Left mouse button
+                {
+                    Application.OpenURL("https://docs.buddyworks.wtf");
+                    Event.current.Use(); // Consume the event so it doesn't propagate further
+                }
+            }
             GUILayout.EndVertical();
             GUILayout.Space(4); 
             GUILayout.EndHorizontal();

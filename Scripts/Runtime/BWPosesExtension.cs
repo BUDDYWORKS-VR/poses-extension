@@ -37,15 +37,18 @@ namespace BUDDYWORKS.PosesExtension
         public bool SyncHeight => _syncHeight;
         public bool SyncMirror => _syncMirror;
 
-        [Header("Modding Settings")]
+        [Header("Custom Poses")]
+        [Tooltip("Optional: Assign a custom AnimationClip for custom poses. If left empty, a fallback motion will be used.")]
+        [SerializeField] private AnimationClip _customPose;
+        
+        [Header("Custom Dances")]
         [Tooltip("Optional: Assign a custom AnimationClip for Dance A. If left empty, a fallback motion will be used.")]
         [SerializeField] private AnimationClip _customDanceA;
         [Tooltip("Optional: Assign a custom AnimationClip for Dance B. If left empty, a fallback motion will be used.")]
         [SerializeField] private AnimationClip _customDanceB;
         [Tooltip("Optional: Assign a custom AnimationClip for Dance C. If left empty, a fallback motion will be used.")]
         [SerializeField] private AnimationClip _customDanceC;
-        [Tooltip("Optional: Assign a custom AnimationClip for a custom pose. If left empty, a fallback motion will be used.")]
-        [SerializeField] private AnimationClip _customPose;
+        
 
         public AnimationClip CustomDanceA => _customDanceA;
         public AnimationClip CustomDanceB => _customDanceB;
