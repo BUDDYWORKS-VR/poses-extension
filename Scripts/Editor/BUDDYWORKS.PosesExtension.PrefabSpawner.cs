@@ -9,8 +9,10 @@ namespace BUDDYWORKS.PosesExtension
     {
         // VRCF Prefab definitions
         static string prefabPE_Standalone_VRCF = "ff714a403f2fe944aa77358222a4be1c";
+        static string prefabPE_Standalone_MA = "4f722f42060b3434ba099bd52f30d04b";
 
         static string VRCF_Path = "Packages/com.vrcfury.vrcfury";
+        static string MA_Path = "Packages/nadena.dev.modular-avatar";
 
         // GGL Prefab definitions
         static string prefabGGL_Beyond_Legacy = "10b55c87769faa544ae55a6de658bf86";
@@ -41,6 +43,14 @@ namespace BUDDYWORKS.PosesExtension
         private static void SpawnPE()
         {
             SpawnPrefab(prefabPE_Standalone_VRCF);
+            NotifyOrder();
+        }
+        
+        [MenuItem("BUDDYWORKS/Poses Extension/Spawn Standalone Prefab... [ModularAvatar]", false, 1)]
+        [MenuItem("GameObject/BUDDYWORKS/Poses Extension/Spawn Standalone Prefab... [ModularAvatar]", false, 1)]
+        private static void SpawnPE_MA()
+        {
+            SpawnPrefab(prefabPE_Standalone_MA);
             NotifyOrder();
         }
 
@@ -74,6 +84,11 @@ namespace BUDDYWORKS.PosesExtension
         private static bool ValidateSpawnPE()
         {
             return AssetDatabase.IsValidFolder(VRCF_Path) != false;
+        }
+        [MenuItem("BUDDYWORKS/Poses Extension/Spawn Standalone Prefab... [ModularAvatar]", true)]
+        private static bool ValidateSpawnPE_MA()
+        {
+            return AssetDatabase.IsValidFolder(MA_Path) != false;
         }
 
         [MenuItem("BUDDYWORKS/Poses Extension/Spawn GoGo Loco Beyond Prefab...", true)]
