@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5428970774099241940}
+  - component: {fileID: 6453785692053526507}
   - component: {fileID: 4773419415666039433}
   - component: {fileID: 989489365945623101}
   - component: {fileID: 4648410354979069021}
@@ -34,6 +35,31 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6453785692053526507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345690024409448781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df58f6a6e612d234396cce2b08210871, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _syncMirror: 1
+  _syncHeight: 1
+  _syncViewAdjustGroup: 0
+  _syncHandAdjustGroup: 0
+  _syncHeadAdjustGroup: 0
+  _syncTiltAdjustGroup: 0
+  _syncOffsetAdjustGroup: 0
+  _customPose: {fileID: 0}
+  _customDanceA: {fileID: 0}
+  _customDanceB: {fileID: 0}
+  _customDanceC: {fileID: 0}
+  _heightAdjustMultiplier: 1
+  _viewAdjustSensitivity: 1
 --- !u!114 &4773419415666039433
 MonoBehaviour:
   m_ObjectHideFlags: 0

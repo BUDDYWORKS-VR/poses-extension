@@ -98,6 +98,7 @@ namespace BUDDYWORKS.PosesExtension
             GUILayout.BeginVertical();
 
             GUILayout.Label("Select which features are synced to other players.", EditorStyles.boldLabel);
+            GUILayout.Label("Note that this will not work with the Modular Avatar prefab!", EditorStyles.boldLabel);
             Rect r = EditorGUILayout.GetControlRect(false, 1, new GUIStyle() { margin = new RectOffset(0, 0, 4, 4) });
             EditorGUI.DrawRect(r, Color.gray);
 
