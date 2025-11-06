@@ -13098,7 +13098,7 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 4
     m_ConditionEvent: PE/Set
-    m_EventTreshold: 91
+    m_EventTreshold: 30
   - m_ConditionMode: 2
     m_ConditionEvent: PE/ViewPortAdjust
     m_EventTreshold: 0
