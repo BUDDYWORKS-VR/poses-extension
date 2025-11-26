@@ -9547,7 +9547,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Standing - Walking
+  m_Name: Standing - Moving
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -16937,7 +16937,7 @@ BlendTree:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BT - Standing Walking
+  m_Name: BT - Standing Moving
   m_Childs:
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 208ec7a8c0eff7b40b8c147167484ca1, type: 2}
@@ -18516,7 +18516,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Standing - Walking (Mirror)
+  m_Name: Standing - Moving (Mirror)
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
