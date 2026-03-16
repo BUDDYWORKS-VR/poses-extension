@@ -2,7 +2,7 @@
 
 <a href="https://buddyworks.wtf"><img width=50% src="https://splash.buddyworks.wtf/tckAqsHD.png"></img></a>  
 # BUDDYWORKS Poses Extension
-*Locomotion-agnostic pose system for VRChat Avatars, meant to be used for photography.*
+*Easy to use VRChat Pose System for everybody~*
 
 [![Generic badge](https://img.shields.io/github/downloads/BUDDYWORKS-VR/poses-extension/total?label=Downloads)](https://github.com/BUDDYWORKS-VR/poses-extension/releases/latest)
 [![Generic badge](https://img.shields.io/badge/License-BDAL-yellow)](https://github.com/BUDDYWORKS-VR/poses-extension/blob/main/LICENSE)
