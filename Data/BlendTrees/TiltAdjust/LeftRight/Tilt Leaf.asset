@@ -6,10 +6,10 @@ BlendTree:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Tilt Branch
+  m_Name: Tilt Leaf
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: ce5f57806bbb5fc4a9bfba015e3a2425, type: 2}
+    m_Motion: {fileID: 7400000, guid: fe6824b77c5e68947aa9087a3d8bd0b5, type: 2}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -17,17 +17,17 @@ BlendTree:
     m_DirectBlendParameter: VelocityMagnitude
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 20600000, guid: f762565596a19fc47a01e23bee15c12a, type: 2}
+    m_Motion: {fileID: 7400000, guid: fd6516d25aaadb742830096a3a44a556, type: 2}
     m_Threshold: 1
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: VelocityMagnitude
     m_Mirror: 0
-  m_BlendParameter: PE/TiltAdjust/Active
+  m_BlendParameter: PE/TiltAdjust/ValueLR
   m_BlendParameterY: Blend
   m_MinThreshold: 0
   m_MaxThreshold: 1
-  m_UseAutomaticThresholds: 0
+  m_UseAutomaticThresholds: 1
   m_NormalizedBlendValues: 0
   m_BlendType: 0

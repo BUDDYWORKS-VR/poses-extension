@@ -144,7 +144,12 @@ MonoBehaviour:
     saved: 0
     defaultValue: 0
     networkSynced: 0
-  - name: PE/TiltAdjust/Value
+  - name: PE/TiltAdjust/ValueLR
+    valueType: 1
+    saved: 0
+    defaultValue: 0.5
+    networkSynced: 0
+  - name: PE/TiltAdjust/ValueFB
     valueType: 1
     saved: 0
     defaultValue: 0.5

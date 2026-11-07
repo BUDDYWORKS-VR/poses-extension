@@ -144,7 +144,12 @@ MonoBehaviour:
     saved: 1
     defaultValue: 0
     networkSynced: 0
-  - name: PE/TiltAdjust/Value
+  - name: PE/TiltAdjust/ValueLR
+    valueType: 1
+    saved: 1
+    defaultValue: 0.5
+    networkSynced: 0
+  - name: PE/TiltAdjust/ValueFB
     valueType: 1
     saved: 1
     defaultValue: 0.5
@@ -424,20 +429,35 @@ MonoBehaviour:
     saved: 1
     defaultValue: 0
     networkSynced: 0
-  - name: PE/Favorite/TiltAdjust/Value_A
+  - name: PE/Favorite/TiltAdjust/ValueLR_A
     valueType: 1
     saved: 1
     defaultValue: 0.4
     networkSynced: 0
-  - name: PE/Favorite/TiltAdjust/Value_B
+  - name: PE/Favorite/TiltAdjust/ValueLR_B
     valueType: 1
     saved: 1
     defaultValue: 0.5
     networkSynced: 0
-  - name: PE/Favorite/TiltAdjust/Value_C
+  - name: PE/Favorite/TiltAdjust/ValueLR_C
     valueType: 1
     saved: 1
     defaultValue: 0.6
+    networkSynced: 0
+  - name: PE/Favorite/TiltAdjust/ValueFB_A
+    valueType: 1
+    saved: 1
+    defaultValue: 0.5
+    networkSynced: 0
+  - name: PE/Favorite/TiltAdjust/ValueFB_B
+    valueType: 1
+    saved: 1
+    defaultValue: 0.5
+    networkSynced: 0
+  - name: PE/Favorite/TiltAdjust/ValueFB_C
+    valueType: 1
+    saved: 1
+    defaultValue: 0.5
     networkSynced: 0
   - name: PE/Favorite/OffsetAdjust/WasActive_A
     valueType: 2
