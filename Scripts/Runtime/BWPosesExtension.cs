@@ -75,7 +75,7 @@ namespace BUDDYWORKS.PosesExtension
         private const int ViewAdjustCost = 17;
         private const int HandAdjustCost = 17;
         private const int HeadAdjustCost = 25;
-        private const int TiltAdjustCost = 9;
+        private const int TiltAdjustCost = 17;
         private const int OffsetAdjustCost = 25;
 
         public int CalculateParameterCost()
